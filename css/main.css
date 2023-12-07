@@ -159,6 +159,11 @@ h6 {
   line-height: 34px;
 }
 
+.heading--48 {
+  font-size: 48px;
+  line-height: 50px;
+}
+
 .desc--16 {
   font-size: 16px;
   line-height: 24px;
@@ -187,6 +192,7 @@ h6 {
 }
 
 .custom-btn {
+  font-family: "Gill-Sans";
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -194,12 +200,13 @@ h6 {
   gap: 10px;
   width: fit-content;
   min-width: 142px;
-  height: 48px;
+  height: 55px;
   padding: 15px 25px;
   color: #fff;
   background: #000;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
   transition: all 0.15s ease-in-out;
   -webkit-transition: all 0.15s ease-in-out;
   -moz-transition: all 0.15s ease-in-out;
@@ -265,6 +272,15 @@ h6 {
   display: none !important;
 }
 
+/* 
+
+font-family: "Gill-Sans-Light";
+font-family: "Gill-Sans";
+font-family: "Gill-Sans-Medium";
+font-family: "Gill-Sans-Bold";
+
+*/
+
 /* Default CSS Code */
 
 body {
@@ -314,11 +330,11 @@ body {
   background: #000;
 }
 
-.top-header__login,
-.top-header__links li a,
-.top-header__contact a {
-  color: #fff;
+.top-header__contact,
+.top-header__links li a {
+  font-family: "Gill-Sans";
   font-weight: 300;
+  color: #fff;
   font-size: 16px;
   line-height: 24px;
 }
@@ -336,16 +352,10 @@ body {
 .top-header__contact {
   display: flex;
   align-items: center;
-  gap: 30px;
-}
-
-.top-header__contact a {
-  display: flex;
-  align-items: center;
   gap: 5px;
 }
 
-.top-header__contact a span {
+.top-header__contact span {
   width: fit-content;
   height: 22px;
   display: block;
@@ -356,13 +366,24 @@ body {
   -o-transform: scaleX(-1);
 }
 
-.top-header__contact a span img {
+.top-header__contact span img {
   object-fit: contain;
 }
 
 .main-header-area {
-  padding: 10px 0;
-  background: #fbfaf8;
+  padding: 6px 0;
+  background: #fcfbf8;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.main-header-area--is-sticky {
+  background: hsla(0, 0%, 100%, 0.7);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
 }
 
 .main-header {
@@ -375,27 +396,35 @@ body {
 .main-header__links {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 35px;
+}
+
+.main-header__left {
+  gap: 60px;
 }
 
 .main-header__links li a {
-  color: #000;
+  color: #424242;
+  font-family: "Gill-Sans";
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 25px;
 }
 
 .main-header__right {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
 }
 
 .main-header__right button img {
   width: fit-content;
-  height: 35px;
+  height: 28px;
 }
 
 .nav-logo {
   width: fit-content;
-  height: 60px;
+  height: 50px;
 }
 
 .nav-logo img {
@@ -406,7 +435,7 @@ body {
 
 /* Main Content */
 main {
-  margin-top: 124px;
+  margin-top: 106px;
 }
 /* Main Content */
 
@@ -414,10 +443,10 @@ main {
 .hero-area {
   position: relative;
   width: 100%;
-  height: calc(100vh - 124px);
+  height: calc(100vh - 106px);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: top;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
     url("../img/hero.jpg");
   display: flex;
@@ -460,20 +489,52 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 630px;
+  width: 100%;
 }
 
 .hero__content h1,
+.hero__content h3,
 .hero__content p {
+  font-family: "Gill-Sans";
   color: #fff;
+}
+
+.hero__content h1 {
   text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero__content h3 {
+  font-weight: 400;
 }
 
 .hero__content p {
-  margin-top: 20px;
+  margin-top: 15px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 300;
 }
 
 .hero__content .custom-btns {
   margin-top: 30px;
+}
+
+.hero .custom-btns {
+  gap: 50px;
+}
+
+.hero .custom-btn {
+  min-width: 200px;
+}
+
+.custom-btn--behandelingen {
+  background: #212121;
+}
+
+.custom-btn--webshop {
+  background: #424242;
 }
 
 /* Hero Area */

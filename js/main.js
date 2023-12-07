@@ -34,3 +34,14 @@ $(".products__items").slick({
   prevArrow: '<button class="slick-prev"><span></span></button>',
   nextArrow: '<button class="slick-next"><span></span></button>',
 });
+
+// Sticky Header
+window.addEventListener("scroll", function () {
+  const mainHeader = document.querySelector(".main-header-area");
+
+  if (window.scrollY > 0) {
+    mainHeader.classList.add("main-header-area--is-sticky");
+  } else {
+    mainHeader.classList.remove("main-header-area--is-sticky");
+  }
+});
