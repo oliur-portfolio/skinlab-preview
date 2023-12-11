@@ -1,3 +1,25 @@
+// Search toggle
+const searchOpen = document.getElementById("searchOpen");
+const searchBox = document.querySelector(".search-overlay");
+const searchClose = document.querySelector(".close-search-btn");
+
+searchOpen.addEventListener("click", () => {
+  searchBox.classList.add("search-overlay--show");
+  document.body.style.overflow = "hidden";
+});
+
+searchClose.addEventListener("click", () => {
+  searchBox.classList.remove("search-overlay--show");
+  document.body.style.overflow = "auto";
+});
+
+document.addEventListener("mouseup", function (e) {
+  if (e.target.classList.contains("search-overlay--show")) {
+    searchBox.classList.remove("search-overlay--show");
+    document.body.style.overflow = "auto";
+  }
+});
+
 // Process Slider Effect
 $(".slider-for").slick({
   slidesToShow: 1,

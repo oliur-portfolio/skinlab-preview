@@ -91,12 +91,39 @@
             </div>
 
             <div class="main-header__right">
-              <button><img src="img/search.png" alt="search" /></button>
+              <button>
+                <img id="searchOpen" src="img/search.png" alt="search" />
+              </button>
               <button><img src="img/user.png" alt="user" /></button>
               <button><img src="img/cart.png" alt="cart" /></button>
             </div>
           </div>
         </div>
+
+        <!-- Search Box -->
+        <div class="search-overlay">
+          <div class="search-wrapper">
+            <div class="search-box">
+              <form action="" class="search-form">
+                <input
+                  class="input-style"
+                  type="text"
+                  name="search"
+                  placeholder="Search"
+                />
+                <!-- <label for="fname" class="search-form__label">Search</label> -->
+                <button class="search-submit-btn" type="submit">
+                  <img src="img/search.png" alt="search" />
+                </button>
+              </form>
+
+              <button class="close-search-btn">
+                <img src="img/close.png" alt="close" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Search Box -->
       </nav>
       <!-- Main Header -->
     </header>
