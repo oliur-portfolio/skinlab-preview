@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function () {
+  var submenuItems = document.querySelectorAll(".main-header__links-submenu");
+
+  submenuItems.forEach(function (submenuItem) {
+    submenuItem.addEventListener("mouseover", function () {
+      document
+        .querySelector(".main-header-area")
+        .classList.add("main-header-area--submenu");
+    });
+
+    submenuItem.addEventListener("mouseout", function () {
+      document
+        .querySelector(".main-header-area")
+        .classList.remove("main-header-area--submenu");
+    });
+  });
+});
+
 // Search toggle
 const searchOpen = document.getElementById("searchOpen");
 const searchBox = document.querySelector(".search-overlay");
@@ -44,7 +62,7 @@ $(".slider-nav").slick({
 
 // Products Slider Effect
 $(".products__items").slick({
-  slidesToShow: 3.5,
+  slidesToShow: 4.3,
   slidesToScroll: 3,
   centerMode: false,
   infinite: false,
@@ -83,7 +101,9 @@ window.addEventListener("scroll", function () {
 // Menu Hover
 (function () {
   const target = document.querySelector(".target");
-  const links = document.querySelectorAll(".main-header__links a");
+  const links = document.querySelectorAll(
+    ".main-header__links .main-header__link"
+  );
 
   function mouseenterFunc() {
     if (!this.parentNode.classList.contains("active")) {
