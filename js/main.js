@@ -118,8 +118,8 @@ window.addEventListener("scroll", function () {
       const width = this.getBoundingClientRect().width;
       const left = this.getBoundingClientRect().left + window.pageXOffset;
 
-      target.style.width = `${width}px`;
-      target.style.left = `${left}px`;
+      target.style.width = `${width - 34}px`;
+      target.style.left = `${left + 17}px`;
       target.style.transform = "none";
     }
   }
