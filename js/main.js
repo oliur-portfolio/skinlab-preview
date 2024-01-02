@@ -1,3 +1,21 @@
+// Animated Hamburger Icon
+const navToggleBtn = document.querySelector(".navbar-toggler");
+const header = document.querySelector(".header");
+
+navToggleBtn.addEventListener("click", () => {
+  navToggleBtn.classList.toggle("change");
+  header.classList.toggle("mobile-nav");
+  document.body.classList.toggle("overflow-hidden");
+});
+
+// Accordion Effect
+$(".accordion__question").click(function (e) {
+  e.preventDefault();
+  var notthis = $(".active").not(this);
+  notthis.toggleClass("active").next(".accordion__answer").slideToggle(300);
+  $(this).toggleClass("active").next().slideToggle("fast");
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   var submenuItems = document.querySelectorAll(".main-header__links-submenu");
 
@@ -49,6 +67,36 @@ $(".slider-for").slick({
     var num = index + 1;
     return '<button class="dot">' + "" + "</button>";
   },
+  prevArrow:
+    '<button class="process-arrow process-arrow--prev slick-prev"><span></span></button>',
+  nextArrow:
+    '<button class="process-arrow process-arrow--next slick-next"><span></span></button>',
+  responsive: [
+    {
+      breakpoint: 2000,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+      },
+    },
+  ],
 });
 
 $(".slider-nav").slick({
@@ -73,6 +121,44 @@ $(".products__items").slick({
   },
   prevArrow: '<button class="slick-prev"><span></span></button>',
   nextArrow: '<button class="slick-next"><span></span></button>',
+  responsive: [
+    {
+      breakpoint: 1600,
+      settings: {
+        slidesToShow: 3.2,
+        slidesToScroll: 3.5,
+      },
+    },
+    {
+      breakpoint: 1199,
+      settings: {
+        slidesToShow: 2.4,
+        slidesToScroll: 2.4,
+      },
+    },
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 1.8,
+        slidesToScroll: 1.8,
+        dots: false,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1.5,
+        slidesToScroll: 1.5,
+      },
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 });
 
 const headerArea = document.querySelector(".header");
