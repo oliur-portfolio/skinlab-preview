@@ -494,4 +494,16 @@
   .search-wrapper {
     padding: 0.6rem 2rem;
   }
+
+  .top-header__links li {
+    display: none;
+  }
+
+  .top-header__links-faq {
+    display: block !important;
+  }
+
+  .top-header__contact span {
+    display: none;
+  }
 }
