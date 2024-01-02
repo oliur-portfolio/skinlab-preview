@@ -25,10 +25,6 @@
 }
 
 @media (max-width: 1199.98px) {
-  main {
-    margin-top: 41px;
-  }
-
   .navbar-toggler {
     display: block;
   }
@@ -485,5 +481,17 @@
   .footer__bottom {
     padding-top: 5rem;
     padding-bottom: 3rem;
+  }
+
+  .top-header__contact span {
+    height: 1.8rem;
+  }
+
+  .hero-area {
+    padding-bottom: 9rem;
+  }
+
+  .search-wrapper {
+    padding: 0.6rem 2rem;
   }
 }
