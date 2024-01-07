@@ -201,7 +201,8 @@ h6 {
   width: fit-content;
   min-width: 14.2rem;
   height: 5rem;
-  padding: 1.5rem 2.5rem;
+  padding: 0.8rem 2.5rem;
+  padding-bottom: 1.1rem;
   color: #fff;
   background: #000;
   font-size: 2rem;
@@ -423,7 +424,7 @@ body {
 }
 
 .top-header__contact span {
-  width: auto;
+  width: 2.2rem;
   height: 2.2rem;
   display: block;
   transform: scaleX(-1);
@@ -526,7 +527,7 @@ body {
 
 .main-header__right button {
   width: auto;
-  height: 30px;
+  height: 3rem;
 }
 
 .main-header__right button img {
@@ -547,7 +548,7 @@ body {
 }
 
 .nav-logo {
-  width: auto;
+  width: 8.3rem;
   height: 5rem;
 }
 
@@ -584,10 +585,10 @@ body {
 
 .search-overlay {
   position: fixed;
-  top: 0;
+  top: 4rem;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 4.4rem);
   background: rgba(0, 0, 0, 0.6);
   z-index: 9999;
   opacity: 0;
@@ -597,11 +598,6 @@ body {
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-}
-
-.search-overlay {
-  top: 4.4rem;
-  height: calc(100vh - 4.4rem);
 }
 
 .header--is-sticky .search-overlay {
@@ -738,18 +734,18 @@ body {
 .navbar-toggler {
   display: none;
   position: absolute;
-  top: 17px;
-  right: 0;
-  width: 23px;
-  height: 14px;
+  top: 1.7rem;
+  left: 0;
+  width: 2.3rem;
+  height: 1.6rem;
   background: transparent;
   z-index: 999;
   background: transparent;
-  border-radius: 45px;
-  -webkit-border-radius: 45px;
-  -moz-border-radius: 45px;
-  -ms-border-radius: 45px;
-  -o-border-radius: 45px;
+  border-radius: 4.5rem;
+  -webkit-border-radius: 4.5rem;
+  -moz-border-radius: 4.5rem;
+  -ms-border-radius: 4.5rem;
+  -o-border-radius: 4.5rem;
 }
 
 .navbar-toggler .toggler-btn {
@@ -760,6 +756,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -770,8 +767,7 @@ body {
 .toggler-btn .bar {
   width: 100%;
   display: block;
-  height: 2px;
-  margin-bottom: 4px;
+  height: 0.2rem;
   background: #000;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -784,11 +780,11 @@ body {
 
 .navbar-toggler.change .toggler-btn .bar1 {
   background: #000;
-  transform: rotate(-45deg) translate(-4px, 4px);
-  -webkit-transform: rotate(-45deg) translate(-4px, 4px);
-  -moz-transform: rotate(-45deg) translate(-4px, 4px);
-  -ms-transform: rotate(-45deg) translate(-4px, 4px);
-  -o-transform: rotate(-45deg) translate(-4px, 4px);
+  transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
+  -webkit-transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
+  -moz-transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
+  -ms-transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
+  -o-transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
 }
 
 .navbar-toggler.change .toggler-btn .bar2 {
@@ -797,11 +793,11 @@ body {
 
 .navbar-toggler.change .toggler-btn .bar3 {
   background: #000;
-  transform: rotate(45deg) translate(-4px, -5px);
-  -webkit-transform: rotate(45deg) translate(-4px, -5px);
-  -moz-transform: rotate(45deg) translate(-4px, -5px);
-  -ms-transform: rotate(45deg) translate(-4px, -5px);
-  -o-transform: rotate(45deg) translate(-4px, -5px);
+  transform: rotate(45deg) translate(-0.5rem, -0.5rem);
+  -webkit-transform: rotate(45deg) translate(-0.5rem, -0.5rem);
+  -moz-transform: rotate(45deg) translate(-0.5rem, -0.5rem);
+  -ms-transform: rotate(45deg) translate(-0.5rem, -0.5rem);
+  -o-transform: rotate(45deg) translate(-0.5rem, -0.5rem);
 }
 
 /* Header Area */
@@ -942,7 +938,7 @@ main {
 
 .process__item img {
   width: 7rem;
-  height: 100%;
+  height: 7rem;
   object-fit: contain;
   opacity: 0.5;
   transition: all 0.15s ease-in-out;
@@ -1042,8 +1038,8 @@ main {
   display: none;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 5rem;
-  max-width: 282px;
+  margin-top: 3rem;
+  max-width: 28.2rem;
   margin-left: auto;
   margin-right: auto;
   gap: 2rem;
@@ -1054,8 +1050,8 @@ main {
 }
 
 .process__slide .process__item h5 {
-  font-size: 24px;
-  line-height: 34px;
+  font-size: 2.4rem;
+  line-height: 3.4rem;
 }
 
 /* Process Area */
@@ -1112,7 +1108,7 @@ main {
 
 .complete__item-icon-main {
   width: 4rem;
-  height: auto;
+  height: 4rem;
   object-fit: contain;
 }
 
@@ -1154,8 +1150,8 @@ main {
 }
 
 .trustpilot-rating {
-  width: auto;
-  height: 7.3rem;
+  width: 11.3rem;
+  height: auto;
 }
 
 .products__main {
@@ -1206,7 +1202,7 @@ main {
 }
 
 .products__image {
-  width: auto;
+  width: 100%;
   height: 23rem;
   margin-left: auto;
   margin-right: auto;
@@ -1332,6 +1328,7 @@ input[type="number"] {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border: 0.2rem solid #6d6d6d;
+  z-index: 99;
 }
 
 .products .slick-arrow span {
@@ -1589,7 +1586,7 @@ input[type="number"] {
 }
 
 .footer__socials li a {
-  width: auto;
+  width: 5rem;
   height: 5rem;
 }
 
@@ -1686,8 +1683,8 @@ input[type="number"] {
 }
 
 .footer-input__submit-btn img {
-  width: auto;
-  height: 2.2rem;
+  width: 2.2rem;
+  height: auto;
   object-fit: contain;
 }
 
@@ -1735,9 +1732,9 @@ input[type="number"] {
 }
 
 .footer__bottom-logo {
-  width: auto;
+  width: 5.5rem;
   max-width: 15rem;
-  height: 5.5rem;
+  height: auto;
 }
 
 .footer__bottom-logo img {
@@ -1755,7 +1752,7 @@ input[type="number"] {
 }
 
 .main-header .basic-accordion {
-  margin-top: -25px;
+  margin-top: -2.5rem;
   display: none;
 }
 
@@ -1764,9 +1761,9 @@ input[type="number"] {
 }
 
 .basic-accordion__item {
-  padding: 20px 0;
+  padding: 2rem 0;
   background: transparent;
-  border-bottom: 1px solid hsla(0, 0%, 48%, 0.6);
+  border-bottom: 0.1rem solid hsla(0, 0%, 48%, 0.6);
 }
 
 .basic-accordion__item .accordion__question {
@@ -1781,7 +1778,7 @@ input[type="number"] {
 
 .accordion__arrow {
   width: max-content;
-  height: 20px;
+  height: 2rem;
   object-fit: contain;
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1799,8 +1796,8 @@ input[type="number"] {
 }
 
 .basic-accordion__item .accordion__answer {
-  margin-top: 20px;
-  padding-left: 20px;
+  margin-top: 2rem;
+  padding-left: 2rem;
 }
 
 .accordion__answer {
@@ -1808,6 +1805,10 @@ input[type="number"] {
 }
 
 .footer-area .basic-accordion {
+  display: none;
+}
+
+.footer__list-newsletter-mobile {
   display: none;
 }
 

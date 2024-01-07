@@ -141,7 +141,6 @@ $(".products__items").slick({
       settings: {
         slidesToShow: 1.8,
         slidesToScroll: 1.8,
-        dots: false,
       },
     },
     {
