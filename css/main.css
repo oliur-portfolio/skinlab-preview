@@ -201,8 +201,7 @@ h6 {
   width: fit-content;
   min-width: 14.2rem;
   height: 5rem;
-  padding: 0.8rem 2.5rem;
-  padding-bottom: 1.1rem;
+  padding: 0 2.5rem;
   color: #fff;
   background: #000;
   font-size: 2rem;
@@ -526,8 +525,13 @@ body {
 }
 
 .main-header__right button {
-  width: auto;
-  height: 3rem;
+  width: 3rem;
+  height: auto;
+}
+
+.cart-btn {
+  width: 4rem !important;
+  height: auto !important;
 }
 
 .main-header__right button img {
@@ -1777,7 +1781,7 @@ input[type="number"] {
 }
 
 .accordion__arrow {
-  width: max-content;
+  width: 2rem;
   height: 2rem;
   object-fit: contain;
   transition: all 0.2s ease-in-out;
