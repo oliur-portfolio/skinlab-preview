@@ -440,7 +440,6 @@
 
   .custom-btn {
     font-size: 1.8rem;
-    height: 4.8rem;
   }
 
   .hero__content p {
@@ -590,9 +589,5 @@
 
   .search-box {
     max-width: 100%;
-  }
-
-  .search-form .input-style {
-    width: 34.6rem;
   }
 }
