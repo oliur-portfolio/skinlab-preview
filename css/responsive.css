@@ -438,10 +438,6 @@
     gap: 1.5rem;
   }
 
-  .custom-btn {
-    font-size: 1.8rem;
-  }
-
   .hero__content p {
     font-size: 2rem;
     line-height: 2.8rem;
@@ -567,6 +563,12 @@
 
   .footer-area .basic-accordion {
     margin-top: 1.5rem;
+  }
+
+  .custom-btn {
+    font-size: 1.8rem;
+    padding-top: 1.7rem;
+    padding-bottom: 1.3rem;
   }
 }
 
