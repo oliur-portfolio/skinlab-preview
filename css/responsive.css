@@ -570,6 +570,11 @@
     padding-top: 1.7rem;
     padding-bottom: 1.3rem;
   }
+
+  .custom-btn--standard {
+    padding-top: 2.1rem;
+    padding-bottom: 1.7rem;
+  }
 }
 
 @media (max-width: 575.98px) {
