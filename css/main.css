@@ -588,8 +588,8 @@ body {
 }
 
 .search-overlay {
-  position: fixed;
-  top: 4rem;
+  position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
   height: calc(100vh - 4.4rem);
@@ -639,7 +639,7 @@ body {
   position: absolute;
   top: 50%;
   right: 1.5rem;
-  width: auto;
+  width: 2.4rem;
   height: 2.4rem;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
@@ -649,7 +649,7 @@ body {
 }
 
 .close-search-btn {
-  width: auto;
+  width: 2.4rem;
   height: 2.4rem;
 }
 

@@ -587,4 +587,12 @@
     margin-left: 0;
     margin-right: 0;
   }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .search-form .input-style {
+    width: 34.6rem;
+  }
 }
