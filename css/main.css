@@ -1750,18 +1750,11 @@ input[type="number"] {
 /* Accordion */
 .basic-accordion {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 0;
 }
 
 .main-header .basic-accordion {
   margin-top: -2.5rem;
   display: none;
-}
-
-.mobile-nav .basic-accordion {
-  display: grid;
 }
 
 .basic-accordion__item {
@@ -1774,6 +1767,10 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.submenu__slider {
+  padding-bottom: 5rem;
 }
 
 .accordion__question h3 {
@@ -1817,3 +1814,31 @@ input[type="number"] {
 }
 
 /* Accordion */
+
+/* Swiper Slider */
+.swiper-pagination-bullet {
+  margin: 0 !important;
+  opacity: 1;
+  background: #eeeeee;
+  width: 3rem !important;
+  height: 0.5rem !important;
+  border-radius: 5rem;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: #808080;
+}
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+/* Swiper Slider */

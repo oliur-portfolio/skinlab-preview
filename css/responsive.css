@@ -219,6 +219,10 @@
   .complete__item-main {
     padding-top: 3rem;
   }
+
+  .mobile-nav .basic-accordion {
+    display: block;
+  }
 }
 
 @media (max-width: 991.98px) {

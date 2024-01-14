@@ -1,3 +1,12 @@
+const swiper = new Swiper(".swiper", {
+  loop: true,
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
 // Animated Hamburger Icon
 const navToggleBtn = document.querySelector(".navbar-toggler");
 const header = document.querySelector(".header");
