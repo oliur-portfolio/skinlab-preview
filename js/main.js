@@ -1,9 +1,77 @@
-const swiper = new Swiper(".swiper", {
+// Process Slider
+var swiperNav = new Swiper(".process__items", {
+  direction: "vertical",
+  slidesPerView: 6,
+  spaceBetween: 40,
+  mousewheel: false,
+});
+
+const swiperMain = new Swiper(".process__slider", {
+  loop: true,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 20,
+  speed: 500,
+  thumbs: {
+    swiper: swiperNav,
+  },
+  pagination: {
+    el: ".swiper-pagination--process",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next--process",
+    prevEl: ".swiper-button-prev--process",
+  },
+});
+
+const swiperSubmenu = new Swiper(".submenu__slider", {
   loop: true,
 
   pagination: {
-    el: ".swiper-pagination",
+    el: ".swiper-pagination--submenu",
     clickable: true,
+  },
+});
+
+const swiperProduct = new Swiper(".products__items", {
+  loop: false,
+  slidesPerView: 4.3,
+  slidesPerGroup: 3,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination--product",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next--product",
+    prevEl: ".swiper-button-prev--product",
+  },
+  breakpoints: {
+    350: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+    550: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+    768: {
+      slidesPerView: 1.8,
+      slidesPerGroup: 1,
+    },
+    991: {
+      slidesPerView: 2.4,
+      slidesPerGroup: 1,
+    },
+    1199: {
+      slidesPerView: 3.2,
+      slidesPerGroup: 1,
+    },
+    1600: {
+      slidesPerView: 4.3,
+      slidesPerGroup: 3,
+    },
   },
 });
 
@@ -63,110 +131,6 @@ document.addEventListener("mouseup", function (e) {
     searchBox.classList.remove("search-overlay--show");
     document.body.style.overflow = "auto";
   }
-});
-
-// Process Slider Effect
-$(".slider-for").slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  dots: true,
-  asNavFor: ".slider-nav",
-  customPaging: function (slider, index) {
-    var num = index + 1;
-    return '<button class="dot">' + "" + "</button>";
-  },
-  prevArrow:
-    '<button class="process-arrow process-arrow--prev slick-prev"><span></span></button>',
-  nextArrow:
-    '<button class="process-arrow process-arrow--next slick-next"><span></span></button>',
-  responsive: [
-    {
-      breakpoint: 2000,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-      },
-    },
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-      },
-    },
-  ],
-});
-
-$(".slider-nav").slick({
-  slidesToShow: 6,
-  slidesToScroll: 6,
-  asNavFor: ".slider-for",
-  dots: false,
-  focusOnSelect: true,
-  vertical: true,
-});
-
-// Products Slider Effect
-$(".products__items").slick({
-  slidesToShow: 4.3,
-  slidesToScroll: 3,
-  centerMode: false,
-  infinite: false,
-  dots: true,
-  customPaging: function (slider, index) {
-    var num = index + 1;
-    return '<button class="dot">' + "" + "</button>";
-  },
-  prevArrow: '<button class="slick-prev"><span></span></button>',
-  nextArrow: '<button class="slick-next"><span></span></button>',
-  responsive: [
-    {
-      breakpoint: 1600,
-      settings: {
-        slidesToShow: 3.2,
-        slidesToScroll: 3.5,
-      },
-    },
-    {
-      breakpoint: 1199,
-      settings: {
-        slidesToShow: 2.4,
-        slidesToScroll: 2.4,
-      },
-    },
-    {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 1.8,
-        slidesToScroll: 1.8,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1.5,
-        slidesToScroll: 1.5,
-      },
-    },
-    {
-      breakpoint: 550,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
 });
 
 const headerArea = document.querySelector(".header");
