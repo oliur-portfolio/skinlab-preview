@@ -536,7 +536,7 @@
   }
 
   .geschikt-area {
-    padding: 8rem 0;
+    padding-top: 8rem;
   }
 
   .geschikt-area .section-heading {
@@ -558,6 +558,10 @@
   .geschikt__item--account h2 {
     font-size: 3.6rem;
     line-height: 4.6rem;
+  }
+
+  .footer-area {
+    padding-top: 8rem;
   }
 
   .footer__socials {
