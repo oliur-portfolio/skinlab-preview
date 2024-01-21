@@ -1,3 +1,84 @@
+// Animated Hamburger Icon
+const navToggleBtn = document.querySelector(".navbar-toggler");
+const header = document.querySelector(".header");
+
+navToggleBtn.addEventListener("click", () => {
+  navToggleBtn.classList.toggle("change");
+  header.classList.toggle("mobile-nav");
+  document.body.classList.toggle("overflow-hidden");
+});
+
+// Accordion Effect
+$(".accordion__question").click(function (e) {
+  e.preventDefault();
+  var notthis = $(".active").not(this);
+  notthis.toggleClass("active").next(".accordion__answer").slideToggle(300);
+  $(this).toggleClass("active").next().slideToggle("fast");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var submenuItems = document.querySelectorAll(".main-header__links-submenu");
+
+  submenuItems.forEach(function (submenuItem) {
+    submenuItem.addEventListener("mouseover", function () {
+      document
+        .querySelector(".main-header-area")
+        .classList.add("main-header-area--submenu");
+    });
+
+    submenuItem.addEventListener("mouseout", function () {
+      document
+        .querySelector(".main-header-area")
+        .classList.remove("main-header-area--submenu");
+    });
+  });
+});
+
+// Search toggle
+const searchOpen = document.getElementById("searchOpen");
+const searchBox = document.querySelector(".search-overlay");
+const searchClose = document.querySelector(".close-search-btn");
+
+searchOpen.addEventListener("click", () => {
+  searchBox.classList.add("search-overlay--show");
+  document.body.style.overflow = "hidden";
+});
+
+searchClose.addEventListener("click", () => {
+  searchBox.classList.remove("search-overlay--show");
+  document.body.style.overflow = "auto";
+});
+
+document.addEventListener("mouseup", function (e) {
+  if (e.target.classList.contains("search-overlay--show")) {
+    searchBox.classList.remove("search-overlay--show");
+    document.body.style.overflow = "auto";
+  }
+});
+
+const headerArea = document.querySelector(".header");
+
+// Sticky Header
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 80) {
+    headerArea.classList.add("header--is-sticky");
+
+    headerArea.addEventListener("mouseenter", () => {
+      if (headerArea.classList.contains("header--is-sticky")) {
+        headerArea.classList.add("header--not-blur");
+      }
+    });
+
+    headerArea.addEventListener("mouseleave", () => {
+      if (headerArea.classList.contains("header--is-sticky")) {
+        headerArea.classList.remove("header--not-blur");
+      }
+    });
+  } else {
+    headerArea.classList.remove("header--is-sticky");
+  }
+});
+
 // Menu Hover
 (function () {
   const target = document.querySelector(".target");
@@ -126,85 +207,4 @@ const swiperProduct = new Swiper(".products__items", {
       slidesPerGroup: 3,
     },
   },
-});
-
-// Animated Hamburger Icon
-const navToggleBtn = document.querySelector(".navbar-toggler");
-const header = document.querySelector(".header");
-
-navToggleBtn.addEventListener("click", () => {
-  navToggleBtn.classList.toggle("change");
-  header.classList.toggle("mobile-nav");
-  document.body.classList.toggle("overflow-hidden");
-});
-
-// Accordion Effect
-$(".accordion__question").click(function (e) {
-  e.preventDefault();
-  var notthis = $(".active").not(this);
-  notthis.toggleClass("active").next(".accordion__answer").slideToggle(300);
-  $(this).toggleClass("active").next().slideToggle("fast");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  var submenuItems = document.querySelectorAll(".main-header__links-submenu");
-
-  submenuItems.forEach(function (submenuItem) {
-    submenuItem.addEventListener("mouseover", function () {
-      document
-        .querySelector(".main-header-area")
-        .classList.add("main-header-area--submenu");
-    });
-
-    submenuItem.addEventListener("mouseout", function () {
-      document
-        .querySelector(".main-header-area")
-        .classList.remove("main-header-area--submenu");
-    });
-  });
-});
-
-// Search toggle
-const searchOpen = document.getElementById("searchOpen");
-const searchBox = document.querySelector(".search-overlay");
-const searchClose = document.querySelector(".close-search-btn");
-
-searchOpen.addEventListener("click", () => {
-  searchBox.classList.add("search-overlay--show");
-  document.body.style.overflow = "hidden";
-});
-
-searchClose.addEventListener("click", () => {
-  searchBox.classList.remove("search-overlay--show");
-  document.body.style.overflow = "auto";
-});
-
-document.addEventListener("mouseup", function (e) {
-  if (e.target.classList.contains("search-overlay--show")) {
-    searchBox.classList.remove("search-overlay--show");
-    document.body.style.overflow = "auto";
-  }
-});
-
-const headerArea = document.querySelector(".header");
-
-// Sticky Header
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 80) {
-    headerArea.classList.add("header--is-sticky");
-
-    headerArea.addEventListener("mouseenter", () => {
-      if (headerArea.classList.contains("header--is-sticky")) {
-        headerArea.classList.add("header--not-blur");
-      }
-    });
-
-    headerArea.addEventListener("mouseleave", () => {
-      if (headerArea.classList.contains("header--is-sticky")) {
-        headerArea.classList.remove("header--not-blur");
-      }
-    });
-  } else {
-    headerArea.classList.remove("header--is-sticky");
-  }
 });
