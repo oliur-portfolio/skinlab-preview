@@ -1878,8 +1878,6 @@ input[type="number"] {
 
 /* Treatment Hero Area */
 .treatment-hero-area {
-  align-items: center;
-  padding-bottom: 0;
   background-position: bottom;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
     url(../img/treatment-hero.jpg);
@@ -1907,6 +1905,7 @@ input[type="number"] {
   margin-right: auto;
   display: flex;
   align-items: center;
+  gap: 1rem;
   background: #efeff0;
   padding: 1rem;
   border-radius: 10rem;
@@ -1916,17 +1915,27 @@ input[type="number"] {
   -o-border-radius: 100px;
 }
 
+.treatment-nav li {
+  line-height: normal;
+}
+
 .treatment-nav li a {
-  padding: 16px 24px;
+  padding: 14px 20px;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
   font-weight: 700;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
-.treatment-nav li a.active {
+.treatment-nav li a.active,
+.treatment-nav li a:hover {
   background: #fff;
 }
 
