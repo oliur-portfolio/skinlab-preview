@@ -1881,6 +1881,8 @@ input[type="number"] {
   background-position: bottom;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
     url(../img/treatment-hero.jpg);
+  align-items: center;
+  padding-bottom: 0 !important;
 }
 
 .treatment-hero-area h1 {
