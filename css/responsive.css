@@ -240,11 +240,6 @@
     max-width: 80rem;
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .treatment-nav li a {
-    padding: 10px 15px;
-    font-size: 1.6rem;
-  }
 }
 
 @media (max-width: 991.98px) {
@@ -445,32 +440,6 @@
   .process .swiper-button-next,
   .process .swiper-button-prev {
     display: flex !important;
-  }
-
-  .treatment-nav {
-    flex-direction: column;
-    background: transparent;
-    padding: 0;
-    flex-wrap: wrap;
-    gap: 1rem;
-    border-radius: 0.6rem;
-    -webkit-border-radius: 0.6rem;
-    -moz-border-radius: 0.6rem;
-    -ms-border-radius: 0.6rem;
-    -o-border-radius: 0.6rem;
-  }
-
-  .treatment-nav li a.active {
-    background: #efeff0;
-  }
-
-  .treatment-nav li a {
-    padding: 14px 25px;
-    font-size: 1.8rem;
-  }
-
-  .treatment__items {
-    margin-top: 5rem;
   }
 }
 
