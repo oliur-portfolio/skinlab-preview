@@ -236,7 +236,8 @@ h6 {
 .custom-btn--standard {
   background: #d4aea7;
   color: #fff;
-  min-width: 29rem;
+  width: 100%;
+  max-width: 29rem;
   border-radius: 1.2rem;
   -webkit-border-radius: 1.2rem;
   -moz-border-radius: 1.2rem;
@@ -1348,11 +1349,11 @@ input[type="number"] {
 }
 
 .swiper-button-prev {
-  padding-right: 3px;
+  padding-right: 0.3rem;
 }
 
 .swiper-button-next {
-  padding-left: 3px;
+  padding-left: 0.3rem;
 }
 
 .products .slick-prev.slick-arrow {
@@ -1844,8 +1845,8 @@ input[type="number"] {
   margin: 0 !important;
   opacity: 1;
   background: #eeeeee;
-  width: 40px !important;
-  height: 6px !important;
+  width: 4rem !important;
+  height: 0.6rem !important;
   border-radius: 5rem;
   -webkit-border-radius: 5rem;
   -moz-border-radius: 5rem;
@@ -1877,7 +1878,7 @@ input[type="number"] {
 /* Swiper Slider */
 
 /* Treatment Hero Area */
-.treatment-hero-area {
+.other-hero-area {
   background-position: bottom;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
     url(../img/treatment-hero.jpg);
@@ -1885,12 +1886,105 @@ input[type="number"] {
   padding-bottom: 0 !important;
 }
 
-.treatment-hero-area h1 {
+.other-hero-area h1 {
   text-transform: none;
 }
 
-.treatment-hero-area .hero__content {
+.other-hero-area .hero__content {
   max-width: 75rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.scroll-btn {
+  position: absolute;
+  width: 2.4rem;
+  height: 3.6rem;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  border: 1px solid #fff;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.scroll-btn:hover {
+  background: #fff;
+}
+
+.scroll-btn::after {
+  content: " ";
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: #fff;
+  left: 50%;
+  top: 1.2rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  animation: animate-scroll 1s linear infinite;
+  -webkit-animation: animate-scroll 1s linear infinite;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.scroll-btn:hover::after {
+  background: #d4aea7;
+}
+
+@keyframes animate-scroll {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -0.9rem);
+    -webkit-transform: translate(-50%, -0.9rem);
+    -moz-transform: translate(-50%, -0.9rem);
+    -ms-transform: translate(-50%, -0.9rem);
+    -o-transform: translate(-50%, -0.9rem);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 0.9rem);
+    -webkit-transform: translate(-50%, 0.9rem);
+    -moz-transform: translate(-50%, 0.9rem);
+    -ms-transform: translate(-50%, 0.9rem);
+    -o-transform: translate(-50%, 0.9rem);
+  }
 }
 
 /* Treatment Hero Area */
@@ -1907,18 +2001,18 @@ input[type="number"] {
 }
 
 .treatment-nav-wrapper::-webkit-scrollbar {
-  height: 8px;
+  height: 0.8rem;
 }
 
 .treatment-nav-wrapper::-webkit-scrollbar-thumb {
   background: #b7b4b4;
-  border-radius: 4px;
-  height: 8px;
+  border-radius: 0.4rem;
+  height: 0.8rem;
 }
 
 .treatment-nav {
   min-width: 104.4rem;
-  width: 104.4rem;
+  width: max-content;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -1927,10 +2021,10 @@ input[type="number"] {
   background: #efeff0;
   padding: 1rem;
   border-radius: 10rem;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  -ms-border-radius: 10rem;
+  -o-border-radius: 10rem;
 }
 
 .treatment-nav li {
@@ -1944,12 +2038,12 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 13.5px 20px;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  padding: 1.35rem 2rem;
+  border-radius: 5rem;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
   font-weight: 700;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1968,7 +2062,7 @@ input[type="number"] {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  max-width: 1120px;
+  max-width: 112rem;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -2006,7 +2100,7 @@ input[type="number"] {
 .treatment__item {
   background: #fff9f7;
   padding: 2.5rem;
-  border: 1px solid #efeff0;
+  border: 0.1rem solid #efeff0;
   border-radius: 1.8rem;
   -webkit-border-radius: 1.8rem;
   -moz-border-radius: 1.8rem;
@@ -2089,3 +2183,11 @@ input[type="number"] {
 }
 
 /* Breadcrumb Area */
+
+/* Huidaandoening Hero Area */
+.huidaandoening-hero-area {
+  background-position: top;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    url(../img/huidaandoening-hero.jpg);
+}
+/* Huidaandoening Hero Area */
