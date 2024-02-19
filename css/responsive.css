@@ -19,6 +19,10 @@
     margin-right: auto;
   }
 
+  .laser-process-area .process {
+    padding-right: 0;
+  }
+
   .footer__socials {
     margin-right: 0;
   }
@@ -240,6 +244,10 @@
     max-width: 80rem;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .laser-process-area .process {
+    height: 60rem;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -440,6 +448,36 @@
   .process .swiper-button-next,
   .process .swiper-button-prev {
     display: flex !important;
+  }
+
+  .laser-process-area .process__slider {
+    width: 100%;
+  }
+
+  .swiper-slide-active .process__item h5 {
+    color: #000;
+  }
+
+  .swiper-slide-active .process__item img {
+    opacity: 1;
+  }
+
+  .laser-process-area .process {
+    height: 50rem;
+  }
+
+  .populaire__items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+
+  .play-button {
+    width: 100px;
+    height: 100px;
+  }
+
+  .faq .basic-accordion__item {
+    padding: 2rem 0;
   }
 }
 
@@ -693,5 +731,42 @@
 
   .treatment__image {
     padding: 0;
+  }
+
+  .laserontharen-hero-area .hero .custom-btns {
+    flex-direction: column;
+  }
+
+  .laserontharen-hero-area .hero .custom-btn {
+    width: 100%;
+  }
+
+  .populaire__items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .populaire__item .custom-btn--standard {
+    min-width: auto;
+    max-width: 20rem;
+  }
+
+  .play-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .products-video .products__main {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-right: 0;
+  }
+
+  .faq .accordion__question h3 {
+    font-size: 1.9rem;
+  }
+
+  .faq .custom-btn {
+    min-width: auto;
+    max-width: 20rem;
   }
 }

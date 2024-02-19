@@ -9,11 +9,24 @@ navToggleBtn.addEventListener("click", () => {
 });
 
 // Accordion Effect
-$(".accordion__question").click(function (e) {
+$(".default-accordion .accordion__question").click(function (e) {
   e.preventDefault();
-  var notthis = $(".active").not(this);
-  notthis.toggleClass("active").next(".accordion__answer").slideToggle(300);
-  $(this).toggleClass("active").next().slideToggle("fast");
+  var notthis = $(".active-default").not(this);
+  notthis
+    .toggleClass("active-default")
+    .next(".default-accordion .accordion__answer")
+    .slideToggle(300);
+  $(this).toggleClass("active-default").next().slideToggle("fast");
+});
+
+$(".faq-accordion .accordion__question").click(function (e) {
+  e.preventDefault();
+  var notthis = $(".active-faq").not(this);
+  notthis
+    .toggleClass("active-faq")
+    .next(".faq-accordion .accordion__answer")
+    .slideToggle(300);
+  $(this).toggleClass("active-faq").next().slideToggle("fast");
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -133,14 +146,14 @@ window.addEventListener("scroll", function () {
 })();
 
 // Process Slider
-var swiperNav = new Swiper(".process__items", {
+var swiperNav = new Swiper("#processNav, #laserNav", {
   direction: "vertical",
   slidesPerView: 6,
   spaceBetween: 40,
   mousewheel: false,
 });
 
-const swiperMain = new Swiper(".process__slider", {
+const swiperMain = new Swiper("#processSlider, #laserSlider", {
   loop: true,
   slidesPerView: 1,
   slidesPerGroup: 1,
@@ -150,12 +163,12 @@ const swiperMain = new Swiper(".process__slider", {
     swiper: swiperNav,
   },
   pagination: {
-    el: ".swiper-pagination--process",
+    el: ".swiper-pagination--process, .swiper-pagination--laser",
     clickable: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next--process",
-    prevEl: ".swiper-button-prev--process",
+    nextEl: ".swiper-button-next--process, .swiper-button-next--laser",
+    prevEl: ".swiper-button-prev--process, .swiper-button-prev--laser",
   },
 });
 
@@ -207,4 +220,24 @@ const swiperProduct = new Swiper(".products__items", {
       slidesPerGroup: 3,
     },
   },
+});
+
+// Video Play
+var video = document.getElementById("myVideo");
+var playButton = document.getElementById("playButton");
+
+function playVideo() {
+  video.play();
+  video.setAttribute("controls", "controls");
+  playButton.style.display = "none";
+}
+
+video.addEventListener("pause", function () {
+  playButton.style.display = "block";
+  video.removeAttribute("controls");
+});
+
+video.addEventListener("play", function () {
+  playButton.style.display = "none";
+  video.setAttribute("controls", "controls");
 });
