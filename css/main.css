@@ -192,7 +192,7 @@ h6 {
 }
 
 .custom-btn {
-  font-family: "Gill-Sans";
+  font-family: "Gill-Sans", sans-serif;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -301,7 +301,7 @@ h6 {
 
 font-family: "Gill-Sans", sans-serif;
 font-family: "Inter", sans-serif;
-font-family: "Helvetica-Neue";
+font-family: "Helvetica-Neue", sans-serif;
 
 */
 
@@ -369,7 +369,7 @@ body {
 }
 
 .top-header__contact {
-  font-family: "Gill-Sans";
+  font-family: "Gill-Sans", sans-serif;
   font-weight: 300;
   color: #fff;
   font-size: 1.6rem;
@@ -377,7 +377,7 @@ body {
 }
 
 .top-header__links li a {
-  font-family: "Gill-Sans";
+  font-family: "Gill-Sans", sans-serif;
   font-weight: 300;
   color: #fff;
   font-size: 1.6rem;
@@ -499,7 +499,7 @@ body {
 .accordion__question h3,
 .basic-accordion__item > a {
   color: #424242;
-  font-family: "Gill-Sans";
+  font-family: "Gill-Sans", sans-serif;
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 2.5rem;
@@ -871,7 +871,7 @@ main {
 .hero__content h1,
 .hero__content h3,
 .hero__content p {
-  font-family: "Gill-Sans";
+  font-family: "Gill-Sans", sans-serif;
   color: #fff;
 }
 
@@ -1261,7 +1261,7 @@ main {
   width: 9rem;
   height: 100%;
   padding: 1.5rem;
-  font-family: "Helvetica-Neue";
+  font-family: "Helvetica-Neue", sans-serif;
   font-size: 2.4rem;
   line-height: 1;
   font-weight: 700;
@@ -2321,3 +2321,119 @@ input[type="number"] {
 }
 
 /* FAQ Area */
+
+/* Prijzen Area */
+
+.prijzen-table-list {
+  margin-top: 5rem;
+}
+
+.prijzen-table-area {
+  margin-top: 10rem;
+}
+
+.prijzen-table-area:first-of-type {
+  margin-top: 0;
+}
+
+.table-container {
+  overflow-y: hidden;
+  overflow-x: auto;
+  margin-top: 3rem;
+}
+
+.table-container::-webkit-scrollbar {
+  height: 0.8rem;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #b7b4b4;
+  border-radius: 0.4rem;
+  height: 0.8rem;
+}
+
+table {
+  width: 100%;
+  min-width: 1150px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 15px 30px;
+}
+
+th {
+  border: 0;
+  font-family: "Gill-Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000;
+}
+
+td,
+.table-name {
+  border-left: 0;
+  border-right: 0;
+  font-family: "Gill-Sans", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  color: #000;
+}
+
+.table-name {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+td button {
+  min-width: 20px;
+  width: 20px;
+  height: auto;
+  margin-top: 6px;
+}
+
+td button img {
+  object-fit: contain;
+}
+
+.cta-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 250px;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 200px;
+}
+
+td:nth-child(2),
+td:nth-child(3) {
+  font-family: "Helvetica-Neue", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 300px;
+}
+
+/* Prijzen Area */

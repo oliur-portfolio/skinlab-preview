@@ -35,6 +35,15 @@
 
 @font-face {
   font-family: "Helvetica-Neue";
+  src: url("Helvetica-Neue-Medium.ttf") format("truetype"),
+    url("Helvetica-Neue-Medium.woff") format("woff"),
+    url("Helvetica-Neue-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Helvetica-Neue";
   src: url("Helvetica-Neue-Bold.ttf") format("truetype"),
     url("Helvetica-Neue-Bold.woff") format("woff"),
     url("Helvetica-Neue-Bold.woff2") format("woff2");

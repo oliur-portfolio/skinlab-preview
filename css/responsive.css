@@ -769,4 +769,14 @@
     min-width: auto;
     max-width: 20rem;
   }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  td,
+  .table-name {
+    font-size: 2rem;
+  }
 }
