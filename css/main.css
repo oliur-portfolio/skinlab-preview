@@ -2322,6 +2322,14 @@ input[type="number"] {
 
 /* FAQ Area */
 
+/* Huidaandoening Hero Area */
+.prijzen-hero-area {
+  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    url(../img/prijzen-hero.jpg);
+}
+/* Huidaandoening Hero Area */
+
 /* Prijzen Area */
 
 .prijzen-table-list {
