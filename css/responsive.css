@@ -275,6 +275,40 @@
     -ms-border-radius: 0.5rem;
     -o-border-radius: 0.5rem;
   }
+
+  .kliniek-content__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .kliniek__content {
+    flex: none;
+  }
+
+  .kliniek__image {
+    display: none;
+  }
+
+  .kliniek__content img {
+    margin-top: 25px;
+    display: block;
+    width: 200px;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .kliniek__content p {
+    margin-top: 25px;
+  }
+
+  .kliniek-content__list {
+    gap: 8rem;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -832,5 +866,14 @@
   td,
   .table-name {
     font-size: 2rem;
+  }
+
+  .kliniek__content h2 {
+    font-size: 3.6rem;
+    line-height: 4.6rem;
+  }
+
+  .kliniek-content__list {
+    gap: 5rem;
   }
 }

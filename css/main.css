@@ -2558,3 +2558,71 @@ td:nth-child(4) {
 }
 
 /* Products Page */
+
+/* De kliniek Hero Area */
+.kliniek-hero-area {
+  background-position: top;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url(../img/kliniek-hero.jpg);
+}
+/* De kliniek Hero Area */
+
+/* kliniek Content Area */
+
+.kliniek-content-area {
+  padding-top: 8rem;
+}
+
+.kliniek-content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.kliniek-content__item {
+  display: flex;
+  align-items: center;
+}
+
+.kliniek-content__item--reverse {
+  flex-direction: row-reverse;
+}
+
+.kliniek__content {
+  flex: 0.5;
+}
+
+.kliniek__image {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kliniek__image img {
+  width: 300px;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.kliniek__content h2 {
+  color: #000;
+}
+
+.kliniek__content img {
+  display: none;
+}
+
+.kliniek__content p {
+  font-size: 2rem;
+  color: #000;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+/* kliniek Content Area */
