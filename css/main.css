@@ -331,6 +331,11 @@ body {
   margin-top: 2rem;
 }
 
+.section-heading--left {
+  text-align: left;
+  max-width: 100%;
+}
+
 /* Reuse CSS Code */
 
 /* Header Area */
@@ -2626,3 +2631,64 @@ td:nth-child(4) {
 }
 
 /* kliniek Content Area */
+
+/* About US Page */
+
+/* About Area */
+.about-area {
+  padding-top: 8rem;
+}
+
+.about__wrapper {
+  display: flex;
+  gap: 100px;
+  margin-top: 5rem;
+}
+
+.about__left {
+  width: 40rem;
+  text-align: center;
+}
+
+.about__left p {
+  margin-top: 20px;
+}
+
+.about__right {
+  flex: 1;
+}
+
+.about__descs p {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.about__descs p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about__content {
+  margin-top: 5rem;
+}
+
+.about__content img {
+  margin-top: 4rem;
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
+.about__content .about__descs {
+  margin-top: 4rem;
+}
+
+/* About Area */
+
+/* About US Page */

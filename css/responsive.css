@@ -309,6 +309,51 @@
   .kliniek-content__list {
     gap: 8rem;
   }
+
+  .about__wrapper {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .about__left {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about .section-heading--left {
+    text-align: center;
+  }
+
+  thead tr:first-child,
+  tbody tr:first-child {
+    position: relative;
+  }
+
+  thead tr th:first-child,
+  tbody tr td:first-child {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 55;
+  }
+
+  .table-blur {
+    position: relative;
+  }
+
+  .table-blur::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1.5rem;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, white);
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -548,6 +593,11 @@
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
+  }
+
+  thead tr th:first-child,
+  tbody tr td:first-child {
+    width: 25rem;
   }
 }
 
@@ -863,9 +913,57 @@
     padding: 10px;
   }
 
+  th,
   td,
-  .table-name {
-    font-size: 2rem;
+  .table-name,
+  td:nth-child(2),
+  td:nth-child(3) {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  td button {
+    min-width: 12px;
+    width: 12px;
+    height: auto;
+    margin-top: 7px;
+  }
+
+  table {
+    min-width: 350px;
+  }
+
+  thead tr th:first-child,
+  tbody tr td:first-child {
+    min-width: 17rem;
+    width: 15rem;
+    max-width: 15rem;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 12rem;
+    max-width: 12rem;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 11rem;
+    max-width: 11rem;
+  }
+
+  td:nth-child(4) .custom-btn--standard {
+    min-width: 150px;
+    max-width: 150px;
+    width: 100px;
+    font-size: 16px;
+    padding: 1.5rem 1rem;
+  }
+
+  .table-blur::after {
+    width: 150px;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
   }
 
   .kliniek__content h2 {
@@ -875,5 +973,31 @@
 
   .kliniek-content__list {
     gap: 5rem;
+  }
+
+  .about__wrapper {
+    margin-top: 3rem;
+    gap: 3rem;
+  }
+
+  .about__left {
+    width: 100%;
+  }
+
+  .about__left h4 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .about__descs p {
+    margin-bottom: 15px;
+  }
+
+  .about__content img {
+    margin-top: 3rem;
+  }
+
+  .about__content .about__descs {
+    margin-top: 3rem;
   }
 }
