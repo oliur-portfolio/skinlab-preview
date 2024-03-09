@@ -1,3 +1,26 @@
+const tables = document.querySelectorAll(".table");
+
+tables.forEach((table) => {
+  let startX;
+
+  table.addEventListener("touchstart", function (event) {
+    startX = event.touches[0].clientX;
+  });
+
+  table.addEventListener("touchmove", function (event) {
+    const currentX = event.touches[0].clientX;
+    const threshold = 5;
+
+    if (startX - currentX > threshold) {
+      let container = table.parentNode.parentNode.parentNode;
+      container.classList.add("swiped");
+    } else if (currentX - startX > threshold) {
+      let container = table.parentNode.parentNode.parentNode;
+      container.classList.remove("swiped");
+    }
+  });
+});
+
 // Animated Hamburger Icon
 const navToggleBtn = document.querySelector(".navbar-toggler");
 const header = document.querySelector(".header");

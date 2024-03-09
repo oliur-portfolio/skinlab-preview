@@ -318,10 +318,7 @@
   .about__left {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .about .section-heading--left {
-    text-align: center;
+    position: static;
   }
 
   thead tr:first-child,
@@ -353,6 +350,31 @@
     filter: blur(4px);
     -webkit-filter: blur(4px);
     pointer-events: none;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+  }
+
+  .swiped .table-blur::after {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .kliniek__content h2 {
+    text-align: center;
+  }
+
+  .kliniek__content img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .kliniek__content p {
+    text-align: center;
   }
 }
 
@@ -367,6 +389,11 @@
   }
 
   h2 {
+    font-size: 5.6rem;
+    line-height: 6.6rem;
+  }
+
+  .heading-2 {
     font-size: 5.6rem;
     line-height: 6.6rem;
   }
@@ -572,11 +599,6 @@
     height: 50rem;
   }
 
-  .populaire__items {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
-  }
-
   .play-button {
     width: 100px;
     height: 100px;
@@ -599,6 +621,27 @@
   tbody tr td:first-child {
     width: 25rem;
   }
+
+  .populaire__items {
+    display: flex;
+    gap: 5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .populaire__items::-webkit-scrollbar {
+    height: 0.8rem;
+  }
+
+  .populaire__items::-webkit-scrollbar-thumb {
+    background: #b7b4b4;
+    border-radius: 0.4rem;
+    height: 0.8rem;
+  }
+
+  .populaire__item {
+    min-width: 25rem;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -608,6 +651,11 @@
   }
 
   h2 {
+    font-size: 4.2rem;
+    line-height: 5.2rem;
+  }
+
+  .heading-2 {
     font-size: 4.2rem;
     line-height: 5.2rem;
   }
@@ -622,17 +670,32 @@
     line-height: 3rem;
   }
 
-  h4 {
-    font-size: 3.2rem;
-    line-height: 4.2rem;
-  }
-
   h3 {
     font-size: 3.2rem;
     line-height: 4.2rem;
   }
 
+  .heading-3 {
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+  }
+
+  h4 {
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+  }
+
+  .heading-4 {
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+  }
+
   h6 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  .heading-6 {
     font-size: 1.8rem;
     line-height: 2.4rem;
   }
@@ -880,7 +943,15 @@
   }
 
   .populaire__items {
-    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+  }
+
+  .populaire__item img {
+    width: 20rem;
+  }
+
+  .populaire__item {
+    min-width: 20rem;
   }
 
   .populaire__item .custom-btn--standard {
@@ -918,8 +989,8 @@
   .table-name,
   td:nth-child(2),
   td:nth-child(3) {
-    font-size: 1.6rem;
-    line-height: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
   }
 
   td button {
@@ -999,5 +1070,15 @@
 
   .about__content .about__descs {
     margin-top: 3rem;
+  }
+
+  .products-video .products__main .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .video__content {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
