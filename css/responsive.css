@@ -268,7 +268,7 @@
     padding: 1.35rem 3rem;
     height: auto;
     background: #fff;
-    border: 1px solid #efeff0;
+    border: 0.1rem solid #efeff0;
     border-radius: 0.5rem;
     -webkit-border-radius: 0.5rem;
     -moz-border-radius: 0.5rem;
@@ -290,9 +290,9 @@
   }
 
   .kliniek__content img {
-    margin-top: 25px;
+    margin-top: 2.5rem;
     display: block;
-    width: 200px;
+    width: 20rem;
     height: auto;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -303,19 +303,21 @@
   }
 
   .kliniek__content p {
-    margin-top: 25px;
+    margin-top: 2.5rem;
   }
 
   .kliniek-content__list {
     gap: 8rem;
   }
 
-  .about__wrapper {
+  .about__wrapper,
+  .blog__wrapper {
     flex-direction: column;
     gap: 5rem;
   }
 
-  .about__left {
+  .about__left,
+  .blog__left {
     margin-left: auto;
     margin-right: auto;
     position: static;
@@ -344,11 +346,11 @@
     position: absolute;
     top: 0;
     right: -1.5rem;
-    width: 200px;
+    width: 20rem;
     height: 100%;
     background: linear-gradient(to right, transparent, white);
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
+    filter: blur(0.4rem);
+    -webkit-filter: blur(0.4rem);
     pointer-events: none;
     opacity: 1;
     visibility: visible;
@@ -600,8 +602,8 @@
   }
 
   .play-button {
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
   }
 
   .faq .basic-accordion__item {
@@ -641,6 +643,14 @@
 
   .populaire__item {
     min-width: 25rem;
+  }
+
+  .search-faq-area {
+    max-width: 40rem;
+  }
+
+  .faq-hero-area {
+    padding-top: 8rem;
   }
 }
 
@@ -869,7 +879,7 @@
   }
 
   .product-category-nav li button {
-    font-size: 16px;
+    font-size: 1.6rem;
     padding: 1.1rem 3rem;
   }
 
@@ -884,6 +894,13 @@
 
   .total__products p {
     font-size: 1.8rem;
+  }
+
+  .about-area,
+  .blog-area,
+  .main-faq-area,
+  .recensies-area {
+    padding-top: 6rem;
   }
 }
 
@@ -960,8 +977,8 @@
   }
 
   .play-button {
-    width: 50px;
-    height: 50px;
+    width: 5rem;
+    height: 5rem;
   }
 
   .products-video .products__main {
@@ -981,7 +998,7 @@
 
   th,
   td {
-    padding: 10px;
+    padding: 1rem;
   }
 
   th,
@@ -994,14 +1011,14 @@
   }
 
   td button {
-    min-width: 12px;
-    width: 12px;
+    min-width: 1.2rem;
+    width: 1.2rem;
     height: auto;
-    margin-top: 7px;
+    margin-top: 0.7rem;
   }
 
   table {
-    min-width: 350px;
+    min-width: 35rem;
   }
 
   thead tr th:first-child,
@@ -1024,17 +1041,17 @@
   }
 
   td:nth-child(4) .custom-btn--standard {
-    min-width: 150px;
-    max-width: 150px;
-    width: 100px;
-    font-size: 16px;
+    min-width: 15rem;
+    max-width: 15rem;
+    width: 10rem;
+    font-size: 1.6rem;
     padding: 1.5rem 1rem;
   }
 
   .table-blur::after {
-    width: 150px;
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
+    width: 15rem;
+    filter: blur(1rem);
+    -webkit-filter: blur(1rem);
   }
 
   .kliniek__content h2 {
@@ -1046,29 +1063,35 @@
     gap: 5rem;
   }
 
-  .about__wrapper {
+  .about__wrapper,
+  .blog__wrapper {
     margin-top: 3rem;
     gap: 3rem;
   }
 
-  .about__left {
+  .about__left,
+  .blog__left {
     width: 100%;
   }
 
-  .about__left h4 {
+  .about__left h4,
+  .blog__left h4 {
     font-size: 2rem;
     line-height: 3rem;
   }
 
-  .about__descs p {
-    margin-bottom: 15px;
+  .about__descs p,
+  .blog__descs p {
+    margin-bottom: 1.5rem;
   }
 
-  .about__content img {
+  .about__content img,
+  .blog__content img {
     margin-top: 3rem;
   }
 
-  .about__content .about__descs {
+  .about__content .about__descs,
+  .blog__content .blog__descs {
     margin-top: 3rem;
   }
 
@@ -1080,5 +1103,11 @@
   .video__content {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .breadcrumb__items li {
+    display: flex;
+    align-items: center;
+    max-width: 16rem;
   }
 }
