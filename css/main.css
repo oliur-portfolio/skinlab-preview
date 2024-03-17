@@ -1734,6 +1734,10 @@ input::-webkit-inner-spin-button {
   width: 9.6rem;
 }
 
+.footer-time {
+  flex: 1;
+}
+
 .footer__bottom {
   display: flex;
   align-items: center;
@@ -2885,3 +2889,57 @@ td:nth-child(4) {
 }
 
 /* Recensies Page */
+
+/* Contact Page */
+.main-contact-area {
+  padding-top: 8rem;
+}
+
+.main-contact__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 5rem;
+}
+
+.main-contact__item {
+  padding: 2.5rem;
+  background: #fef9f8;
+  border-radius: 2.2rem;
+  -webkit-border-radius: 2.2rem;
+  -moz-border-radius: 2.2rem;
+  -ms-border-radius: 2.2rem;
+  -o-border-radius: 2.2rem;
+}
+
+.main-contact__item p,
+.main-contact__item a {
+  font-weight: 600;
+}
+
+.main-contact__item a {
+  display: flex;
+}
+
+.main-contact__item .footer-day {
+  width: 15.6rem;
+}
+
+.main-contact__item-content {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.main-contact__item h3 {
+  margin-top: 2rem;
+}
+
+.main-contact__item img {
+  width: max-content;
+  height: 4rem;
+  object-fit: contain;
+}
+
+/* Contact Page */
