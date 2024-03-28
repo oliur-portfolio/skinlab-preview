@@ -1,3 +1,64 @@
+const productNavBlur = document.querySelector(".product-category-nav-blur");
+const container = document.querySelector(".product-category-nav-overflow");
+const scrollLeftBtn = document.querySelector(".product-nav-arrow--left");
+const scrollRightBtn = document.querySelector(".product-nav-arrow--right");
+
+container.addEventListener("scroll", function () {
+  // Show or hide arrow buttons based on scroll position
+  if (container.scrollLeft === 0) {
+    scrollLeftBtn.style.display = "none";
+    scrollRightBtn.style.display = "block";
+    productNavBlur.classList.remove("swiped-right");
+    productNavBlur.classList.add("swiped-left");
+  } else if (
+    container.scrollLeft + container.clientWidth >=
+    container.scrollWidth
+  ) {
+    scrollLeftBtn.style.display = "block";
+    scrollRightBtn.style.display = "none";
+    productNavBlur.classList.remove("swiped-left");
+    productNavBlur.classList.add("swiped-right");
+  } else {
+    scrollLeftBtn.style.display = "block";
+    scrollRightBtn.style.display = "block";
+    productNavBlur.classList.add("swiped");
+    productNavBlur.classList.remove("swiped-left");
+    productNavBlur.classList.remove("swiped-right");
+  }
+});
+
+scrollLeftBtn.addEventListener("click", function () {
+  container.scrollBy({
+    left: -200, // Adjust the scroll amount as needed
+    behavior: "smooth",
+  });
+});
+
+scrollRightBtn.addEventListener("click", function () {
+  container.scrollBy({
+    left: 200, // Adjust the scroll amount as needed
+    behavior: "smooth",
+  });
+});
+
+const faqExpandBtns = document.querySelectorAll(".faq--expand-btn");
+
+faqExpandBtns.forEach((accordion) => {
+  accordion.onclick = function () {
+    let content = this.previousElementSibling;
+    console.log(content);
+
+    if (content.style.maxHeight) {
+      //this is if the accordion is open
+      content.style.maxHeight = null;
+    } else {
+      //if the accordion is currently closed
+      content.style.maxHeight = content.scrollHeight + "px";
+      console.log(content.style.maxHeight);
+    }
+  };
+});
+
 const tables = document.querySelectorAll(".table");
 
 tables.forEach((table) => {
@@ -44,6 +105,22 @@ $(".default-accordion .accordion__question").click(function (e) {
 
 $(".faq-accordion .accordion__question").click(function (e) {
   e.preventDefault();
+
+  const faqExpandBtns = document.querySelectorAll(".faq--expand-btn");
+
+  faqExpandBtns.forEach((acord) => {
+    let content = acord.previousElementSibling;
+    console.log(acord.previousElementSibling);
+
+    if (content.style.maxHeight) {
+      //this is if the accordion is open
+      content.style.maxHeight = "fit-content";
+    } else {
+      //if the accordion is currently closed
+      content.style.maxHeight = null;
+    }
+  });
+
   var notthis = $(".active-faq").not(this);
   notthis
     .toggleClass("active-faq")
@@ -239,7 +316,7 @@ const swiperProduct = new Swiper(".products__items", {
       slidesPerGroup: 1,
     },
     1600: {
-      slidesPerView: 4.3,
+      slidesPerView: 4.8,
       slidesPerGroup: 3,
     },
   },

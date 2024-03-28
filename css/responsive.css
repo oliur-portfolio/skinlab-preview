@@ -265,7 +265,7 @@
     gap: 3rem;
   }
 
-  .product-category-nav-area {
+  /* .product-category-nav-area {
     flex-direction: column;
   }
 
@@ -273,18 +273,15 @@
     flex-wrap: wrap;
     gap: 1.3rem;
     justify-content: center;
-  }
+  } */
 
   .product-category-nav li button {
     padding: 1.35rem 3rem;
     height: auto;
-    background: #fff;
-    border: 0.1rem solid #efeff0;
-    border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
+  }
+
+  .product-category-nav-blur {
+    min-width: 30rem;
   }
 
   .kliniek-content__item {
@@ -388,6 +385,18 @@
 
   .kliniek__content p {
     text-align: center;
+  }
+
+  .apparatuur__item {
+    flex-direction: column;
+  }
+
+  .apparatuur__left {
+    flex: none;
+  }
+
+  .apparatuur__right {
+    width: 100%;
   }
 }
 
@@ -663,6 +672,14 @@
   .faq-hero-area {
     padding-top: 8rem;
   }
+
+  .recensies__image--desktop {
+    display: none;
+  }
+
+  .recensies__image--mobile {
+    display: block;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -688,6 +705,11 @@
 
   .heading--48 {
     font-size: 2.6rem;
+    line-height: 3rem;
+  }
+
+  .heading--36 {
+    font-size: 2.4rem;
     line-height: 3rem;
   }
 
@@ -919,8 +941,42 @@
   .about-area,
   .blog-area,
   .main-faq-area,
-  .recensies-area {
+  .recensies-area,
+  .apparatuur-area {
     padding-top: 6rem;
+  }
+
+  .video__content h3 {
+    font-size: 1.9rem;
+    line-height: 2.8rem;
+  }
+
+  .video__content p {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .apparatuur__items,
+  .apparatuur__item {
+    gap: 2.5rem;
+  }
+
+  .filter-btn {
+    min-width: max-content;
+    width: fit-content;
+  }
+
+  .filter-btn--sticky {
+    position: fixed;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 999;
   }
 }
 
@@ -1125,13 +1181,16 @@
     padding-right: 2rem;
   }
 
-  .breadcrumb__items li {
-    display: flex;
-    align-items: center;
-    max-width: 16rem;
-  }
-
   .main-contact__item .footer-day {
     width: 14.6rem;
+  }
+
+  .breadcrumb__items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .faq-accordion {
+    max-height: 65rem;
   }
 }
