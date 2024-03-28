@@ -1,46 +1,3 @@
-const productNavBlur = document.querySelector(".product-category-nav-blur");
-const container = document.querySelector(".product-category-nav-overflow");
-const scrollLeftBtn = document.querySelector(".product-nav-arrow--left");
-const scrollRightBtn = document.querySelector(".product-nav-arrow--right");
-
-container.addEventListener("scroll", function () {
-  // Show or hide arrow buttons based on scroll position
-  if (container.scrollLeft === 0) {
-    scrollLeftBtn.style.display = "none";
-    scrollRightBtn.style.display = "block";
-    productNavBlur.classList.remove("swiped-right");
-    productNavBlur.classList.add("swiped-left");
-  } else if (
-    container.scrollLeft + container.clientWidth >=
-    container.scrollWidth
-  ) {
-    scrollLeftBtn.style.display = "block";
-    scrollRightBtn.style.display = "none";
-    productNavBlur.classList.remove("swiped-left");
-    productNavBlur.classList.add("swiped-right");
-  } else {
-    scrollLeftBtn.style.display = "block";
-    scrollRightBtn.style.display = "block";
-    productNavBlur.classList.add("swiped");
-    productNavBlur.classList.remove("swiped-left");
-    productNavBlur.classList.remove("swiped-right");
-  }
-});
-
-scrollLeftBtn.addEventListener("click", function () {
-  container.scrollBy({
-    left: -200, // Adjust the scroll amount as needed
-    behavior: "smooth",
-  });
-});
-
-scrollRightBtn.addEventListener("click", function () {
-  container.scrollBy({
-    left: 200, // Adjust the scroll amount as needed
-    behavior: "smooth",
-  });
-});
-
 const faqExpandBtns = document.querySelectorAll(".faq--expand-btn");
 
 faqExpandBtns.forEach((accordion) => {
@@ -127,6 +84,50 @@ $(".faq-accordion .accordion__question").click(function (e) {
     .next(".faq-accordion .accordion__answer")
     .slideToggle(300);
   $(this).toggleClass("active-faq").next().slideToggle("fast");
+});
+
+// Product Nav Blur effect
+const productNavBlur = document.querySelector(".product-category-nav-blur");
+const container = document.querySelector(".product-category-nav-overflow");
+const scrollLeftBtn = document.querySelector(".product-nav-arrow--left");
+const scrollRightBtn = document.querySelector(".product-nav-arrow--right");
+
+container.addEventListener("scroll", function () {
+  // Show or hide arrow buttons based on scroll position
+  if (container.scrollLeft === 0) {
+    scrollLeftBtn.style.display = "none";
+    scrollRightBtn.style.display = "block";
+    productNavBlur.classList.remove("swiped-right");
+    productNavBlur.classList.add("swiped-left");
+  } else if (
+    container.scrollLeft + container.clientWidth >=
+    container.scrollWidth
+  ) {
+    scrollLeftBtn.style.display = "block";
+    scrollRightBtn.style.display = "none";
+    productNavBlur.classList.remove("swiped-left");
+    productNavBlur.classList.add("swiped-right");
+  } else {
+    scrollLeftBtn.style.display = "block";
+    scrollRightBtn.style.display = "block";
+    productNavBlur.classList.add("swiped");
+    productNavBlur.classList.remove("swiped-left");
+    productNavBlur.classList.remove("swiped-right");
+  }
+});
+
+scrollLeftBtn.addEventListener("click", function () {
+  container.scrollBy({
+    left: -200, // Adjust the scroll amount as needed
+    behavior: "smooth",
+  });
+});
+
+scrollRightBtn.addEventListener("click", function () {
+  container.scrollBy({
+    left: 200, // Adjust the scroll amount as needed
+    behavior: "smooth",
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
