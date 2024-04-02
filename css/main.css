@@ -182,7 +182,7 @@ h6 {
 
 .desc--24 {
   font-size: 2.4rem;
-  line-height: 3.2rem;
+  line-height: 3rem;
 }
 
 .desc--32 {
@@ -274,6 +274,14 @@ h6 {
   fill: #000;
 }
 
+.custom-btn--round {
+  border-radius: 5rem;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
+}
+
 .link-btn {
   display: flex;
   align-items: center;
@@ -290,6 +298,11 @@ h6 {
 
 .link-btn svg path {
   fill: #015fff;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container {
@@ -2091,14 +2104,25 @@ main {
   overflow-x: auto;
 }
 
-.treatment-nav-wrapper::-webkit-scrollbar {
+.treatment-nav-wrapper::-webkit-scrollbar,
+.product-category-nav-overflow::-webkit-scrollbar {
   height: 0.8rem;
 }
 
-.treatment-nav-wrapper::-webkit-scrollbar-thumb {
+.treatment-nav-wrapper::-webkit-scrollbar-thumb,
+.product-category-nav-overflow::-webkit-scrollbar-thumb {
   background: #b7b4b4;
   border-radius: 0.4rem;
   height: 0.8rem;
+}
+
+.filter-sidebar-area::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+.filter-sidebar-area::-webkit-scrollbar-thumb {
+  background: #b7b4b4;
+  border-radius: 0.4rem;
 }
 
 .treatment-nav {
@@ -2441,6 +2465,10 @@ main {
   color: #000;
 }
 
+.accordion__answer .custom-btn {
+  margin-top: 1.5rem;
+}
+
 /* FAQ Area */
 
 /* BehandelPrijzen Hero Area */
@@ -2589,8 +2617,7 @@ td:nth-child(4) {
   min-width: 100rem;
 }
 
-.product-category-nav-blur::after,
-.product-category-nav-blur::before {
+.product-category-nav-blur::after {
   content: "";
   position: absolute;
   top: 0;
@@ -2610,54 +2637,20 @@ td:nth-child(4) {
   -o-transition: all 0.3s ease-in-out;
 }
 
-.product-category-nav-blur::before {
-  left: -12rem;
-}
-
-.swiped-left.product-category-nav-blur::before {
-  display: none;
-}
-
-.swiped-right.product-category-nav-blur::after {
-  display: none;
+.swiped.product-category-nav-blur::after {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .product-category-nav-overflow {
   overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-x: auto;
   scroll-behavior: smooth;
-}
-
-.product-nav-arrow {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background: #acacac;
-  width: 20px;
-  height: 20px;
-  padding: 0.5rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  z-index: 99;
-  display: none;
-}
-
-.product-nav-arrow--right {
-  left: auto;
-  right: 0;
-  display: block;
 }
 
 .product-category-nav-area {
   justify-content: center;
+  align-items: flex-start;
 }
 
 .product-category-nav li button,
@@ -2753,6 +2746,38 @@ td:nth-child(4) {
   -moz-border-radius: 5rem;
   -ms-border-radius: 5rem;
   -o-border-radius: 5rem;
+}
+
+.product__logos-area {
+  margin-top: 0;
+  margin-bottom: 8rem;
+  gap: 5rem;
+}
+
+.product__logos {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.product__logo {
+  width: 18rem;
+  height: 18rem;
+  border: 0.1rem solid #a9aca9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.product__logo img {
+  width: fit-content;
+  height: 6rem;
+  object-fit: contain;
 }
 
 /* Products Page */
@@ -3237,3 +3262,418 @@ td:nth-child(4) {
 }
 
 /* Apparatuur Page */
+
+/* Filter Sidebar */
+
+.filter-sidebar-area {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 40rem;
+  height: 100vh;
+  background: #fff;
+  padding: 2rem;
+  z-index: 9999;
+  overflow: auto;
+  box-shadow: 0 0 5rem -0.5rem rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 5rem -0.5rem rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 5rem -0.5rem rgba(0, 0, 0, 0.1);
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
+  -moz-transition: all 0.9s ease;
+  -ms-transition: all 0.9s ease;
+  -o-transition: all 0.9s ease;
+}
+
+.filter-sidebar--open {
+  right: 0;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.filter-sidebar {
+  position: relative;
+}
+
+.filter-sidebar__close {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.filter-sidebar__header {
+  text-align: center;
+}
+
+.filter-sidebar__search .input-style {
+  border: 0;
+  border-bottom: 0.1rem solid #505050;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.filter-sidebar__items {
+  margin-top: 2.5rem;
+}
+
+.filter-sidebar__items h3 {
+  margin-bottom: 1.5rem;
+}
+
+.product-category-nav-blur {
+  min-width: 30rem;
+}
+
+.filter-sidebar__items .faq-accordion {
+  margin-top: 0;
+  border-top: 0.1rem solid hsla(0, 0%, 48%, 0.6) !important;
+}
+
+.filter-sidebar__items .faq-accordion h3 {
+  margin-bottom: 0;
+  color: #000;
+}
+
+.filter-sidebar__items .accordion__question {
+  padding: 0 2rem;
+}
+
+.filter-sidebar__items .basic-accordion__item .accordion__answer {
+  padding-left: 4rem;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+  display: none;
+}
+
+.checkbox__content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+}
+
+.checkbox__content p {
+  font-weight: 500;
+}
+
+.radio-icon {
+  width: 2.5rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.radio-icon--check {
+  display: none;
+}
+
+.filter__checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.custom-checkbox:checked + label .checkbox__content .radio-icon--uncheck {
+  display: none;
+}
+
+.custom-checkbox:checked + label .checkbox__content .radio-icon--check {
+  display: block;
+}
+
+/* Custom Checkbox */
+
+.custom-btn--filter-result {
+  margin-top: 3rem;
+  border-radius: 5rem;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
+}
+
+.reset-filter-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: fit-content;
+  text-decoration: underline;
+  font-weight: 400;
+  margin-top: 2rem;
+}
+
+/* Filter Sidebar */
+
+/* Zorgcheck Page */
+.zorgcheck-area {
+  padding-top: 8rem;
+}
+
+.zorgcheck__steps {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.zorgcheck__step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.zorgcheck__step p {
+  font-size: 2.4rem;
+  line-height: 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid #808080;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.zorgcheck__step--active p {
+  background: #d4aea7;
+}
+
+.zorgcheck__step-line {
+  display: block;
+  width: 15rem;
+  height: 0.1rem;
+  background: #808080;
+}
+
+.zorgcheck__step--active .zorgcheck__step-line {
+  background: #d4aea7;
+}
+
+.zorgcheck__image {
+  width: fit-content;
+  height: 15rem;
+  object-fit: contain;
+}
+
+.zorgcheck__checkboxes .checkbox__content {
+  flex-direction: column;
+  background: #fff7f6;
+  border: 1px solid #d6d6d6;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+}
+
+.zorgcheck-step__content {
+  margin-top: 5rem;
+  display: none;
+}
+
+.zorgcheck-step__content--active {
+  display: block;
+}
+
+.zorgcheck-step__content h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.zorgcheck-step__content-geslacht .checkbox__content {
+  padding: 3rem;
+}
+
+.zorgcheck-step__content-geslacht .zorgcheck__checkboxes {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 90rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+
+.zorgcheck-step__content-geslacht .checkbox__icons {
+  margin-top: 2rem;
+}
+
+.leeftijd {
+  max-width: 35rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.leeftijd__field {
+  margin-top: 1.5rem;
+}
+
+.leeftijd__field p {
+  color: #b41700;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 1rem;
+  display: none;
+}
+
+.leeftijd__field--error .input-style {
+  border: 1px solid #b41700;
+}
+
+.leeftijd__field--error p {
+  display: block;
+}
+
+.leeftijd .custom-btn {
+  margin-top: 3rem;
+}
+
+.zorgcheck-step__content-zorgverzekeraar .zorgcheck__checkboxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 90rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.zorgcheck-step__content-zorgverzekeraar .checkbox__content {
+  padding: 2rem;
+}
+
+.zorgcheck-step__content-zorgverzekeraar .checkbox__icons {
+  margin-top: 1rem;
+}
+
+.zorgcheck-step__content-zorgverzekeraar .zorgcheck__image {
+  height: 8rem;
+}
+
+.zorgcheck-step__content-aanvullende .zorgcheck__checkboxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 3.5rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 95rem;
+}
+
+.zorgcheck-step__content-aanvullende .zorgcheck__checkboxes .checkbox__content {
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.checkbox__content-light-desc {
+  font-weight: 300;
+}
+
+.zorgcheck-step__content-aanvullende .checkbox__icons {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.zorgcheck-step__content-aanvullende .checkbox__content .desc--24 {
+  min-height: 6rem;
+}
+
+/* Vergoed Area */
+.vergoed {
+  padding-top: 8rem;
+}
+
+.vergoed h2 {
+  text-align: center;
+  max-width: 75rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.vergoed__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  width: 100%;
+  max-width: 115rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vergoed__item {
+  border: 1px solid #d6d6d6;
+  background: #f9f4eb;
+  padding: 4rem 2.5rem;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+}
+
+.vergoed__item h3 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.vergoed__item-descs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 19rem;
+  overflow: auto;
+}
+
+.vergoed__item .custom-btn {
+  margin-top: 2rem;
+}
+
+.vergoed__newsletter {
+  border: 1px solid #d6d6d6;
+  width: 100%;
+  max-width: 85rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  margin-top: 3.5rem;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+}
+
+.vergoed__newsletter .footer-input-form {
+  max-width: 28rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Vergoed Area */
+
+/* Zorgcheck Page */
