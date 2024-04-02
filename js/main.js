@@ -392,22 +392,16 @@ zorgcheckerContents.forEach((content, index) => {
 });
 
 // Filter Button Sticky
-var filterBtn = document.querySelector(".filter-btn");
-var windowHeight = window.innerHeight;
-var buffer = 100; // Adjust this value as needed
-
-function toggleFilterBtnClass() {
-  var filterBtnPosition = filterBtn.getBoundingClientRect().top;
+window.addEventListener("scroll", function () {
+  var filterBtn = document.querySelector(".filter-btn");
+  var filterBtnArea = document.querySelector(".product-category-nav-area");
+  var filterBtnPosition = filterBtnArea.getBoundingClientRect().top;
+  var windowHeight = window.innerHeight;
+  var buffer = 250;
 
   if (filterBtnPosition < windowHeight - buffer) {
     filterBtn.classList.add("filter-btn--sticky");
   } else {
     filterBtn.classList.remove("filter-btn--sticky");
   }
-}
-
-window.addEventListener("scroll", toggleFilterBtnClass);
-window.addEventListener("resize", function () {
-  windowHeight = window.innerHeight;
-  toggleFilterBtnClass();
 });
