@@ -1035,6 +1035,7 @@
 
   .zorgcheck__step p {
     font-size: 2rem;
+    line-height: 1;
     width: 3rem;
     height: 3rem;
   }
