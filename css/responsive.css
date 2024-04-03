@@ -1015,7 +1015,10 @@
     width: 100%;
   }
 
-  
+  .filter-btn--sticky {
+    min-width: max-content;
+    width: fit-content;
+  }
 
   .zorgcheck__step-line {
     width: 3.5rem;
