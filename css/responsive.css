@@ -1015,19 +1015,7 @@
     width: 100%;
   }
 
-  .filter-btn--sticky {
-    position: fixed;
-    min-width: max-content;
-    width: fit-content;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    z-index: 999;
-  }
+  
 
   .zorgcheck__step-line {
     width: 3.5rem;

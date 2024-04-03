@@ -98,9 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Sticky Header
   const headerArea = document.querySelector(".header");
 
-  // Sticky Header
   window.addEventListener("scroll", function () {
     if (window.scrollY > 80) {
       headerArea.classList.add("header--is-sticky");
@@ -329,16 +329,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Filter Sidebar Open
-  const filterSidebar = document.querySelector(".filter-sidebar-area");
+  const filterSidebarOverlay = document.querySelector(
+    ".filter-sidebar-overlay"
+  );
   const filterBtn = document.querySelector(".filter-btn");
   const filterCloseBtn = document.querySelector(".filter-sidebar__close");
 
   filterBtn.addEventListener("click", () => {
-    filterSidebar.classList.add("filter-sidebar--open");
+    filterSidebarOverlay.classList.add("filter-sidebar--open");
+    document.body.style.overflow = "hidden";
   });
 
   filterCloseBtn.addEventListener("click", () => {
-    filterSidebar.classList.remove("filter-sidebar--open");
+    filterSidebarOverlay.classList.remove("filter-sidebar--open");
+    document.body.style.overflow = "auto";
+  });
+
+  document.addEventListener("mouseup", function (e) {
+    if (e.target.classList.contains("filter-sidebar--open")) {
+      filterSidebarOverlay.classList.remove("filter-sidebar--open");
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  // Filter Button Sticky
+  window.addEventListener("scroll", function () {
+    var filterBtn = document.querySelector(".filter-btn");
+    var filterBtnArea = document.querySelector(".product-category-nav-area");
+    var filterBtnPosition = filterBtnArea.getBoundingClientRect().top;
+    var windowHeight = window.innerHeight;
+    var buffer = 250;
+
+    if (filterBtnPosition < windowHeight - buffer) {
+      filterBtn.classList.add("filter-btn--sticky");
+    } else {
+      filterBtn.classList.remove("filter-btn--sticky");
+    }
   });
 });
 
@@ -347,6 +373,8 @@ const zorgcheckerSteps = document.querySelectorAll(".zorgcheck__step");
 const zorgcheckerContents = document.querySelectorAll(
   ".zorgcheck-step__content"
 );
+
+const zorgcheckerSuccessContent = document.querySelector(".vergoed-area");
 
 function moveToNextStep(currentIndex) {
   zorgcheckerContents.forEach((c) =>
@@ -363,8 +391,18 @@ function moveToNextStep(currentIndex) {
 }
 
 function handleAllStepsCompleted() {
-  alert("All steps completed!");
-  location.reload();
+  zorgcheckerSuccessContent.classList.remove("hidden");
+}
+
+// Function to handle step indicators
+function handleStepIndicators(clickedIndex) {
+  zorgcheckerSteps.forEach((step, index) => {
+    if (index <= clickedIndex) {
+      step.classList.add("zorgcheck__step--active");
+    } else {
+      step.classList.remove("zorgcheck__step--active");
+    }
+  });
 }
 
 zorgcheckerContents.forEach((content, index) => {
@@ -372,9 +410,7 @@ zorgcheckerContents.forEach((content, index) => {
   radioButtons.forEach((radio) => {
     radio.addEventListener("change", () => {
       moveToNextStep(index);
-      if (index < zorgcheckerSteps.length - 1) {
-        zorgcheckerSteps[index + 1].classList.add("zorgcheck__step--active");
-      }
+      handleStepIndicators(index);
     });
   });
 
@@ -383,25 +419,32 @@ zorgcheckerContents.forEach((content, index) => {
     if (step2Button) {
       step2Button.addEventListener("click", () => {
         moveToNextStep(index);
-        if (index < zorgcheckerSteps.length - 1) {
-          zorgcheckerSteps[index + 1].classList.add("zorgcheck__step--active");
-        }
+        handleStepIndicators(index);
       });
     }
   }
 });
 
-// Filter Button Sticky
-window.addEventListener("scroll", function () {
-  var filterBtn = document.querySelector(".filter-btn");
-  var filterBtnArea = document.querySelector(".product-category-nav-area");
-  var filterBtnPosition = filterBtnArea.getBoundingClientRect().top;
-  var windowHeight = window.innerHeight;
-  var buffer = 250;
+zorgcheckerSteps.forEach((step, index) => {
+  step.addEventListener("click", () => {
+    moveToNextStep(index - 1);
+    handleStepIndicators(index - 1);
+  });
+});
 
-  if (filterBtnPosition < windowHeight - buffer) {
-    filterBtn.classList.add("filter-btn--sticky");
+document.getElementById("leeftijd").addEventListener("input", function (e) {
+  let input = e.target.value.replace(/\D/g, "");
+  let formattedInput = "";
+  if (input.length > 2) {
+    formattedInput += input.slice(0, 2) + "-";
+    if (input.length > 4) {
+      formattedInput += input.slice(2, 4) + "-";
+      formattedInput += input.slice(4, 8);
+    } else {
+      formattedInput += input.slice(2);
+    }
   } else {
-    filterBtn.classList.remove("filter-btn--sticky");
+    formattedInput += input;
   }
+  e.target.value = formattedInput;
 });
