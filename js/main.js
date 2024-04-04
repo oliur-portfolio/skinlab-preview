@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var filterBtnArea = document.querySelector(".product-category-nav-area");
     var filterBtnPosition = filterBtnArea.getBoundingClientRect().top;
     var windowHeight = window.innerHeight;
-    var buffer = 250;
+    var buffer = 650;
 
     if (filterBtnPosition < windowHeight - buffer) {
       filterBtn.classList.add("filter-btn--sticky");
@@ -373,8 +373,8 @@ const zorgcheckerSteps = document.querySelectorAll(".zorgcheck__step");
 const zorgcheckerContents = document.querySelectorAll(
   ".zorgcheck-step__content"
 );
-
 const zorgcheckerSuccessContent = document.querySelector(".vergoed-area");
+const zorgcheckStepsContainer = document.querySelector(".zorgcheck");
 
 function moveToNextStep(currentIndex) {
   zorgcheckerContents.forEach((c) =>
@@ -388,6 +388,9 @@ function moveToNextStep(currentIndex) {
   } else {
     handleAllStepsCompleted();
   }
+
+  // Scroll to the step indicators container
+  zorgcheckStepsContainer.scrollIntoView({ behavior: "smooth" });
 }
 
 function handleAllStepsCompleted() {
@@ -423,6 +426,16 @@ zorgcheckerContents.forEach((content, index) => {
       });
     }
   }
+  if (index === 2) {
+    // Assuming step 3 is at index 2
+    const step3Button = content.querySelector("#step3_button");
+    if (step3Button) {
+      step3Button.addEventListener("click", () => {
+        moveToNextStep(index);
+        handleStepIndicators(index);
+      });
+    }
+  }
 });
 
 zorgcheckerSteps.forEach((step, index) => {
@@ -432,19 +445,70 @@ zorgcheckerSteps.forEach((step, index) => {
   });
 });
 
+// document.getElementById("leeftijd").addEventListener("input", function (e) {
+//   let input = e.target.value.replace(/\D/g, "");
+//   let formattedInput = "";
+//   if (input.length > 2) {
+//     formattedInput += input.slice(0, 2) + "-";
+//     if (input.length > 4) {
+//       formattedInput += input.slice(2, 4) + "-";
+//       formattedInput += input.slice(4, 8);
+//     } else {
+//       formattedInput += input.slice(2);
+//     }
+//   } else {
+//     formattedInput += input;
+//   }
+//   e.target.value = formattedInput;
+// });
+
+// Function to format date input
 document.getElementById("leeftijd").addEventListener("input", function (e) {
-  let input = e.target.value.replace(/\D/g, "");
-  let formattedInput = "";
-  if (input.length > 2) {
-    formattedInput += input.slice(0, 2) + "-";
-    if (input.length > 4) {
-      formattedInput += input.slice(2, 4) + "-";
-      formattedInput += input.slice(4, 8);
-    } else {
-      formattedInput += input.slice(2);
-    }
-  } else {
-    formattedInput += input;
+  let inputValue = e.target.value;
+
+  inputValue = inputValue.replace(/\D/g, "");
+
+  if (inputValue === "") {
+    e.target.value = "__-__-____";
+    return;
   }
-  e.target.value = formattedInput;
+
+  let formattedValue = "";
+  let inputIndex = 0;
+  for (let i = 0; i < 10; i++) {
+    if (inputValue[inputIndex]) {
+      formattedValue += inputValue[inputIndex++];
+    } else {
+      formattedValue += "_";
+    }
+    if (i === 1 || i === 3) {
+      formattedValue += "-";
+    }
+    if (i === 9) {
+      break;
+    }
+  }
+
+  e.target.value = formattedValue.slice(0, 10);
+});
+
+document.getElementById("leeftijd").addEventListener("keydown", function (e) {
+  if (e.keyCode === 8) {
+    e.preventDefault();
+    let currentValue = e.target.value;
+    let index = currentValue.length - 1;
+    while (index >= 0 && currentValue[index] === "_") {
+      index--;
+    }
+    while (
+      index >= 0 &&
+      (currentValue[index] === "-" || isNaN(currentValue[index]))
+    ) {
+      index--;
+    }
+    if (index >= 0) {
+      e.target.value =
+        currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
+    }
+  }
 });
