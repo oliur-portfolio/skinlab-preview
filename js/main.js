@@ -384,12 +384,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document
-    .getElementById("openModalBtnFilter")
-    .addEventListener("click", function () {
-      openModal("modalFilter");
-    });
-
-  document
     .getElementById("openModalBtnLogin")
     .addEventListener("click", function () {
       console.log("Click Login");
@@ -400,6 +394,12 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("openModalBtnRegister")
     .addEventListener("click", function () {
       openModal("modalRegister");
+    });
+
+  document
+    .getElementById("openModalBtnFilter")
+    .addEventListener("click", function () {
+      openModal("modalFilter");
     });
 });
 
