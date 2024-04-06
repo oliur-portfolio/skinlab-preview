@@ -328,44 +328,79 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Filter Sidebar Open
-  const filterSidebarOverlay = document.querySelector(
-    ".filter-sidebar-overlay"
-  );
-  const filterBtn = document.querySelector(".filter-btn");
-  const filterCloseBtn = document.querySelector(".filter-sidebar__close");
-
-  filterBtn.addEventListener("click", () => {
-    filterSidebarOverlay.classList.add("filter-sidebar--open");
-    document.body.style.overflow = "hidden";
-  });
-
-  filterCloseBtn.addEventListener("click", () => {
-    filterSidebarOverlay.classList.remove("filter-sidebar--open");
-    document.body.style.overflow = "auto";
-  });
-
-  document.addEventListener("mouseup", function (e) {
-    if (e.target.classList.contains("filter-sidebar--open")) {
-      filterSidebarOverlay.classList.remove("filter-sidebar--open");
-      document.body.style.overflow = "auto";
-    }
-  });
-
   // Filter Button Sticky
   window.addEventListener("scroll", function () {
     var filterBtn = document.querySelector(".filter-btn");
-    var filterBtnArea = document.querySelector(".product-category-nav-area");
-    var filterBtnPosition = filterBtnArea.getBoundingClientRect().top;
-    var windowHeight = window.innerHeight;
-    var buffer = 650;
+    var filterBtnNav = document.querySelector(".product-category-nav-area");
+    var filterBtnArea = document.querySelector(".all-products-area");
+    var filterBtnAreaTop = filterBtnArea.getBoundingClientRect().top;
+    var filterBtnAreaHeight = filterBtnArea.offsetHeight;
+    var filterBtnPosition = filterBtnNav.getBoundingClientRect().top;
 
-    if (filterBtnPosition < windowHeight - buffer) {
+    var windowHeight = window.innerHeight;
+
+    var buffer = 50;
+    if (filterBtnAreaTop + filterBtnAreaHeight < windowHeight + buffer) {
+      filterBtn.classList.add("hidden");
+    } else {
+      filterBtn.classList.remove("hidden");
+    }
+
+    if (filterBtnPosition + windowHeight < windowHeight) {
       filterBtn.classList.add("filter-btn--sticky");
     } else {
       filterBtn.classList.remove("filter-btn--sticky");
     }
   });
+
+  // Function to open a specific modal and close all other modals
+  function openModal(modalId) {
+    console.log(modalId);
+    var modals = document.querySelectorAll(".modal");
+    for (var i = 0; i < modals.length; i++) {
+      modals[i].classList.remove("filter-sidebar--open");
+    }
+    var modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add("filter-sidebar--open");
+    }
+  }
+
+  window.closeAllModals = function () {
+    var modals = document.querySelectorAll(".modal");
+    for (var i = 0; i < modals.length; i++) {
+      modals[i].classList.remove("filter-sidebar--open");
+    }
+  };
+
+  document.addEventListener("mouseup", function (e) {
+    var modals = document.querySelectorAll(".modal");
+    for (var i = 0; i < modals.length; i++) {
+      if (e.target === modals[i]) {
+        window.closeAllModals();
+        break;
+      }
+    }
+  });
+
+  document
+    .getElementById("openModalBtnFilter")
+    .addEventListener("click", function () {
+      openModal("modalFilter");
+    });
+
+  document
+    .getElementById("openModalBtnLogin")
+    .addEventListener("click", function () {
+      console.log("Click Login");
+      openModal("modalLogin");
+    });
+
+  document
+    .getElementById("openModalBtnRegister")
+    .addEventListener("click", function () {
+      openModal("modalRegister");
+    });
 });
 
 // Zorgchecker Form Step
@@ -389,7 +424,6 @@ function moveToNextStep(currentIndex) {
     handleAllStepsCompleted();
   }
 
-  // Scroll to the step indicators container
   zorgcheckStepsContainer.scrollIntoView({ behavior: "smooth" });
 }
 
@@ -397,7 +431,6 @@ function handleAllStepsCompleted() {
   zorgcheckerSuccessContent.classList.remove("hidden");
 }
 
-// Function to handle step indicators
 function handleStepIndicators(clickedIndex) {
   zorgcheckerSteps.forEach((step, index) => {
     if (index <= clickedIndex) {
@@ -427,7 +460,6 @@ zorgcheckerContents.forEach((content, index) => {
     }
   }
   if (index === 2) {
-    // Assuming step 3 is at index 2
     const step3Button = content.querySelector("#step3_button");
     if (step3Button) {
       step3Button.addEventListener("click", () => {
@@ -445,70 +477,88 @@ zorgcheckerSteps.forEach((step, index) => {
   });
 });
 
-// document.getElementById("leeftijd").addEventListener("input", function (e) {
-//   let input = e.target.value.replace(/\D/g, "");
-//   let formattedInput = "";
-//   if (input.length > 2) {
-//     formattedInput += input.slice(0, 2) + "-";
-//     if (input.length > 4) {
-//       formattedInput += input.slice(2, 4) + "-";
-//       formattedInput += input.slice(4, 8);
-//     } else {
-//       formattedInput += input.slice(2);
-//     }
-//   } else {
-//     formattedInput += input;
-//   }
-//   e.target.value = formattedInput;
-// });
+document.addEventListener("DOMContentLoaded", function () {
+  // Show Password text
+  var toggleLoginPassword = document.querySelector(".password__eye--login");
+  var loginPasswordField = document.querySelector(
+    ".input-style--password-login"
+  );
 
-// Function to format date input
-document.getElementById("leeftijd").addEventListener("input", function (e) {
-  let inputValue = e.target.value;
+  var toggleRegisterPassword = document.querySelector(
+    ".password__eye--register"
+  );
+  var registerPasswordField = document.querySelector(
+    ".input-style--password-register"
+  );
 
-  inputValue = inputValue.replace(/\D/g, "");
-
-  if (inputValue === "") {
-    e.target.value = "__-__-____";
-    return;
+  if (toggleLoginPassword && loginPasswordField) {
+    toggleLoginPassword.addEventListener("click", function () {
+      togglePasswordVisibility(loginPasswordField);
+    });
   }
 
-  let formattedValue = "";
-  let inputIndex = 0;
-  for (let i = 0; i < 10; i++) {
-    if (inputValue[inputIndex]) {
-      formattedValue += inputValue[inputIndex++];
+  if (toggleRegisterPassword && registerPasswordField) {
+    toggleRegisterPassword.addEventListener("click", function () {
+      togglePasswordVisibility(registerPasswordField);
+    });
+  }
+
+  function togglePasswordVisibility(passwordField) {
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
     } else {
-      formattedValue += "_";
-    }
-    if (i === 1 || i === 3) {
-      formattedValue += "-";
-    }
-    if (i === 9) {
-      break;
+      passwordField.type = "password";
     }
   }
 
-  e.target.value = formattedValue.slice(0, 10);
-});
+  // Function to format date input
+  document.getElementById("leeftijd").addEventListener("input", function (e) {
+    let inputValue = e.target.value;
 
-document.getElementById("leeftijd").addEventListener("keydown", function (e) {
-  if (e.keyCode === 8) {
-    e.preventDefault();
-    let currentValue = e.target.value;
-    let index = currentValue.length - 1;
-    while (index >= 0 && currentValue[index] === "_") {
-      index--;
+    inputValue = inputValue.replace(/\D/g, "");
+
+    if (inputValue === "") {
+      e.target.value = "__-__-____";
+      return;
     }
-    while (
-      index >= 0 &&
-      (currentValue[index] === "-" || isNaN(currentValue[index]))
-    ) {
-      index--;
+
+    let formattedValue = "";
+    let inputIndex = 0;
+    for (let i = 0; i < 10; i++) {
+      if (inputValue[inputIndex]) {
+        formattedValue += inputValue[inputIndex++];
+      } else {
+        formattedValue += "_";
+      }
+      if (i === 1 || i === 3) {
+        formattedValue += "-";
+      }
+      if (i === 9) {
+        break;
+      }
     }
-    if (index >= 0) {
-      e.target.value =
-        currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
+
+    e.target.value = formattedValue.slice(0, 10);
+  });
+
+  document.getElementById("leeftijd").addEventListener("keydown", function (e) {
+    if (e.keyCode === 8) {
+      e.preventDefault();
+      let currentValue = e.target.value;
+      let index = currentValue.length - 1;
+      while (index >= 0 && currentValue[index] === "_") {
+        index--;
+      }
+      while (
+        index >= 0 &&
+        (currentValue[index] === "-" || isNaN(currentValue[index]))
+      ) {
+        index--;
+      }
+      if (index >= 0) {
+        e.target.value =
+          currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
+      }
     }
-  }
+  });
 });

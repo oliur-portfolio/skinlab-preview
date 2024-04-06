@@ -282,6 +282,22 @@ h6 {
   -o-border-radius: 5rem;
 }
 
+.custom-btn--full {
+  width: 100%;
+  min-width: 100%;
+}
+
+.custom-btn-secondary {
+  border: 1px solid #d4aea7;
+  background: #fff9f7;
+  color: #000;
+}
+
+.custom-btn-secondary:hover {
+  background: #d4aea7;
+  color: #fff;
+}
+
 .link-btn {
   display: flex;
   align-items: center;
@@ -3286,7 +3302,7 @@ td:nth-child(4) {
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
+  z-index: 99999;
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -3355,16 +3371,9 @@ td:nth-child(4) {
   text-align: center;
 }
 
-.filter-sidebar__search .input-style {
-  border: 0;
+.filter-sidebar__close-title {
   border-bottom: 0.1rem solid #505050;
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
+  padding-bottom: 1.5rem;
 }
 
 .filter-sidebar__items {
@@ -3737,3 +3746,104 @@ td:nth-child(4) {
 /* Vergoed Area */
 
 /* Zorgcheck Page */
+
+/* Modals Area */
+
+.modal--center {
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+}
+
+.modal--center .filter-sidebar-wrapper {
+  height: max-content;
+}
+
+.modal--center .filter-sidebar-area {
+  position: static;
+  height: auto;
+  padding: 3rem;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+}
+
+.auth-form {
+  margin-top: 4rem;
+}
+
+.auth__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.auth__input {
+  position: relative;
+}
+
+.auth-form .custom-btn {
+  margin-top: 3rem;
+}
+
+.auth__bottom-note {
+  margin-top: 3rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.auth__bottom-note a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.password__eye {
+  font-weight: 300;
+  text-decoration: underline;
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.auth__forget-pass {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-end;
+  width: fit-content;
+  margin-left: auto;
+  text-decoration: underline;
+}
+
+.custom-btn--social {
+  background: transparent;
+  margin-top: 2rem !important;
+}
+
+.custom-btn--social:hover {
+  color: #000;
+}
+
+.custom-btn--social span {
+  width: 2rem;
+  height: auto;
+}
+
+.auth-divider {
+  margin-top: 3rem;
+}
+
+.auth-divider .total__products-line {
+  border-bottom: 0.1rem solid #ddd;
+}
+
+/* Modals Area */

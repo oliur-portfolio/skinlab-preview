@@ -1069,6 +1069,15 @@
     font-size: 2.6rem;
     line-height: 3.2rem;
   }
+
+  .modal--center .filter-sidebar-wrapper,
+  .modal--center .filter-sidebar-area {
+    height: 100%;
+  }
+
+  .filter-sidebar__close-title {
+    margin-top: 0.5rem;
+  }
 }
 
 @media (max-width: 575.98px) {
