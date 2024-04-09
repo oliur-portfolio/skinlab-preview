@@ -349,7 +349,7 @@ font-family: "Helvetica-Neue", sans-serif;
 body {
   font-family: "Gill-Sans", sans-serif;
   font-size: 1.8rem;
-  line-height: 2.8rem;
+  line-height: 2.6rem;
   font-weight: 400;
   color: #000;
   background: #fff;
@@ -1275,6 +1275,7 @@ main {
 
 .products__item-desc {
   font-size: 1.6rem;
+  line-height: 1.4;
   margin-top: 0.6rem;
 }
 
@@ -1319,6 +1320,7 @@ main {
 .products__item-status p {
   font-weight: 500;
   font-size: 1.6rem;
+  line-height: 1.4;
 }
 
 .products__item-status-circle {
@@ -2727,11 +2729,15 @@ td:nth-child(4) {
 }
 
 /* All Products Area */
+
+.all-products__items-wrapper {
+  margin-top: 5rem;
+}
+
 .all-products__items {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  margin-top: 5rem;
 }
 
 .all-products__items .products__item {
@@ -2780,19 +2786,19 @@ td:nth-child(4) {
 
 .product__logos-area {
   margin-top: 0;
-  margin-bottom: 8rem;
-  gap: 5rem;
+  margin-bottom: 5rem;
+  gap: 3rem;
 }
 
 .product__logos {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .product__logo {
-  width: 18rem;
-  height: 18rem;
+  width: 13rem;
+  height: 13rem;
   border: 0.1rem solid #a9aca9;
   display: flex;
   align-items: center;
@@ -2806,8 +2812,162 @@ td:nth-child(4) {
 
 .product__logo img {
   width: fit-content;
-  height: 6rem;
+  height: 4rem;
   object-fit: contain;
+}
+
+.products__item--maand {
+  grid-column: span 2;
+}
+
+.products__item--maand {
+  background: #fff9f7;
+  border: 1px solid #d4aea7;
+  padding: 2rem 3rem;
+}
+
+.products__item--maand h3 {
+  padding-bottom: 0.3rem;
+  border-bottom: 0.1rem solid #a9aca9;
+  margin-bottom: 1.5rem;
+}
+
+.products__maand-content {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.products__maand-left,
+.products__maand-right {
+  flex: 1;
+}
+
+.products__maand-left .products__item-name {
+  min-height: auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.products__maand-left .products__item-prices {
+  justify-content: center;
+}
+
+.products__maand-right h6 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.products__maand-right-bold-desc {
+  font-weight: 600;
+}
+
+.products__maand-right p {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.main__product-features {
+  border: 0.1rem solid #a9aca9;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  background: #dbddd6;
+  padding: 3rem;
+  border-radius: 1.8rem;
+  -webkit-border-radius: 1.8rem;
+  -moz-border-radius: 1.8rem;
+  -ms-border-radius: 1.8rem;
+  -o-border-radius: 1.8rem;
+}
+
+.main__product-feature {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-right: 2.5rem;
+  gap: 2.5rem;
+  border-right: 0.1rem solid #a9aca9;
+}
+
+.main__product-feature:last-of-type {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.main__product-feature2 {
+  flex: 1.5;
+}
+
+.main__product-feature img {
+  width: max-content;
+  height: 4rem;
+  object-fit: contain;
+}
+
+.main__product-feature p {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.all-products__items-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.products__item--voorradig {
+  padding: 3rem;
+  background: #f9f4eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.products__voorradig-img {
+  display: flex;
+  justify-content: center;
+  border-bottom: 0.1rem solid #a9aca9;
+  padding-bottom: 1rem;
+}
+
+.products__voorradig-img img {
+  width: max-content;
+  height: 8rem;
+}
+
+.products__voorradig-content h6 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-top: 2rem;
+}
+
+.products__voorradig-content p {
+  margin-top: 1.5rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.products__item--nieuwsbrief {
+  justify-content: flex-start;
+  background: transparent;
+}
+
+.products__nieuwsbrief-form {
+  margin-top: 2rem;
+}
+
+.products__maand-more-text {
+  display: none;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-weight: 600;
+  position: relative;
+  z-index: 10;
+  text-decoration: underline;
 }
 
 /* Products Page */

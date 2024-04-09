@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const productMaandMoreTextPlus = document.querySelector(
+    ".products__maand-more-text--plus"
+  );
+  const productMaandMoreTextMinus = document.querySelector(
+    ".products__maand-more-text--minus"
+  );
+  const productMaandContent = document.querySelector(".products__maand-right");
+
+  productMaandMoreTextPlus.addEventListener("click", () => {
+    productMaandContent.classList.add("products__maand-right--show");
+  });
+
+  productMaandMoreTextMinus.addEventListener("click", () => {
+    productMaandContent.classList.remove("products__maand-right--show");
+  });
+
   // Faq More Expand Effect
   const faqExpandBtns = document.querySelectorAll(".faq--expand-btn");
 
