@@ -1190,8 +1190,14 @@
   }
 
   .all-products__items .custom-btn--product-cart-btn::before {
-    position: absolute;
     content: "In winkelmand";
+    font-size: 18px;
+  }
+
+  .all-products-area--secondary-layout
+    .all-products__items
+    .custom-btn--product-cart-btn::before {
+    position: absolute;
     font-size: 16px;
   }
 
@@ -1280,6 +1286,36 @@
 
   .products__maand-right--show .products__maand-more-text-wrapper {
     margin-top: 0.8rem;
+  }
+
+  .all-products__items .products__image {
+    display: flex;
+    align-items: center;
+  }
+
+  .all-products__items .products__image img {
+    height: 20rem;
+  }
+
+  .products__item--maand .products__image img {
+    height: 100%;
+  }
+
+  .all-products__items .products__item {
+    flex-direction: column;
+  }
+
+  .all-products-area--secondary-layout .all-products__items .products__item {
+    flex-direction: row;
+  }
+
+  .products__item--maand {
+    flex-direction: column !important;
+  }
+
+  .product__select-layout-area {
+    display: flex;
+    padding: 0 2rem;
   }
 }
 

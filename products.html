@@ -1647,31 +1647,20 @@
 
     <!-- Main Content -->
     <main>
-      <!-- Products Hero Area -->
-      <section class="hero-area other-hero-area products-hero-area">
-        <!-- Scroll btn -->
-        <a class="scroll-btn" href="#allProducts">
-          <span class="sr-only">Scroll to content</span>
-        </a>
-        <!-- Scroll btn -->
-
-        <div class="container">
-          <div class="hero">
-            <div class="hero__content">
-              <h1>Producten</h1>
-              <h3 class="heading--48">
-                Al onze producten zijn dierproefvrij en en geselecteerd op
-                duurzaamheid
-              </h3>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Products Hero Area -->
-
       <!-- All Products Area -->
       <section class="treatment all-products-area" id="allProducts">
         <div class="container">
+          <!-- Section Heading -->
+          <div class="section-heading">
+            <h2>Producten</h2>
+
+            <p class="desc--24">
+              Al onze producten zijn dierproefvrij en en geselecteerd op
+              duurzaamheid
+            </p>
+          </div>
+          <!-- Section Heading -->
+
           <div class="total__products product__logos-area">
             <div class="total__products-line"></div>
             <div class="product__logos-overflow">
@@ -1732,6 +1721,13 @@
               <span><img src="img/filter.png" alt="filter" /></span>
               Filter en sorteer
             </button>
+          </div>
+
+          <div class="product__select-layout-area">
+            <select id="productSelectLayout" class="product__select-layout">
+              <option value="default-product">Default product view</option>
+              <option value="secondary-product">Horizontal product view</option>
+            </select>
           </div>
 
           <div class="all-products__items-wrapper">

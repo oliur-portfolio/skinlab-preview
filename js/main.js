@@ -1,20 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const productMaandMoreTextPlus = document.querySelector(
-    ".products__maand-more-text--plus"
-  );
-  const productMaandMoreTextMinus = document.querySelector(
-    ".products__maand-more-text--minus"
-  );
-  const productMaandContent = document.querySelector(".products__maand-right");
-
-  productMaandMoreTextPlus.addEventListener("click", () => {
-    productMaandContent.classList.add("products__maand-right--show");
-  });
-
-  productMaandMoreTextMinus.addEventListener("click", () => {
-    productMaandContent.classList.remove("products__maand-right--show");
-  });
-
   // Faq More Expand Effect
   const faqExpandBtns = document.querySelectorAll(".faq--expand-btn");
 
@@ -417,6 +401,38 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function () {
       openModal("modalFilter");
     });
+
+  // Product Description text show
+  const productMaandMoreTextPlus = document.querySelector(
+    ".products__maand-more-text--plus"
+  );
+  const productMaandMoreTextMinus = document.querySelector(
+    ".products__maand-more-text--minus"
+  );
+  const productMaandContent = document.querySelector(".products__maand-right");
+
+  productMaandMoreTextPlus.addEventListener("click", () => {
+    productMaandContent.classList.add("products__maand-right--show");
+  });
+
+  productMaandMoreTextMinus.addEventListener("click", () => {
+    productMaandContent.classList.remove("products__maand-right--show");
+  });
+
+  // Change Product Layout
+  const productSelectLayout = document.getElementById("productSelectLayout");
+  const allProductLayoutArea = document.getElementById("allProducts");
+
+  productSelectLayout.addEventListener("change", function () {
+    console.log(this.value);
+    if (this.value === "secondary-product") {
+      allProductLayoutArea.classList.add("all-products-area--secondary-layout");
+    } else if (this.value === "default-product") {
+      allProductLayoutArea.classList.remove(
+        "all-products-area--secondary-layout"
+      );
+    }
+  });
 });
 
 // Zorgchecker Form Step

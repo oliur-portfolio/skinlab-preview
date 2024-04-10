@@ -2615,14 +2615,6 @@ td:nth-child(4) {
 
 /* Products Page */
 
-/* Products Hero Area */
-.products-hero-area {
-  background-position: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
-    url(../img/products-hero.jpg);
-}
-/* Products Hero Area */
-
 .product-category-nav-area,
 .product-category-nav {
   display: flex;
@@ -2785,7 +2777,7 @@ td:nth-child(4) {
 }
 
 .product__logos-area {
-  margin-top: 0;
+  margin-top: 5rem;
   margin-bottom: 5rem;
   gap: 3rem;
 }
@@ -2968,6 +2960,17 @@ td:nth-child(4) {
   position: relative;
   z-index: 10;
   text-decoration: underline;
+}
+
+.product__select-layout-area {
+  margin-top: 2rem;
+  justify-content: flex-start;
+  display: none;
+}
+
+.product__select-layout {
+  border: 0.1rem solid #a9aca9;
+  padding: 1.35rem 1.3rem;
 }
 
 /* Products Page */
