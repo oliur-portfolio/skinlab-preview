@@ -418,6 +418,36 @@
     width: 4rem;
     height: auto;
   }
+
+  .toskani__gradient-area .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .toskani__product .apparatuur__left img {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .toskani__item--gradient {
+    gap: 0;
+  }
+
+  .toskani__item--gradient p {
+    margin-top: 1.5rem;
+  }
+
+  .toskani__content {
+    flex-direction: column;
+  }
+
+  .toskani__texts {
+    margin-top: 0;
+  }
+
+  .toskani__item .apparatuur__left h3 {
+    text-align: center;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -741,6 +771,11 @@
 
   .product__logo img {
     height: 4rem;
+  }
+
+  .toskani__product .apparatuur__left img {
+    width: 24rem;
+    height: 24rem;
   }
 }
 
@@ -1316,6 +1351,25 @@
   .product__select-layout-area {
     display: flex;
     padding: 0 2rem;
+  }
+
+  .section-heading img {
+    height: 4rem;
+  }
+
+  .toskani__product .apparatuur__left img {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .toskani__gradient-area {
+    margin-top: 2.5rem;
+  }
+
+  .toskani__product-newsletter {
+    flex-direction: column;
+    padding: 1.5rem 1.5rem;
+    gap: 2.2rem;
   }
 }
 

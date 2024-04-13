@@ -375,6 +375,13 @@ body {
   max-width: 100%;
 }
 
+.section-heading img {
+  width: auto;
+  height: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Reuse CSS Code */
 
 /* Header Area */
@@ -3455,6 +3462,142 @@ td:nth-child(4) {
 }
 
 /* Apparatuur Page */
+
+/* Toskani Page */
+.toskani__content {
+  display: flex;
+  gap: 4rem;
+}
+
+.toskani__content img {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+  border: 0.1rem solid #a9aca9;
+}
+
+.toskani__texts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.toskani__texts p {
+  margin-top: 0;
+}
+
+.toskani__item .apparatuur__left h3 {
+  text-align: left;
+}
+
+.toskani__item--bg1 .apparatuur__left {
+  background: #fff9f7;
+  border: 1px solid #d4aea7;
+}
+
+.toskani__item--bg2 .apparatuur__left {
+  background: #f7f5f2;
+  border: 1px solid #d4aea7;
+}
+
+.toskani__item--bg3 .apparatuur__left {
+  background: transparent;
+}
+
+.toskani__product .apparatuur__left h3 {
+  text-align: center;
+}
+
+.toskani__product-header p {
+  max-width: 60rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.toskani__product .apparatuur__left img {
+  width: 24rem;
+  height: 24rem;
+}
+
+.toskani__product .populaire__items {
+  margin-top: 3rem;
+}
+
+.toskani__product .apparatuur__left {
+  padding: 5rem 3rem;
+}
+
+.toskani__product-newsletter {
+  margin-top: 3rem;
+  background: #fff9f7;
+  border: 1px solid #d4aea7;
+  padding: 2.5rem 4rem;
+  max-width: 50rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+}
+
+.toskani__product-newsletter h5 {
+  margin-bottom: 0;
+}
+
+.toskani__product-newsletter .footer-input-form {
+  width: 100%;
+}
+
+.toskani__product-newsletter .footer-input-form .input-style {
+  border: 0.1rem solid #d6d6d6;
+}
+
+.toskani__product-newsletter .footer-input__submit-btn {
+  border-left: 0.2rem solid #bfbfbf;
+  height: 4rem;
+}
+
+.toskani__product-newsletter .footer-input__submit-btn img {
+  height: 4rem !important;
+  margin-top: 0 !important;
+}
+
+.toskani__item--gradient {
+  background-image: url("../img/toskani-gradient.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: transparent;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+
+.toskani__gradient-items .geschikt__item--een h6 {
+  font-size: 2rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+}
+
+.toskani__gradient-items {
+  margin-top: 0;
+}
+
+.toskani__gradient-area {
+  margin-top: 3.5rem;
+}
+
+/* Toskani Page */
 
 /* Filter Sidebar */
 
