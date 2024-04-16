@@ -257,6 +257,17 @@ h6 {
   padding: 1.9rem 2.5rem;
 }
 
+.custom-btn--blog {
+  background: #fff9f7;
+  color: #000;
+  border: 1px solid #d4aea7;
+}
+
+.custom-btn--blog:hover {
+  background: #d4aea7;
+  color: #fff;
+}
+
 .custom-btn--product-cart-btn {
   background: #a9aca9;
   color: #fff;
@@ -4153,3 +4164,80 @@ td:nth-child(4) {
 }
 
 /* Modals Area */
+
+/* Terms Page */
+.terms-area {
+  padding-top: 8rem;
+}
+
+.terms {
+  width: 100%;
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.terms__content {
+  margin-top: 3rem;
+}
+
+.terms__content-descs {
+  margin-top: 1.5rem;
+}
+
+.terms__content,
+.terms__content-descs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Terms Page */
+
+/* Blogs Area */
+.main-blogs-area {
+  padding-top: 8rem;
+}
+
+.main-blogs__items {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 110rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  row-gap: 4rem;
+}
+
+.main-blogs__item-image {
+  height: 27rem;
+}
+
+.main-blogs__item-image img {
+  object-fit: cover;
+  border-top-left-radius: 1.8rem;
+  border-top-right-radius: 1.8rem;
+}
+
+.main-blogs__item-content {
+  background: #f7f5f1;
+  padding: 3rem;
+  border-bottom-left-radius: 1.8rem;
+  border-bottom-right-radius: 1.8rem;
+}
+
+.main-blogs__item-info a {
+  font-weight: 600;
+}
+
+.main-blogs__item-info p {
+  margin-top: 1rem;
+}
+
+.main-blogs__item-content .custom-btn {
+  margin-top: 3rem;
+}
+
+/* Blogs Area */

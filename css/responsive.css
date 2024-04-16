@@ -448,6 +448,13 @@
   .toskani__item .apparatuur__left h3 {
     text-align: center;
   }
+
+  .main-blogs__items {
+    max-width: 75rem;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 4rem;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -1049,7 +1056,9 @@
   .recensies-area,
   .apparatuur-area,
   .zorgcheck-area,
-  .vergoed-area {
+  .vergoed-area,
+  .terms-area,
+  .main-blogs-area {
     padding-top: 6rem;
   }
 
@@ -1370,6 +1379,11 @@
     flex-direction: column;
     padding: 1.5rem 1.5rem;
     gap: 2.2rem;
+  }
+
+  .main-blogs__items {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
   }
 }
 
