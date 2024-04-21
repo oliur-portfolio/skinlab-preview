@@ -455,6 +455,49 @@
     column-gap: 2rem;
     row-gap: 4rem;
   }
+
+  .skin__problem-hero-wrapper {
+    flex-direction: column;
+  }
+
+  .skin__problem-hero-image,
+  .skin__problem-hero-content {
+    flex: none;
+  }
+
+  .skin__problem-hero-image {
+    width: 100%;
+    height: auto;
+    min-height: 23rem;
+    aspect-ratio: 16/9;
+  }
+
+  .skin__problem-hero-image img {
+    border-radius: 1.8rem;
+    -webkit-border-radius: 1.8rem;
+    -moz-border-radius: 1.8rem;
+    -ms-border-radius: 1.8rem;
+    -o-border-radius: 1.8rem;
+  }
+
+  .resultaten__item {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .resultaten__compare-images {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  .resultaten__items {
+    padding-bottom: 4rem;
+  }
+
+  .resultaten__items {
+    margin-top: 3rem;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -784,6 +827,10 @@
     width: 24rem;
     height: 24rem;
   }
+
+  .laser-process-area--skin {
+    padding-top: 8rem;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -815,6 +862,11 @@
   .heading--36 {
     font-size: 2.4rem;
     line-height: 3rem;
+  }
+
+  .desc--22 {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
   }
 
   h3 {
@@ -1058,8 +1110,19 @@
   .zorgcheck-area,
   .vergoed-area,
   .terms-area,
-  .main-blogs-area {
+  .main-blogs-area,
+  .laser-process-area--skin,
+  .resultaten__area,
+  .faq-area {
     padding-top: 6rem;
+  }
+
+  .laser-process-area--skin .container .section-heading {
+    margin-bottom: 3rem;
+  }
+
+  .main-blogs__items {
+    margin-top: 3rem;
   }
 
   .video__content h3 {
@@ -1384,6 +1447,33 @@
   .main-blogs__items {
     grid-template-columns: repeat(1, 1fr);
     gap: 2.5rem;
+  }
+
+  .skin__problem-hero-wrapper {
+    gap: 1.5rem;
+  }
+
+  .skin__problem-hero-list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .laser-process-area--skin {
+    padding-bottom: 0;
+  }
+
+  .skin__problem-hero-area {
+    padding: 6rem 0;
+  }
+
+  .skin__problem-hero .section-heading h2 {
+    padding: 0 3rem;
+  }
+
+  .skin__problem-hero-list-text h5,
+  .skin__problem-hero-list-text p {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
   }
 }
 

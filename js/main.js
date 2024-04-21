@@ -1,3 +1,31 @@
+$(function () {
+  function initializeBeforeAfter() {
+    $(".beforeAfter").beforeAfter({
+      movable: true,
+      clickMove: true,
+      alwaysShow: true,
+      position: 50,
+      opacity: 0.4,
+      activeOpacity: 1,
+      hoverOpacity: 0.8,
+      separatorColor: "#fafafa",
+      bulletColor: "#fafafa",
+      onMoveStart: function (e) {
+        console.log(event.target);
+      },
+      onMoving: function () {
+        console.log(event.target);
+      },
+      onMoveEnd: function () {
+        console.log(event.target);
+      },
+    });
+  }
+
+  // Call the function to initialize BeforeAfter plugin on page load
+  initializeBeforeAfter();
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   // Faq More Expand Effect
   const faqExpandBtns = document.querySelectorAll(".faq--expand-btn");
@@ -248,6 +276,19 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 4.8,
         slidesPerGroup: 3,
       },
+    },
+  });
+
+  // Swiper Slide resulten
+  const swiperResulten = new Swiper(".resultaten__items", {
+    allowTouchMove: false,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
     },
   });
 

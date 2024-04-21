@@ -180,6 +180,12 @@ h6 {
   font-weight: 600;
 }
 
+.desc--22 {
+  font-size: 2.2rem;
+  line-height: 3rem;
+  font-weight: 600;
+}
+
 .desc--24 {
   font-size: 2.4rem;
   line-height: 3rem;
@@ -4241,3 +4247,149 @@ td:nth-child(4) {
 }
 
 /* Blogs Area */
+
+/* Inner Treatment Page */
+.inner-treatment-hero-area {
+  background-position: bottom;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    url(../img/inner-treatment-hero.jpg);
+}
+
+.prijzen-area--inner-treatment .prijzen-table-list {
+  margin-top: 0;
+}
+
+.prijzen-area--inner-treatment .section-heading {
+  max-width: 100%;
+}
+/* Inner Treatment Page */
+
+/* Inner Skin problem Page */
+.skin__problem-hero-area {
+  padding: 8rem 0;
+  /* background: #fff7f6; */
+  background: #f7f5f1;
+}
+
+.skin__problem-hero .section-heading h2 {
+  display: inline-block;
+  border-bottom: 0.1rem solid #d6d6d6;
+  padding: 0 8rem;
+}
+
+.skin__problem-hero-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.skin__problem-hero-image {
+  flex: 0.5;
+}
+
+.skin__problem-hero-image img {
+  border-radius: 3rem;
+  -webkit-border-radius: 3rem;
+  -moz-border-radius: 3rem;
+  -ms-border-radius: 3rem;
+  -o-border-radius: 3rem;
+}
+
+.skin__problem-hero-content {
+  flex: 0.5;
+}
+
+.skin__problem-hero-list {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skin__problem-hero-list-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.skin__problem-hero-list-item img {
+  width: 5rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.skin__problem-hero-list-text h5,
+.skin__problem-hero-list-text p {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+}
+
+.skin__problem-hero-list-text p {
+  color: #6d6d6d;
+  font-weight: 400;
+}
+
+.laser-process-area--skin .container .section-heading {
+  max-width: 110rem;
+  margin-bottom: 5rem;
+}
+
+.main-blogs-area--skin {
+  padding-top: 0;
+  padding-bottom: 8rem;
+}
+
+.populaire-area--skin {
+  padding-top: 8rem;
+  padding-bottom: 0;
+}
+
+.populaire-area--skin .section-heading {
+  max-width: 100%;
+}
+
+.populaire-area--skin .populaire__items {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 966px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Resultaten Area */
+.resultaten__area {
+  padding-bottom: 8rem;
+}
+
+.resultaten__item {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+}
+
+.resultaten__compare-images,
+.resultaten__compare-content {
+  flex: 1;
+}
+
+.resultaten__compare-images img {
+  max-width: none;
+}
+
+.resultaten__compare-content {
+  text-align: center;
+}
+
+.resultaten__compare-content p {
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.resultaten__items {
+  margin-top: 5rem;
+  padding-bottom: 7rem;
+}
+
+/* Resultaten Area */
+
+/* Inner Skin problem Page */
