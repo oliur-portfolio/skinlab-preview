@@ -4427,8 +4427,8 @@ td:nth-child(4) {
 }
 
 .custom-btn--vancancie-form:hover {
-  background: #d4aea7;
-  color: #fff;
+  background: #d4aea7 !important;
+  color: #fff !important;
 }
 
 .vancancie-form .nav-logo {
