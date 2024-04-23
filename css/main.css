@@ -4393,3 +4393,282 @@ td:nth-child(4) {
 /* Resultaten Area */
 
 /* Inner Skin problem Page */
+
+/* Vancancie page */
+.vancancie-form-area {
+  padding-top: 8rem;
+}
+
+.vancancie-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 10rem;
+  max-width: 110rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vancancie-form__left {
+  width: 100%;
+  max-width: 30rem;
+}
+
+.vancancie-form__right {
+  flex: 1;
+}
+
+.custom-btn--vancancie-form {
+  background: transparent !important;
+  max-width: fit-content !important;
+  min-width: fit-content !important;
+  padding: 1.4rem 3rem !important;
+  font-size: 1.8rem !important;
+}
+
+.custom-btn--vancancie-form:hover {
+  background: #d4aea7;
+  color: #fff;
+}
+
+.vancancie-form .nav-logo {
+  width: 11.5rem;
+  height: 7rem;
+  margin-left: 4rem;
+}
+
+.vancancie-form__intro {
+  margin-top: 9rem;
+}
+
+.vancancie-form__tabs {
+  margin-top: 6rem;
+}
+
+.vancancie-form__intro-list-item h5,
+.vancancie-form__intro-list-item p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.vancancie-form__intro-list-item h5 {
+  margin-top: 0.6rem;
+}
+
+.vancancie-form__intro-list {
+  margin-top: 3rem;
+}
+
+.vancancie-form__intro-list-item {
+  border-bottom: 0.1rem solid #d6d6d6;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.vancancie-form__intro-list-item:first-child {
+  padding-top: 0;
+}
+
+.vancancie-form__intro-list-item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* Tabs */
+.custom__tab {
+  overflow: hidden;
+  display: flex;
+  gap: 2rem;
+}
+
+.custom__tab button {
+  transition: 0.3s;
+  color: #6d6d6d;
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 600;
+  min-width: 20rem;
+  text-align: left;
+  padding-bottom: 1rem;
+  border-bottom: 0.4rem solid transparent;
+}
+
+.custom__tab button:hover {
+  color: #000;
+}
+
+.custom__tab button.active {
+  color: #000;
+  border-bottom: 0.4rem solid #d4aea7;
+}
+
+.custom__tabcontent {
+  display: none;
+  padding-top: 3rem;
+}
+/* Tabs */
+
+.vacature__tab-info-heading h3,
+.vacature__tab-info-list-area h3 {
+  font-size: 2.2rem;
+  line-height: 3rem;
+  margin-bottom: 2rem;
+}
+
+.vacature__tab-info-heading h3:last-of-type {
+  margin-bottom: 0;
+}
+
+.vacature__tab-info-descs {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.vacature__tab-info-descs p,
+.vacature__tab-info-list li p {
+  font-size: 2rem;
+  line-height: 2.8rem;
+  font-weight: 500;
+}
+
+.vacature__tab-info-list {
+  padding-left: 2rem;
+}
+
+.vacature__tab-info-list li {
+  list-style: disc;
+}
+
+.vacature__tab-info-list-area {
+  margin-top: 2rem;
+}
+
+.vacature__tab-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding-bottom: 2rem;
+}
+
+.vacature__tab--line {
+  border-bottom: 0.1rem solid #808080;
+}
+
+.custom__tabcontent--vacature .custom-btn {
+  width: 100%;
+  min-width: 100%;
+  margin-top: 2rem;
+}
+
+.vancancie-form-main__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.vancancie-form__inputs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.5rem;
+}
+
+.vancancie-form__inputs input {
+  flex: 1;
+  padding-right: 1.5rem;
+}
+
+.input-style--vancancie-col2 {
+  grid-column: span 2;
+}
+
+.input-style--vancancie-col3 {
+  grid-column: span 3;
+}
+
+.input-style--vancancie-col-full {
+  grid-column: 1 / -1;
+}
+
+.cv__upload-area {
+  width: 100%;
+  height: 20rem;
+  border: 1px dashed #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+}
+
+.cv__upload {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.custom-btn--upload {
+  min-width: 25rem !important;
+  width: fit-content !important;
+  font-weight: 300;
+  margin-top: 0 !important;
+}
+
+.upload__file-name {
+  opacity: 0.7;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.input-style--text-area {
+  min-height: 20rem;
+}
+
+.form__isagree-area {
+  margin-top: 2rem;
+  padding: 0 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid #808080;
+}
+
+.form__isagree-area p,
+.form__isagree-area a {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: #6d6d6d;
+}
+
+.form__isagree-area a {
+  color: #6a6a6a;
+  text-decoration: underline;
+  margin-top: 1.5rem;
+}
+
+.form__checkbox-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.form__checkbox-area input {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.form__checkbox-area label {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Vancancie page */

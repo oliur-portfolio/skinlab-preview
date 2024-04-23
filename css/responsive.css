@@ -26,6 +26,10 @@
   .footer__socials {
     margin-right: 0;
   }
+
+  .vancancie-form {
+    max-width: 120rem;
+  }
 }
 
 @media (max-width: 1199.98px) {
@@ -497,6 +501,19 @@
 
   .resultaten__items {
     margin-top: 3rem;
+  }
+
+  .vancancie-form {
+    flex-direction: column;
+    gap: 7rem;
+  }
+
+  .vancancie-form__intro {
+    margin-top: 4rem;
+  }
+
+  .vancancie-form__tabs {
+    margin-top: 4rem;
   }
 }
 
@@ -1474,6 +1491,41 @@
   .skin__problem-hero-list-text p {
     font-size: 1.8rem;
     line-height: 2.6rem;
+  }
+
+  .vancancie-form__left {
+    max-width: 100%;
+  }
+
+  .custom__tab {
+    gap: 1rem;
+  }
+
+  .custom__tab button {
+    min-width: 12rem;
+  }
+
+  .vancancie-form__inputs {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+
+  .input-style--vancancie-col2,
+  .input-style--vancancie-col3,
+  .input-style--vancancie-col-full {
+    grid-column: auto;
+  }
+
+  .cv__upload {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .vancancie-form .nav-logo {
+    width: 8.5rem;
+    height: 5rem;
+    margin-left: 2rem;
   }
 }
 

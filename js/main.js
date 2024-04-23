@@ -635,3 +635,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Upload CV
+const realFileBtn = document.getElementById("real-file");
+const customUploadBtn = document.getElementById("customUploadButton");
+const customUploadFile = document.getElementById("customUploadFile");
+
+customUploadBtn.addEventListener("click", function () {
+  realFileBtn.click();
+});
+
+realFileBtn.addEventListener("change", function () {
+  if (realFileBtn.value) {
+    customUploadFile.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+  } else {
+    customUploadFile.innerHTML = "No file chosen, yet.";
+  }
+});
+
+// Tabs Effect
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("custom__tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("custom__tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
