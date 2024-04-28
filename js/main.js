@@ -1,29 +1,9 @@
-$(function () {
-  function initializeBeforeAfter() {
-    $(".beforeAfter").beforeAfter({
-      movable: true,
-      clickMove: true,
-      alwaysShow: true,
-      position: 50,
-      opacity: 0.4,
-      activeOpacity: 1,
-      hoverOpacity: 0.8,
-      separatorColor: "#fafafa",
-      bulletColor: "#fafafa",
-      onMoveStart: function (e) {
-        console.log(event.target);
-      },
-      onMoving: function () {
-        console.log(event.target);
-      },
-      onMoveEnd: function () {
-        console.log(event.target);
-      },
-    });
-  }
+// Select all elements with class name 'beer-slider'
+var beerSliderElements = document.querySelectorAll(".beer-slider");
 
-  // Call the function to initialize BeforeAfter plugin on page load
-  initializeBeforeAfter();
+// Iterate over each element and initialize BeerSlider
+beerSliderElements.forEach(function (element) {
+  var slider = new BeerSlider(element);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -149,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Menu Hover
+  // Menu Hover Header
   (function () {
     const target = document.querySelector(".target");
     const links = document.querySelectorAll(
@@ -202,6 +182,59 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", resizeFunc);
   })();
 
+  // Menu Hover Top Navbar
+  (function () {
+    const target = document.querySelector(".target2");
+    const links = document.querySelectorAll(
+      ".top-header__links .top-header__link"
+    );
+
+    function mouseenterFunc() {
+      if (!this.parentNode.classList.contains("active")) {
+        for (let i = 0; i < links.length; i++) {
+          if (links[i].parentNode.classList.contains("active")) {
+            links[i].parentNode.classList.remove("active");
+          }
+        }
+
+        this.parentNode.classList.add("active");
+
+        const width = this.getBoundingClientRect().width;
+        const left = this.getBoundingClientRect().left + window.pageXOffset;
+
+        target.style.width = `${width - 34}px`;
+        target.style.left = `${left + 17}px`;
+        target.style.transform = "none";
+      }
+    }
+
+    function mouseleaveFunc() {
+      const active = document.querySelector(".top-header__links li.active");
+      if (active) {
+        active.classList.remove("active");
+      }
+      target.style.width = "0";
+    }
+
+    for (let i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", (e) => e.preventDefault());
+      links[i].addEventListener("mouseenter", mouseenterFunc);
+      links[i].addEventListener("mouseleave", mouseleaveFunc);
+    }
+
+    function resizeFunc() {
+      const active = document.querySelector(".top-header__links li.active");
+
+      if (active) {
+        const left = active.getBoundingClientRect().left + window.pageXOffset;
+
+        target.style.left = `${left}px`;
+      }
+    }
+
+    window.addEventListener("resize", resizeFunc);
+  })();
+
   // Process Slider
   var swiperNav = new Swiper("#processNav, #laserNav", {
     direction: "vertical",
@@ -218,6 +251,10 @@ document.addEventListener("DOMContentLoaded", function () {
     speed: 500,
     thumbs: {
       swiper: swiperNav,
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
     },
     pagination: {
       el: ".swiper-pagination--process, .swiper-pagination--laser",
@@ -279,13 +316,27 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+  const swiperReviewLogo = new Swiper(".review__logo-items", {
+    loop: false,
+    slidesPerView: 3,
+    slidesPerGroup: 3,
+    spaceBetween: 10,
+    breakpoints: {
+      350: {
+        slidesPerView: 2.5,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+    },
+  });
+
   // Swiper Slide resulten
   const swiperResulten = new Swiper(".resultaten__items", {
     allowTouchMove: false,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -636,6 +687,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Tabs Effect
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("custom__tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("custom__tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+
 // Upload CV
 const realFileBtn = document.getElementById("real-file");
 const customUploadBtn = document.getElementById("customUploadButton");
@@ -654,20 +722,3 @@ realFileBtn.addEventListener("change", function () {
     customUploadFile.innerHTML = "No file chosen, yet.";
   }
 });
-
-// Tabs Effect
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("custom__tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("custom__tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-document.getElementById("defaultOpen").click();
