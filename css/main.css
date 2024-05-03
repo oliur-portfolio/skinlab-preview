@@ -1746,6 +1746,10 @@ main {
   width: 5rem;
   height: 5rem;
   object-fit: contain;
+}
+
+.footer__socials li a svg,
+.footer__socials li a svg rect {
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -1753,7 +1757,8 @@ main {
   -o-transition: all 0.2s ease-in-out;
 }
 
-.footer__socials li a:hover svg {
+.footer__socials li a:hover svg,
+.footer__socials li a:hover svg rect {
   fill: #d4aea7;
 }
 
@@ -1851,7 +1856,8 @@ main {
   object-fit: contain;
 }
 
-.footer__list-items--days li p {
+.footer__list-items--days li p,
+.footer__list-items--days li a {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -1936,6 +1942,15 @@ main {
   text-decoration: underline;
   color: #6d6d6d;
   display: inline;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.single__checkbox--nieuwsbrief p a:hover {
+  color: #d4aea7;
 }
 
 /* Footer Area */
@@ -2203,6 +2218,7 @@ main {
 .treatment-nav-wrapper {
   overflow-y: hidden;
   overflow-x: auto;
+  margin-top: 5rem;
 }
 
 .treatment-nav-wrapper::-webkit-scrollbar,
@@ -3655,7 +3671,7 @@ td:nth-child(4) {
   background-size: cover;
   background-position: center center;
   background-color: transparent;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 3rem;
 }
 
