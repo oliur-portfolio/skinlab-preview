@@ -476,9 +476,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document
+    .getElementById("openModalBtnFilter")
+    .addEventListener("click", function () {
+      openModal("modalFilter");
+    });
+
+  document
     .getElementById("openModalBtnLogin")
     .addEventListener("click", function () {
-      console.log("Click Login");
       openModal("modalLogin");
     });
 
@@ -486,12 +491,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("openModalBtnRegister")
     .addEventListener("click", function () {
       openModal("modalRegister");
-    });
-
-  document
-    .getElementById("openModalBtnFilter")
-    .addEventListener("click", function () {
-      openModal("modalFilter");
     });
 
   // Product Description text show

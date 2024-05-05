@@ -1553,6 +1553,14 @@
   .geschikt__item--een img {
     height: 15.5rem !important;
   }
+
+  .product__logos-area {
+    display: none;
+  }
+
+  .all-products-area .product-category-nav-area {
+    margin-top: 5rem;
+  }
 }
 
 @media (max-width: 575.98px) {

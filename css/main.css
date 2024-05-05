@@ -2569,11 +2569,6 @@ main {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5rem;
-  border-radius: 6rem;
-  -webkit-border-radius: 6rem;
-  -moz-border-radius: 6rem;
-  -ms-border-radius: 6rem;
-  -o-border-radius: 6rem;
 }
 
 .faq .accordion__question h3 {
@@ -2765,8 +2760,9 @@ td:nth-child(4) {
 .product-category-nav li button,
 .filter-btn {
   background: #fff;
+  color: #000;
   border: 1px solid #d4aea7;
-  width: fit-content;
+  width: max-content;
   min-width: max-content;
   height: 5.7rem;
   display: flex;
@@ -2868,11 +2864,6 @@ td:nth-child(4) {
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
-  border-radius: 5rem;
-  -webkit-border-radius: 5rem;
-  -moz-border-radius: 5rem;
-  -ms-border-radius: 5rem;
-  -o-border-radius: 5rem;
 }
 
 .product__logos-area {
@@ -2903,7 +2894,7 @@ td:nth-child(4) {
 
 .product__logo img {
   width: fit-content;
-  height: 2.2rem;
+  height: 2rem;
   object-fit: contain;
 }
 
@@ -3025,8 +3016,9 @@ td:nth-child(4) {
 }
 
 .products__voorradig-img img {
-  width: max-content;
+  width: 8rem;
   height: 8rem;
+  object-fit: contain;
 }
 
 .products__voorradig-content h6 {
@@ -4858,3 +4850,9 @@ td:nth-child(4) {
 }
 
 /* Beer Slider */
+
+/* Updated Code */
+.products__item--nieuwsbrief .single__checkbox--nieuwsbrief p {
+  margin-top: 0;
+}
+/* Updated Code */
