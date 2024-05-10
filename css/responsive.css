@@ -269,16 +269,6 @@
     gap: 3rem;
   }
 
-  /* .product-category-nav-area {
-    flex-direction: column;
-  }
-
-  .product-category-nav {
-    flex-wrap: wrap;
-    gap: 1.3rem;
-    justify-content: center;
-  } */
-
   .product-category-nav li button {
     padding: 1.35rem 3rem;
     height: auto;
@@ -518,6 +508,19 @@
 
   .footer-area {
     padding-top: 8rem;
+  }
+
+  .about__left--desktop {
+    display: none;
+  }
+
+  .about__left--mobile {
+    display: block;
+    margin-top: 5rem;
+  }
+
+  .vergoed__logo {
+    margin-top: 3rem;
   }
 }
 
@@ -1122,7 +1125,8 @@
   .main-blogs-area,
   .laser-process-area--skin,
   .resultaten__area,
-  .faq-area {
+  .faq-area,
+  .kliniek-content-area {
     padding-top: 6rem;
   }
 

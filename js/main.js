@@ -7,6 +7,14 @@ beerSliderElements.forEach(function (element) {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Tooltip
+  tippy(".price__info-btn", {
+    content: "Global content",
+    theme: "tomato",
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   // Faq More Expand Effect
   const faqExpandBtns = document.querySelectorAll(".faq--expand-btn");
 

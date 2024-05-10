@@ -2583,14 +2583,6 @@ main {
 
 /* FAQ Area */
 
-/* BehandelPrijzen Hero Area */
-.prijzen-hero-area {
-  background-position: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
-    url(../img/prijzen-hero.jpg);
-}
-/* BehandelPrijzen Hero Area */
-
 /* Prijzen Area */
 
 .prijzen-table-list {
@@ -3066,14 +3058,6 @@ td:nth-child(4) {
 
 /* Products Page */
 
-/* De kliniek Hero Area */
-.kliniek-hero-area {
-  background-position: top;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url(../img/kliniek-hero.jpg);
-}
-/* De kliniek Hero Area */
-
 /* kliniek Content Area */
 
 .kliniek-content-area {
@@ -3084,6 +3068,7 @@ td:nth-child(4) {
   display: flex;
   flex-direction: column;
   gap: 10rem;
+  margin-top: 5rem;
 }
 
 .kliniek-content__item {
@@ -3155,10 +3140,21 @@ td:nth-child(4) {
   position: sticky;
   top: 10rem;
   left: 0;
+  padding-left: 2rem;
+  border-left: 0.2rem solid #dbbdb6;
+}
+
+.about__left h4 {
+  font-size: 2.2rem;
+  line-height: 3.2rem;
 }
 
 .about__left p {
   margin-top: 2rem;
+}
+
+.about__left--mobile {
+  display: none;
 }
 
 .about__right {
@@ -4133,6 +4129,16 @@ td:nth-child(4) {
   margin-right: auto;
 }
 
+.vergoed__logo {
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 /* Vergoed Area */
 
 /* Zorgcheck Page */
@@ -4855,4 +4861,23 @@ td:nth-child(4) {
 .products__item--nieuwsbrief .single__checkbox--nieuwsbrief p {
   margin-top: 0;
 }
+
+.tippy-box[data-theme~="tomato"] {
+  border: 0.1rem solid #d4aea7;
+  background-color: #fff;
+  color: #6d6d6d;
+  width: 100%;
+  max-width: 17rem !important;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}
+
 /* Updated Code */
