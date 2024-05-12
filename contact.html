@@ -45,6 +45,181 @@
   </head>
 
   <body>
+    <!-- All Modals -->
+    <div class="custom__modals">
+      <!-- Login Modal -->
+      <div
+        class="filter-sidebar-overlay modal modal--center modal--login"
+        id="modalLogin"
+      >
+        <div class="filter-sidebar-wrapper">
+          <div class="filter-sidebar-area">
+            <div class="filter-sidebar">
+              <button class="filter-sidebar__close" onclick="closeAllModals()">
+                <img src="img/close.png" alt="close" />
+              </button>
+
+              <div class="filter-sidebar__header">
+                <h2 class="heading-5">Inloggen</h2>
+              </div>
+
+              <div class="filter-sidebar__close-title">
+                <p>Sluit</p>
+              </div>
+
+              <form class="auth-form">
+                <div class="auth__inputs">
+                  <!-- Single Input -->
+                  <div class="auth__input">
+                    <input
+                      type="email"
+                      class="input-style"
+                      id="loginEmail"
+                      name="loginEmail"
+                      placeholder="E-mailadres"
+                    />
+                  </div>
+                  <!-- Single Input -->
+
+                  <!-- Single Input -->
+                  <div class="auth__input">
+                    <input
+                      type="password"
+                      class="input-style input-style--password-login"
+                      id="loginPassword"
+                      name="loginPassword"
+                      placeholder="Wachtwoord"
+                    />
+
+                    <button
+                      type="button"
+                      class="password__eye password__eye--login"
+                    >
+                      Toon
+                    </button>
+                  </div>
+                  <!-- Single Input -->
+                </div>
+
+                <a class="auth__forget-pass" href="#">Wachtwoord vergeten?</a>
+
+                <button
+                  type="submit"
+                  class="custom-btn custom-btn--standard custom-btn--full custom-btn--round"
+                >
+                  Inloggen
+                </button>
+
+                <button
+                  type="button"
+                  class="custom-btn custom-btn--standard custom-btn-secondary custom-btn--social custom-btn--full"
+                >
+                  <span><img src="img/facebook.svg" alt="facebook" /></span>
+                  Login met Facebook
+                </button>
+
+                <!-- Of Divider -->
+                <div class="total__products auth-divider">
+                  <div class="total__products-line"></div>
+                  <p>OF</p>
+                  <div class="total__products-line"></div>
+                </div>
+                <!-- Of Divider -->
+
+                <button
+                  id="openModalBtnRegister"
+                  type="button"
+                  class="custom-btn custom-btn--standard custom-btn-secondary custom-btn--full"
+                >
+                  Maak een account aan
+                </button>
+
+                <p class="auth__bottom-note">
+                  Maak een account aan en krijg <a href="#">100</a> spaarpunten
+                  <a href="#">cadeau</a>!
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Login Modal -->
+
+      <!-- Register Modal -->
+      <div
+        class="filter-sidebar-overlay modal modal--center modal--register"
+        id="modalRegister"
+      >
+        <div class="filter-sidebar-wrapper">
+          <div class="filter-sidebar-area">
+            <div class="filter-sidebar">
+              <button class="filter-sidebar__close" onclick="closeAllModals()">
+                <img src="img/close.png" alt="close" />
+              </button>
+
+              <div class="filter-sidebar__header">
+                <h2 class="heading-5">Registreren</h2>
+              </div>
+
+              <div class="filter-sidebar__close-title">
+                <p>Sluit</p>
+              </div>
+
+              <form class="auth-form">
+                <div class="auth__inputs">
+                  <!-- Single Input -->
+                  <div class="auth__input">
+                    <input
+                      type="email"
+                      class="input-style"
+                      id="registerEmail"
+                      name="registerEmail"
+                      placeholder="E-mailadres"
+                    />
+                  </div>
+                  <!-- Single Input -->
+
+                  <!-- Single Input -->
+                  <div class="auth__input">
+                    <input
+                      type="password"
+                      class="input-style input-style--password-register"
+                      id="registerPassword"
+                      name="registerPassword"
+                      placeholder="Wachtwoord"
+                    />
+
+                    <button
+                      type="button"
+                      class="password__eye password__eye--register"
+                    >
+                      Toon
+                    </button>
+                  </div>
+                  <!-- Single Input -->
+                </div>
+
+                <button
+                  type="submit"
+                  class="custom-btn custom-btn--standard custom-btn-secondary custom-btn--full"
+                >
+                  Registrer
+                </button>
+
+                <p class="auth__bottom-note">
+                  Na registratie krijg je <a href="#">100</a> spaarpunten
+                  <a href="#">cadeau,</a> deze zijn te vinden in je
+                  <a href="#">geregistreerde account.</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Register Modal -->
+    </div>
+    <!-- All Modals -->
+
     <!-- Header Area -->
     <header class="header">
       <!-- Top Header -->
@@ -55,11 +230,12 @@
         >
 
         <ul class="top-header__links">
-          <li><a href="#">Over ons</a></li>
-          <li><a href="#">Blog</a></li>
-          <li class="top-header__links-faq"><a href="#">FAQ</a></li>
-          <li><a href="#">Recensies</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" class="top-header__link">Over ons</a></li>
+          <li><a href="#" class="top-header__link">Blog</a></li>
+          <li><a href="#" class="top-header__link">FAQ</a></li>
+          <li><a href="#" class="top-header__link">Recensies</a></li>
+          <li><a href="#" class="top-header__link">Contact</a></li>
+          <span class="target2"></span>
         </ul>
 
         <a class="top-header__contact" href="mailto:info@skinlabclinic.nl"
@@ -565,7 +741,9 @@
               <button>
                 <img id="searchOpen" src="img/search.png" alt="search" />
               </button>
-              <button><img src="img/user.png" alt="user" /></button>
+              <button id="openModalBtnLogin">
+                <img src="img/user.png" alt="user" />
+              </button>
               <button class="cart-btn">
                 <img src="img/cart.png" alt="cart" />
               </button>
@@ -633,12 +811,32 @@
             <div class="main-contact__items">
               <!-- Single Item -->
               <div class="main-contact__item">
-                <img src="img/telephone.png" alt="contact icon" />
+                <a
+                  href="tel:+310850602446"
+                  class="main-contact__item-icon main-contact__item-icon--stroke"
+                >
+                  <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                  <svg
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.3308 15.9402L15.6608 14.6101C15.8655 14.403 16.1092 14.2384 16.3778 14.1262C16.6465 14.014 16.9347 13.9563 17.2258 13.9563C17.517 13.9563 17.8052 14.014 18.0739 14.1262C18.3425 14.2384 18.5862 14.403 18.7908 14.6101L20.3508 16.1702C20.5579 16.3748 20.7224 16.6183 20.8346 16.887C20.9468 17.1556 21.0046 17.444 21.0046 17.7351C21.0046 18.0263 20.9468 18.3146 20.8346 18.5833C20.7224 18.8519 20.5579 19.0954 20.3508 19.3L19.6408 20.02C19.1516 20.514 18.5189 20.841 17.8329 20.9541C17.1469 21.0672 16.4427 20.9609 15.8208 20.6501C10.4691 17.8952 6.11008 13.5396 3.35083 8.19019C3.03976 7.56761 2.93414 6.86242 3.04914 6.17603C3.16414 5.48963 3.49384 4.85731 3.99085 4.37012L4.70081 3.65015C5.11674 3.23673 5.67937 3.00464 6.26581 3.00464C6.85225 3.00464 7.41488 3.23673 7.83081 3.65015L9.40082 5.22021C9.81424 5.63615 10.0463 6.19871 10.0463 6.78516C10.0463 7.3716 9.81424 7.93416 9.40082 8.3501L8.0708 9.68018C8.95021 10.8697 9.91617 11.9926 10.9608 13.04C11.9994 14.0804 13.116 15.04 14.3008 15.9102L14.3308 15.9402Z"
+                      stroke="#000000"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
 
                 <h3 class="heading--36">Telefoon</h3>
 
                 <div class="main-contact__item-content">
-                  <a class="desc--24" href="tel:+310850602446"
+                  <a class="desc--20" href="tel:+310850602446"
                     >+31 (0)85 060 24 46</a
                   >
                 </div>
@@ -647,12 +845,28 @@
 
               <!-- Single Item -->
               <div class="main-contact__item">
-                <img src="img/email.png" alt="contact icon" />
+                <a
+                  href="mailto:info@skinlabclinic.nl"
+                  class="main-contact__item-icon main-contact__item-icon--fill"
+                >
+                  <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                  <svg
+                    fill="#000000"
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 1024 1024"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1023.46 232a31.629 31.629 0 0 0-2.48-18.271C1012.917 178.288 987.3 160 944.005 160h-832c-38.08 0-79.105 14-99.28 41.472-1.745 1.328-3.409 2.832-4.912 4.576-6.449 7.44-8.705 17.009-7.264 26.033-.288 2.592-.544 5.2-.544 7.92v512c0 53.024 58.992 112 112 112h832c53.024 0 80-58.976 80-112v-512c0-2.832-.368-5.313-.544-8.001zm-911.459-8l832.001-.001h.432L512.002 568.655 81.314 225.407C91.106 223.599 103.154 224 112 224zm832.001 575.999H112.003c-17.648 0-48-30.336-48-48V293.551l427.04 341.648c6.016 5.2 13.487 7.792 20.959 7.792a32.046 32.046 0 0 0 20.976-7.792l427.024-341.632v458.432c0 17.664 1.664 48-16 48z"
+                    />
+                  </svg>
+                </a>
 
                 <h3 class="heading--36">E-mail</h3>
 
                 <div class="main-contact__item-content">
-                  <a class="desc--24" href="mailto:info@skinlabclinic.nl"
+                  <a class="desc--20" href="mailto:info@skinlabclinic.nl"
                     >info@skinlabclinic.nl</a
                   >
                 </div>
@@ -661,12 +875,31 @@
 
               <!-- Single Item -->
               <div class="main-contact__item">
-                <img src="img/whatsapp.png" alt="contact icon" />
+                <a
+                  href="https://wa.me/310850602446"
+                  class="main-contact__item-icon main-contact__item-icon--fill"
+                >
+                  <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                  <svg
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
+                      fill="#000000"
+                    />
+                  </svg>
+                </a>
 
                 <h3 class="heading--36">WhatsApp</h3>
 
                 <div class="main-contact__item-content">
-                  <p class="desc--24">Start WhatsApp chat</p>
+                  <p class="desc--20">Start WhatsApp chat</p>
                 </div>
               </div>
               <!-- Single Item -->
@@ -696,7 +929,27 @@
             <div class="main-contact__items">
               <!-- Single Item -->
               <div class="main-contact__item">
-                <img src="img/map.png" alt="contact icon" />
+                <a
+                  href="http://maps.google.com/?q=Wierdensehoek"
+                  class="main-contact__item-icon main-contact__item-icon--stroke"
+                >
+                  <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                  <svg
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 6H12.01M9 20L3 17V4L5 5M9 20L15 17M9 20V14M15 17L21 20V7L19 6M15 17V14M15 6.2C15 7.96731 13.5 9.4 12 11C10.5 9.4 9 7.96731 9 6.2C9 4.43269 10.3431 3 12 3C13.6569 3 15 4.43269 15 6.2Z"
+                      stroke="#000000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
 
                 <h3 class="heading--36">Op de kaart</h3>
 
@@ -716,56 +969,95 @@
 
               <!-- Single Item -->
               <div class="main-contact__item">
-                <img src="img/location.png" alt="contact icon" />
+                <a
+                  href="http://maps.google.com/?q=Wierdensehoek"
+                  class="main-contact__item-icon main-contact__item-icon--stroke"
+                >
+                  <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                  <svg
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.7 15C4.03377 15.6353 3 16.5205 3 17.4997C3 19.4329 7.02944 21 12 21C16.9706 21 21 19.4329 21 17.4997C21 16.5205 19.9662 15.6353 18.3 15M12 9H12.01M18 9C18 13.0637 13.5 15 12 18C10.5 15 6 13.0637 6 9C6 5.68629 8.68629 3 12 3C15.3137 3 18 5.68629 18 9ZM13 9C13 9.55228 12.5523 10 12 10C11.4477 10 11 9.55228 11 9C11 8.44772 11.4477 8 12 8C12.5523 8 13 8.44772 13 9Z"
+                      stroke="#000000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
 
                 <h3 class="heading--36">Adresgegevens</h3>
 
                 <div class="main-contact__item-content">
-                  <p class="desc--24">Skinlab Clinic</p>
-                  <p class="desc--24">Boddenstraat 36</p>
-                  <p class="desc--24">7607 BN - Almelo</p>
+                  <p class="desc--20">Skinlab Clinic</p>
+                  <p class="desc--20">Boddenstraat 36</p>
+                  <p class="desc--20">7607 BN - Almelo</p>
                 </div>
               </div>
               <!-- Single Item -->
 
               <!-- Single Item -->
               <div class="main-contact__item">
-                <img src="img/clock.png" alt="contact icon" />
+                <div
+                  class="main-contact__item-icon main-contact__item-icon--stroke"
+                >
+                  <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                  <svg
+                    width="800px"
+                    height="800px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                      stroke="#000000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
 
                 <h3 class="heading--36">Openingstijden</h3>
 
                 <div class="main-contact__item-content">
-                  <a href="#" class="desc--24">
+                  <a href="#" class="desc--20">
                     <span class="footer-day">Maandag:</span>
                     <span class="footer-time">09:00 - 17:30</span>
                   </a>
 
-                  <a href="#" class="desc--24">
+                  <a href="#" class="desc--20">
                     <span class="footer-day">Dinsdag:</span>
                     <span class="footer-time">09:00 - 12:00</span>
                   </a>
 
-                  <a href="#" class="desc--24">
+                  <a href="#" class="desc--20">
                     <span class="footer-day">Woensdag:</span>
                     <span class="footer-time">09:00 - 17:30</span>
                   </a>
 
-                  <a href="#" class="desc--24">
+                  <a href="#" class="desc--20">
                     <span class="footer-day">Donderdag:</span>
                     <span class="footer-time">09:00 - 17:30</span>
                   </a>
 
-                  <a href="#" class="desc--24">
+                  <a href="#" class="desc--20">
                     <span class="footer-day">Vrijdag:</span>
                     <span class="footer-time">09:00 - 13:00</span>
                   </a>
 
-                  <a href="#" class="desc--24">
+                  <a href="#" class="desc--20">
                     <span class="footer-day">Zaterdag:</span>
                     <span class="footer-time">Op afspraak</span>
                   </a>
 
-                  <a href="#" class="desc--24">
+                  <a href="#" class="desc--20">
                     <span class="footer-day">Zondag:</span>
                     <span class="footer-time">Gesloten</span>
                   </a>
@@ -792,13 +1084,93 @@
 
             <ul class="footer__socials">
               <li>
-                <a href="#"><img src="img/facebook.png" alt="facebook" /></a>
+                <a href="#">
+                  <svg
+                    viewBox="0 0 72 72"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <title>Facebook</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g
+                      id="Page-1"
+                      stroke="none"
+                      stroke-width="1"
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <g
+                        id="Social-Icons---Rounded-Black"
+                        transform="translate(-152.000000, -43.000000)"
+                      >
+                        <g
+                          id="Facebook"
+                          transform="translate(152.000000, 43.000000)"
+                        >
+                          <rect
+                            id="Rounded"
+                            fill="#000000"
+                            x="0"
+                            y="0"
+                            width="72"
+                            height="72"
+                            rx="8"
+                          ></rect>
+                          <path
+                            d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z"
+                            fill="#FFFFFF"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </a>
               </li>
               <li>
-                <a href="#"><img src="img/instagram.png" alt="instagram" /></a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    id="Capa_1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 24 24"
+                    style="enable-background: new 0 0 24 24"
+                    xml:space="preserve"
+                    width="512"
+                    height="512"
+                  >
+                    <g>
+                      <path
+                        d="M12,2.162c3.204,0,3.584,0.012,4.849,0.07c1.308,0.06,2.655,0.358,3.608,1.311c0.962,0.962,1.251,2.296,1.311,3.608   c0.058,1.265,0.07,1.645,0.07,4.849c0,3.204-0.012,3.584-0.07,4.849c-0.059,1.301-0.364,2.661-1.311,3.608   c-0.962,0.962-2.295,1.251-3.608,1.311c-1.265,0.058-1.645,0.07-4.849,0.07s-3.584-0.012-4.849-0.07   c-1.291-0.059-2.669-0.371-3.608-1.311c-0.957-0.957-1.251-2.304-1.311-3.608c-0.058-1.265-0.07-1.645-0.07-4.849   c0-3.204,0.012-3.584,0.07-4.849c0.059-1.296,0.367-2.664,1.311-3.608c0.96-0.96,2.299-1.251,3.608-1.311   C8.416,2.174,8.796,2.162,12,2.162 M12,0C8.741,0,8.332,0.014,7.052,0.072C5.197,0.157,3.355,0.673,2.014,2.014   C0.668,3.36,0.157,5.198,0.072,7.052C0.014,8.332,0,8.741,0,12c0,3.259,0.014,3.668,0.072,4.948c0.085,1.853,0.603,3.7,1.942,5.038   c1.345,1.345,3.186,1.857,5.038,1.942C8.332,23.986,8.741,24,12,24c3.259,0,3.668-0.014,4.948-0.072   c1.854-0.085,3.698-0.602,5.038-1.942c1.347-1.347,1.857-3.184,1.942-5.038C23.986,15.668,24,15.259,24,12   c0-3.259-0.014-3.668-0.072-4.948c-0.085-1.855-0.602-3.698-1.942-5.038c-1.343-1.343-3.189-1.858-5.038-1.942   C15.668,0.014,15.259,0,12,0z"
+                      />
+                      <path
+                        d="M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162   C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z"
+                      />
+                      <circle cx="18.406" cy="5.594" r="1.44" />
+                    </g>
+                  </svg>
+                </a>
               </li>
               <li>
-                <a href="#"><img src="img/tiktok.png" alt="tiktok" /></a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    shape-rendering="geometricPrecision"
+                    text-rendering="geometricPrecision"
+                    image-rendering="optimizeQuality"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    viewBox="0 0 1000 1000"
+                  >
+                    <path
+                      d="M906.25 0H93.75C42.19 0 0 42.19 0 93.75v812.49c0 51.57 42.19 93.75 93.75 93.75l812.5.01c51.56 0 93.75-42.19 93.75-93.75V93.75C1000 42.19 957.81 0 906.25 0zM684.02 319.72c-32.42-21.13-55.81-54.96-63.11-94.38-1.57-8.51-2.45-17.28-2.45-26.25H515l-.17 414.65c-1.74 46.43-39.96 83.7-86.8 83.7-14.57 0-28.27-3.63-40.35-9.99-27.68-14.57-46.63-43.58-46.63-76.97 0-47.96 39.02-86.98 86.97-86.98 8.95 0 17.54 1.48 25.66 4.01V421.89c-8.41-1.15-16.95-1.86-25.66-1.86-105.01 0-190.43 85.43-190.43 190.45 0 64.42 32.18 121.44 81.3 155.92 30.93 21.72 68.57 34.51 109.14 34.51 105.01 0 190.43-85.43 190.43-190.43V400.21c40.58 29.12 90.3 46.28 143.95 46.28V343.03c-28.89 0-55.8-8.59-78.39-23.31z"
+                    />
+                  </svg>
+                </a>
               </li>
             </ul>
           </div>
@@ -820,6 +1192,37 @@
                 <img src="img/arrow-down.png" alt="arrow" />
               </button>
             </form>
+
+            <div class="single__checkbox single__checkbox--nieuwsbrief">
+              <input
+                class="custom-checkbox"
+                type="checkbox"
+                id="nieuwsbriefMobile"
+                name="nieuwsbriefMobile"
+                value="nieuwsbriefMobile"
+              />
+
+              <label for="nieuwsbriefMobile">
+                <div class="checkbox__content">
+                  <img
+                    class="radio-icon radio-icon--uncheck"
+                    src="img/checkbox-uncheck.png"
+                    alt="uncheck"
+                  />
+
+                  <img
+                    class="radio-icon radio-icon--check"
+                    src="img/checkbox-check.png"
+                    alt="check"
+                  />
+
+                  <p>
+                    Ik ga akkoord met de
+                    <a href="#">algemene voorwaarden</a>
+                  </p>
+                </div>
+              </label>
+            </div>
           </div>
           <!-- Footer List -->
 
@@ -831,7 +1234,8 @@
               <ul class="footer__list-items">
                 <li><a href="#">Over ons</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Ervaringen</a></li>
+                <li><a href="#">Veel gestelde vragen</a></li>
+                <li><a href="#">Recensies</a></li>
                 <li><a href="#">Vacatures</a></li>
                 <li><a href="#">Apparatuur</a></li>
               </ul>
@@ -873,46 +1277,46 @@
 
               <ul class="footer__list-items footer__list-items--days">
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Maandag</span>
-                    <span class="footer-time">09:00 - 17:30</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Maandag</span>
+                    <span class="footer-time">09:00 - 17:30</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Dinsdag</span>
-                    <span class="footer-time">09:00 - 12:00</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Dinsdag</span>
+                    <span class="footer-time">09:00 - 12:00</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Woensdag</span>
-                    <span class="footer-time">09:00 - 17:30</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Woensdag</span>
+                    <span class="footer-time">09:00 - 17:30</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Donderdag</span>
-                    <span class="footer-time">09:00 - 17:30</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Donderdag</span>
+                    <span class="footer-time">09:00 - 17:30</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Vrijdag</span>
-                    <span class="footer-time">09:00 - 13:00</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Vrijdag</span>
+                    <span class="footer-time">09:00 - 13:00</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Zaterdag</span>
-                    <span class="footer-time">Op afspraak</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Zaterdag</span>
+                    <span class="footer-time">Op afspraak</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Zondag</span>
-                    <span class="footer-time">Gesloten</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Zondag</span>
+                    <span class="footer-time">Gesloten</span>
+                  </p>
                 </li>
               </ul>
             </div>
@@ -936,6 +1340,37 @@
                     <img src="img/arrow-down.png" alt="arrow" />
                   </button>
                 </form>
+
+                <div class="single__checkbox single__checkbox--nieuwsbrief">
+                  <input
+                    class="custom-checkbox"
+                    type="checkbox"
+                    id="nieuwsbriefDesktop"
+                    name="nieuwsbriefDesktop"
+                    value="nieuwsbriefDesktop"
+                  />
+
+                  <label for="nieuwsbriefDesktop">
+                    <div class="checkbox__content">
+                      <img
+                        class="radio-icon radio-icon--uncheck"
+                        src="img/checkbox-uncheck.png"
+                        alt="uncheck"
+                      />
+
+                      <img
+                        class="radio-icon radio-icon--check"
+                        src="img/checkbox-check.png"
+                        alt="check"
+                      />
+
+                      <p>
+                        Ik ga akkoord met de
+                        <a href="#">algemene voorwaarden</a>
+                      </p>
+                    </div>
+                  </label>
+                </div>
               </div>
               <!-- Footer List -->
 

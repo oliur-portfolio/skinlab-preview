@@ -510,17 +510,23 @@
     padding-top: 8rem;
   }
 
-  .about__left--desktop {
+  .about__left--desktop,
+  .blog__left--desktop {
     display: none;
   }
 
-  .about__left--mobile {
+  .about__left--mobile,
+  .blog__left--mobile {
     display: block;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 
   .vergoed__logo {
     margin-top: 3rem;
+  }
+
+  .blog__right {
+    margin-top: 0;
   }
 }
 
@@ -1126,7 +1132,8 @@
   .laser-process-area--skin,
   .resultaten__area,
   .faq-area,
-  .kliniek-content-area {
+  .kliniek-content-area,
+  .main-contact-area {
     padding-top: 6rem;
   }
 
@@ -1165,14 +1172,23 @@
   }
 
   .zorgcheck__step-line {
-    width: 3.5rem;
+    width: 5rem;
   }
 
-  .zorgcheck__step p {
+  .zorgcheck__step-num {
     font-size: 2rem;
     line-height: 1;
     width: 3rem;
     height: 3rem;
+  }
+
+  .zorgcheck__step-name {
+    max-width: 10rem;
+  }
+
+  .zorgcheck__step-name p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
   }
 
   .zorgcheck__steps,

@@ -1,7 +1,6 @@
-// Select all elements with class name 'beer-slider'
+// Beer Slider
 var beerSliderElements = document.querySelectorAll(".beer-slider");
 
-// Iterate over each element and initialize BeerSlider
 beerSliderElements.forEach(function (element) {
   var slider = new BeerSlider(element);
 });
@@ -484,12 +483,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document
-    .getElementById("openModalBtnFilter")
-    .addEventListener("click", function () {
-      openModal("modalFilter");
-    });
-
-  document
     .getElementById("openModalBtnLogin")
     .addEventListener("click", function () {
       openModal("modalLogin");
@@ -499,6 +492,12 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("openModalBtnRegister")
     .addEventListener("click", function () {
       openModal("modalRegister");
+    });
+
+  document
+    .getElementById("openModalBtnFilter")
+    .addEventListener("click", function () {
+      openModal("modalFilter");
     });
 
   // Product Description text show

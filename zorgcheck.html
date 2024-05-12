@@ -810,19 +810,46 @@
             <!-- Steps -->
             <ul class="zorgcheck__steps">
               <li class="zorgcheck__step zorgcheck__step1">
-                <p>1</p>
+                <div class="zorgcheck__step-num">
+                  <p>1</p>
+
+                  <div class="zorgcheck__step-name">
+                    <p>Geslacht</p>
+                  </div>
+                </div>
               </li>
+
               <li class="zorgcheck__step zorgcheck__step2">
                 <span class="zorgcheck__step-line"></span>
-                <p>2</p>
+                <div class="zorgcheck__step-num">
+                  <p>2</p>
+
+                  <div class="zorgcheck__step-name">
+                    <p>Geboortedatum</p>
+                  </div>
+                </div>
               </li>
+
               <li class="zorgcheck__step zorgcheck__step3">
                 <span class="zorgcheck__step-line"></span>
-                <p>3</p>
+                <div class="zorgcheck__step-num">
+                  <p>3</p>
+
+                  <div class="zorgcheck__step-name">
+                    <p>Zorgverzekering</p>
+                  </div>
+                </div>
               </li>
+
               <li class="zorgcheck__step zorgcheck__step4">
                 <span class="zorgcheck__step-line"></span>
-                <p>4</p>
+                <div class="zorgcheck__step-num">
+                  <p>4</p>
+
+                  <div class="zorgcheck__step-name">
+                    <p>Aanvullende Zorgverzekering</p>
+                  </div>
+                </div>
               </li>
             </ul>
             <!-- Steps -->
@@ -1352,19 +1379,52 @@
                 Ontvang de resultaten gratis per email
               </h2>
 
-              <form action="" class="footer-input-form">
-                <input
-                  class="input-style"
-                  type="text"
-                  name="voer"
-                  id="voer"
-                  placeholder="Voer je e-mailadres in"
-                />
+              <div class="footer-input-form-area">
+                <form action="" class="footer-input-form">
+                  <input
+                    class="input-style"
+                    type="text"
+                    name="voer"
+                    id="voer"
+                    placeholder="Voer je e-mailadres in"
+                  />
 
-                <button type="submit" class="footer-input__submit-btn">
-                  <img src="img/arrow-down.png" alt="arrow" />
-                </button>
-              </form>
+                  <button type="submit" class="footer-input__submit-btn">
+                    <img src="img/arrow-down.png" alt="arrow" />
+                  </button>
+                </form>
+
+                <div class="single__checkbox single__checkbox--nieuwsbrief">
+                  <input
+                    class="custom-checkbox"
+                    type="checkbox"
+                    id="nieuwsbriefZorgcheck"
+                    name="nieuwsbriefZorgcheck"
+                    value="nieuwsbriefZorgcheck"
+                  />
+
+                  <label for="nieuwsbriefZorgcheck">
+                    <div class="checkbox__content">
+                      <img
+                        class="radio-icon radio-icon--uncheck"
+                        src="img/checkbox-uncheck.png"
+                        alt="uncheck"
+                      />
+
+                      <img
+                        class="radio-icon radio-icon--check"
+                        src="img/checkbox-check.png"
+                        alt="check"
+                      />
+
+                      <p>
+                        Ik ga akkoord met de
+                        <a href="#">algemene voorwaarden</a>
+                      </p>
+                    </div>
+                  </label>
+                </div>
+              </div>
             </div>
             <!-- NewsLetter -->
           </div>
