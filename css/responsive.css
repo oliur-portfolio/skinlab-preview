@@ -528,6 +528,14 @@
   .blog__right {
     margin-top: 0;
   }
+
+  .apparatuur__right--desktop {
+    display: none;
+  }
+
+  .apparatuur__right--mobile {
+    display: block;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -1555,6 +1563,16 @@
 
   .search__product {
     gap: 2rem;
+    flex-direction: column;
+  }
+
+  .search__product-image {
+    width: 8rem;
+    max-width: 100%;
+  }
+
+  .search__product-content {
+    flex: 1;
   }
 
   .search__products {

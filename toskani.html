@@ -45,6 +45,181 @@
   </head>
 
   <body>
+    <!-- All Modals -->
+    <div class="custom__modals">
+      <!-- Login Modal -->
+      <div
+        class="filter-sidebar-overlay modal modal--center modal--login"
+        id="modalLogin"
+      >
+        <div class="filter-sidebar-wrapper">
+          <div class="filter-sidebar-area">
+            <div class="filter-sidebar">
+              <button class="filter-sidebar__close" onclick="closeAllModals()">
+                <img src="img/close.png" alt="close" />
+              </button>
+
+              <div class="filter-sidebar__header">
+                <h2 class="heading-5">Inloggen</h2>
+              </div>
+
+              <div class="filter-sidebar__close-title">
+                <p>Sluit</p>
+              </div>
+
+              <form class="auth-form">
+                <div class="auth__inputs">
+                  <!-- Single Input -->
+                  <div class="auth__input">
+                    <input
+                      type="email"
+                      class="input-style"
+                      id="loginEmail"
+                      name="loginEmail"
+                      placeholder="E-mailadres"
+                    />
+                  </div>
+                  <!-- Single Input -->
+
+                  <!-- Single Input -->
+                  <div class="auth__input">
+                    <input
+                      type="password"
+                      class="input-style input-style--password-login"
+                      id="loginPassword"
+                      name="loginPassword"
+                      placeholder="Wachtwoord"
+                    />
+
+                    <button
+                      type="button"
+                      class="password__eye password__eye--login"
+                    >
+                      Toon
+                    </button>
+                  </div>
+                  <!-- Single Input -->
+                </div>
+
+                <a class="auth__forget-pass" href="#">Wachtwoord vergeten?</a>
+
+                <button
+                  type="submit"
+                  class="custom-btn custom-btn--standard custom-btn--full custom-btn--round"
+                >
+                  Inloggen
+                </button>
+
+                <button
+                  type="button"
+                  class="custom-btn custom-btn--standard custom-btn-secondary custom-btn--social custom-btn--full"
+                >
+                  <span><img src="img/facebook.svg" alt="facebook" /></span>
+                  Login met Facebook
+                </button>
+
+                <!-- Of Divider -->
+                <div class="total__products auth-divider">
+                  <div class="total__products-line"></div>
+                  <p>OF</p>
+                  <div class="total__products-line"></div>
+                </div>
+                <!-- Of Divider -->
+
+                <button
+                  id="openModalBtnRegister"
+                  type="button"
+                  class="custom-btn custom-btn--standard custom-btn-secondary custom-btn--full"
+                >
+                  Maak een account aan
+                </button>
+
+                <p class="auth__bottom-note">
+                  Maak een account aan en krijg <a href="#">100</a> spaarpunten
+                  <a href="#">cadeau</a>!
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Login Modal -->
+
+      <!-- Register Modal -->
+      <div
+        class="filter-sidebar-overlay modal modal--center modal--register"
+        id="modalRegister"
+      >
+        <div class="filter-sidebar-wrapper">
+          <div class="filter-sidebar-area">
+            <div class="filter-sidebar">
+              <button class="filter-sidebar__close" onclick="closeAllModals()">
+                <img src="img/close.png" alt="close" />
+              </button>
+
+              <div class="filter-sidebar__header">
+                <h2 class="heading-5">Registreren</h2>
+              </div>
+
+              <div class="filter-sidebar__close-title">
+                <p>Sluit</p>
+              </div>
+
+              <form class="auth-form">
+                <div class="auth__inputs">
+                  <!-- Single Input -->
+                  <div class="auth__input">
+                    <input
+                      type="email"
+                      class="input-style"
+                      id="registerEmail"
+                      name="registerEmail"
+                      placeholder="E-mailadres"
+                    />
+                  </div>
+                  <!-- Single Input -->
+
+                  <!-- Single Input -->
+                  <div class="auth__input">
+                    <input
+                      type="password"
+                      class="input-style input-style--password-register"
+                      id="registerPassword"
+                      name="registerPassword"
+                      placeholder="Wachtwoord"
+                    />
+
+                    <button
+                      type="button"
+                      class="password__eye password__eye--register"
+                    >
+                      Toon
+                    </button>
+                  </div>
+                  <!-- Single Input -->
+                </div>
+
+                <button
+                  type="submit"
+                  class="custom-btn custom-btn--standard custom-btn-secondary custom-btn--full"
+                >
+                  Registrer
+                </button>
+
+                <p class="auth__bottom-note">
+                  Na registratie krijg je <a href="#">100</a> spaarpunten
+                  <a href="#">cadeau,</a> deze zijn te vinden in je
+                  <a href="#">geregistreerde account.</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Register Modal -->
+    </div>
+    <!-- All Modals -->
+
     <!-- Header Area -->
     <header class="header">
       <!-- Top Header -->
@@ -55,11 +230,12 @@
         >
 
         <ul class="top-header__links">
-          <li><a href="#">Over ons</a></li>
-          <li><a href="#">Blog</a></li>
-          <li class="top-header__links-faq"><a href="#">FAQ</a></li>
-          <li><a href="#">Recensies</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" class="top-header__link">Over ons</a></li>
+          <li><a href="#" class="top-header__link">Blog</a></li>
+          <li><a href="#" class="top-header__link">FAQ</a></li>
+          <li><a href="#" class="top-header__link">Recensies</a></li>
+          <li><a href="#" class="top-header__link">Contact</a></li>
+          <span class="target2"></span>
         </ul>
 
         <a class="top-header__contact" href="mailto:info@skinlabclinic.nl"
@@ -565,7 +741,9 @@
               <button>
                 <img id="searchOpen" src="img/search.png" alt="search" />
               </button>
-              <button><img src="img/user.png" alt="user" /></button>
+              <button id="openModalBtnLogin">
+                <img src="img/user.png" alt="user" />
+              </button>
               <button class="cart-btn">
                 <img src="img/cart.png" alt="cart" />
               </button>
@@ -684,9 +862,41 @@
                     praesentium, placeat optio nobis tempore dolorem asperiores
                     explicabo saepe, error ducimus perferendis animi.
                   </p>
+
+                  <!-- Mobile Version -->
+                  <div class="apparatuur__right--mobile">
+                    <h4 class="heading--36">Gebruik voor o.a</h4>
+
+                    <div class="apparatuur__gebruik-list">
+                      <div class="apparatuur__gebruik">
+                        <img src="img/gebruik-1.png" alt="gebruik icon" />
+
+                        <p class="desc--20">Opkomende pigment vlekken</p>
+                      </div>
+
+                      <div class="apparatuur__gebruik">
+                        <img src="img/gebruik-2.png" alt="gebruik icon" />
+
+                        <p class="desc--20">Beginnende couperose</p>
+                      </div>
+
+                      <div class="apparatuur__gebruik">
+                        <img src="img/gebruik-3.png" alt="gebruik icon" />
+
+                        <p class="desc--20">Inzicht in de huidstructuur</p>
+                      </div>
+                    </div>
+
+                    <a
+                      href="#"
+                      class="custom-btn custom-btn--standard custom-btn--blog"
+                      >Plan je gratis huidanalyse</a
+                    >
+                  </div>
+                  <!-- Mobile Version -->
                 </div>
 
-                <div class="apparatuur__right">
+                <div class="apparatuur__right apparatuur__right--desktop">
                   <h4 class="heading--36">Gebruik voor o.a</h4>
 
                   <div class="apparatuur__gebruik-list">
@@ -709,7 +919,9 @@
                     </div>
                   </div>
 
-                  <a href="#" class="custom-btn custom-btn--standard"
+                  <a
+                    href="#"
+                    class="custom-btn custom-btn--standard custom-btn--blog"
                     >Plan je gratis huidanalyse</a
                   >
                 </div>
@@ -772,19 +984,54 @@
                   <div class="footer__list toskani__product-newsletter">
                     <h5>Nieuwsbrief</h5>
 
-                    <form action="" class="footer-input-form">
-                      <input
-                        class="input-style"
-                        type="text"
-                        name="voer"
-                        id="voer"
-                        placeholder="Voer je e-mailadres in"
-                      />
+                    <div class="footer-input-form-area">
+                      <form action="" class="footer-input-form">
+                        <input
+                          class="input-style"
+                          type="text"
+                          name="voer"
+                          id="voer"
+                          placeholder="Voer je e-mailadres in"
+                        />
 
-                      <button type="submit" class="footer-input__submit-btn">
-                        <img src="img/arrow-down.png" alt="arrow" />
-                      </button>
-                    </form>
+                        <button type="submit" class="footer-input__submit-btn">
+                          <img src="img/arrow-down.png" alt="arrow" />
+                        </button>
+                      </form>
+
+                      <div
+                        class="single__checkbox single__checkbox--nieuwsbrief"
+                      >
+                        <input
+                          class="custom-checkbox"
+                          type="checkbox"
+                          id="nieuwsbriefToskani"
+                          name="nieuwsbriefToskani"
+                          value="nieuwsbriefToskani"
+                        />
+
+                        <label for="nieuwsbriefToskani">
+                          <div class="checkbox__content">
+                            <img
+                              class="radio-icon radio-icon--uncheck"
+                              src="img/checkbox-uncheck.png"
+                              alt="uncheck"
+                            />
+
+                            <img
+                              class="radio-icon radio-icon--check"
+                              src="img/checkbox-check.png"
+                              alt="check"
+                            />
+
+                            <p>
+                              Ik ga akkoord met de
+                              <a href="#">algemene voorwaarden</a>
+                            </p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
                   </div>
 
                   <div class="populaire__items">
@@ -792,7 +1039,9 @@
                     <div class="populaire__item">
                       <img src="img/populaire-1.png" alt="populaire" />
 
-                      <a href="#" class="custom-btn custom-btn--standard"
+                      <a
+                        href="#"
+                        class="custom-btn custom-btn--standard custom-btn--blog"
                         >Gezicht</a
                       >
                     </div>
@@ -802,7 +1051,9 @@
                     <div class="populaire__item">
                       <img src="img/populaire-2.png" alt="populaire" />
 
-                      <a href="#" class="custom-btn custom-btn--standard"
+                      <a
+                        href="#"
+                        class="custom-btn custom-btn--standard custom-btn--blog"
                         >Rug</a
                       >
                     </div>
@@ -812,7 +1063,9 @@
                     <div class="populaire__item">
                       <img src="img/populaire-3.png" alt="populaire" />
 
-                      <a href="#" class="custom-btn custom-btn--standard"
+                      <a
+                        href="#"
+                        class="custom-btn custom-btn--standard custom-btn--blog"
                         >Benen</a
                       >
                     </div>
@@ -822,7 +1075,9 @@
                     <div class="populaire__item">
                       <img src="img/populaire-4.png" alt="populaire" />
 
-                      <a href="#" class="custom-btn custom-btn--standard"
+                      <a
+                        href="#"
+                        class="custom-btn custom-btn--standard custom-btn--blog"
                         >Schaamstreek</a
                       >
                     </div>
@@ -843,17 +1098,28 @@
               <div
                 class="geschikt__item geschikt__item--account toskani__item--gradient"
               >
-                <h2 class="heading--48">
-                  Liever persoonlijk advies welke producten bij uw huid passen?
-                </h2>
-                <p class="desc--20">
+                <h2>Liever persoonlijk advies welke?</h2>
+
+                <h5>
                   Alle behandelingen worden verricht door een gespecialiseerd
                   huidtherapeut.
-                </p>
+                </h5>
 
-                <a href="#" class="custom-btn custom-btn--standard"
-                  >Plan een gratis intake</a
-                >
+                <a href="#" class="custom-btn custom-btn--white"
+                  >Bekijk behandelingen
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="9"
+                    height="16"
+                    viewBox="0 0 9 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M0.399703 0.420946C0.272999 0.553514 0.172476 0.710979 0.10389 0.884327C0.0353038 1.05768 0 1.2435 0 1.43118C0 1.61885 0.0353038 1.80468 0.10389 1.97802C0.172476 2.15137 0.272999 2.30884 0.399703 2.4414L5.70275 8.00125L0.399703 13.5611C0.144148 13.829 0.000578732 14.1924 0.000578732 14.5713C0.000578732 14.9502 0.144148 15.3136 0.399703 15.5816C0.655257 15.8495 1.00186 16 1.36327 16C1.72468 16 2.07129 15.8495 2.32684 15.5816L8.6003 9.00431C8.727 8.87175 8.82753 8.71428 8.89611 8.54093C8.9647 8.36758 9 8.18175 9 7.99408C9 7.80641 8.9647 7.62058 8.89611 7.44724C8.82753 7.27389 8.727 7.11642 8.6003 6.98385L2.32684 0.406617C1.80747 -0.137904 0.932742 -0.137904 0.399703 0.420946Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </a>
               </div>
               <!-- Single Item -->
 
@@ -861,15 +1127,15 @@
               <div class="geschikt__item geschikt__item--een">
                 <img
                   class="geschikt__image"
-                  src="img/geschikt-2.svg"
+                  src="img/kliniek-5.png"
                   alt="geschikt"
                 />
 
-                <h3 class="heading--48">Een gezonde huid Is een mooie huid</h3>
+                <h3>Een gezonde huid Is een mooie huid</h3>
 
                 <h6>Al onze producten zijn dierproefvrij en vegan.</h6>
 
-                <a href="#" class="link-btn">Neem contact op &gt;</a>
+                <a href="#" class="link-btn">Meer over onze huidkliniek &gt;</a>
               </div>
               <!-- Single Item -->
             </div>
@@ -893,13 +1159,93 @@
 
             <ul class="footer__socials">
               <li>
-                <a href="#"><img src="img/facebook.png" alt="facebook" /></a>
+                <a href="#">
+                  <svg
+                    viewBox="0 0 72 72"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <title>Facebook</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g
+                      id="Page-1"
+                      stroke="none"
+                      stroke-width="1"
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <g
+                        id="Social-Icons---Rounded-Black"
+                        transform="translate(-152.000000, -43.000000)"
+                      >
+                        <g
+                          id="Facebook"
+                          transform="translate(152.000000, 43.000000)"
+                        >
+                          <rect
+                            id="Rounded"
+                            fill="#000000"
+                            x="0"
+                            y="0"
+                            width="72"
+                            height="72"
+                            rx="8"
+                          ></rect>
+                          <path
+                            d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z"
+                            fill="#FFFFFF"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </a>
               </li>
               <li>
-                <a href="#"><img src="img/instagram.png" alt="instagram" /></a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    id="Capa_1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 24 24"
+                    style="enable-background: new 0 0 24 24"
+                    xml:space="preserve"
+                    width="512"
+                    height="512"
+                  >
+                    <g>
+                      <path
+                        d="M12,2.162c3.204,0,3.584,0.012,4.849,0.07c1.308,0.06,2.655,0.358,3.608,1.311c0.962,0.962,1.251,2.296,1.311,3.608   c0.058,1.265,0.07,1.645,0.07,4.849c0,3.204-0.012,3.584-0.07,4.849c-0.059,1.301-0.364,2.661-1.311,3.608   c-0.962,0.962-2.295,1.251-3.608,1.311c-1.265,0.058-1.645,0.07-4.849,0.07s-3.584-0.012-4.849-0.07   c-1.291-0.059-2.669-0.371-3.608-1.311c-0.957-0.957-1.251-2.304-1.311-3.608c-0.058-1.265-0.07-1.645-0.07-4.849   c0-3.204,0.012-3.584,0.07-4.849c0.059-1.296,0.367-2.664,1.311-3.608c0.96-0.96,2.299-1.251,3.608-1.311   C8.416,2.174,8.796,2.162,12,2.162 M12,0C8.741,0,8.332,0.014,7.052,0.072C5.197,0.157,3.355,0.673,2.014,2.014   C0.668,3.36,0.157,5.198,0.072,7.052C0.014,8.332,0,8.741,0,12c0,3.259,0.014,3.668,0.072,4.948c0.085,1.853,0.603,3.7,1.942,5.038   c1.345,1.345,3.186,1.857,5.038,1.942C8.332,23.986,8.741,24,12,24c3.259,0,3.668-0.014,4.948-0.072   c1.854-0.085,3.698-0.602,5.038-1.942c1.347-1.347,1.857-3.184,1.942-5.038C23.986,15.668,24,15.259,24,12   c0-3.259-0.014-3.668-0.072-4.948c-0.085-1.855-0.602-3.698-1.942-5.038c-1.343-1.343-3.189-1.858-5.038-1.942   C15.668,0.014,15.259,0,12,0z"
+                      />
+                      <path
+                        d="M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162   C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z"
+                      />
+                      <circle cx="18.406" cy="5.594" r="1.44" />
+                    </g>
+                  </svg>
+                </a>
               </li>
               <li>
-                <a href="#"><img src="img/tiktok.png" alt="tiktok" /></a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    shape-rendering="geometricPrecision"
+                    text-rendering="geometricPrecision"
+                    image-rendering="optimizeQuality"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    viewBox="0 0 1000 1000"
+                  >
+                    <path
+                      d="M906.25 0H93.75C42.19 0 0 42.19 0 93.75v812.49c0 51.57 42.19 93.75 93.75 93.75l812.5.01c51.56 0 93.75-42.19 93.75-93.75V93.75C1000 42.19 957.81 0 906.25 0zM684.02 319.72c-32.42-21.13-55.81-54.96-63.11-94.38-1.57-8.51-2.45-17.28-2.45-26.25H515l-.17 414.65c-1.74 46.43-39.96 83.7-86.8 83.7-14.57 0-28.27-3.63-40.35-9.99-27.68-14.57-46.63-43.58-46.63-76.97 0-47.96 39.02-86.98 86.97-86.98 8.95 0 17.54 1.48 25.66 4.01V421.89c-8.41-1.15-16.95-1.86-25.66-1.86-105.01 0-190.43 85.43-190.43 190.45 0 64.42 32.18 121.44 81.3 155.92 30.93 21.72 68.57 34.51 109.14 34.51 105.01 0 190.43-85.43 190.43-190.43V400.21c40.58 29.12 90.3 46.28 143.95 46.28V343.03c-28.89 0-55.8-8.59-78.39-23.31z"
+                    />
+                  </svg>
+                </a>
               </li>
             </ul>
           </div>
@@ -921,6 +1267,37 @@
                 <img src="img/arrow-down.png" alt="arrow" />
               </button>
             </form>
+
+            <div class="single__checkbox single__checkbox--nieuwsbrief">
+              <input
+                class="custom-checkbox"
+                type="checkbox"
+                id="nieuwsbriefMobile"
+                name="nieuwsbriefMobile"
+                value="nieuwsbriefMobile"
+              />
+
+              <label for="nieuwsbriefMobile">
+                <div class="checkbox__content">
+                  <img
+                    class="radio-icon radio-icon--uncheck"
+                    src="img/checkbox-uncheck.png"
+                    alt="uncheck"
+                  />
+
+                  <img
+                    class="radio-icon radio-icon--check"
+                    src="img/checkbox-check.png"
+                    alt="check"
+                  />
+
+                  <p>
+                    Ik ga akkoord met de
+                    <a href="#">algemene voorwaarden</a>
+                  </p>
+                </div>
+              </label>
+            </div>
           </div>
           <!-- Footer List -->
 
@@ -932,7 +1309,8 @@
               <ul class="footer__list-items">
                 <li><a href="#">Over ons</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Ervaringen</a></li>
+                <li><a href="#">Veel gestelde vragen</a></li>
+                <li><a href="#">Recensies</a></li>
                 <li><a href="#">Vacatures</a></li>
                 <li><a href="#">Apparatuur</a></li>
               </ul>
@@ -974,46 +1352,46 @@
 
               <ul class="footer__list-items footer__list-items--days">
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Maandag</span>
-                    <span class="footer-time">09:00 - 17:30</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Maandag</span>
+                    <span class="footer-time">09:00 - 17:30</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Dinsdag</span>
-                    <span class="footer-time">09:00 - 12:00</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Dinsdag</span>
+                    <span class="footer-time">09:00 - 12:00</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Woensdag</span>
-                    <span class="footer-time">09:00 - 17:30</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Woensdag</span>
+                    <span class="footer-time">09:00 - 17:30</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Donderdag</span>
-                    <span class="footer-time">09:00 - 17:30</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Donderdag</span>
+                    <span class="footer-time">09:00 - 17:30</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Vrijdag</span>
-                    <span class="footer-time">09:00 - 13:00</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Vrijdag</span>
+                    <span class="footer-time">09:00 - 13:00</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Zaterdag</span>
-                    <span class="footer-time">Op afspraak</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Zaterdag</span>
+                    <span class="footer-time">Op afspraak</span>
+                  </p>
                 </li>
                 <li>
-                  <a href="#"
-                    ><span class="footer-day">Zondag</span>
-                    <span class="footer-time">Gesloten</span></a
-                  >
+                  <p>
+                    <span class="footer-day">Zondag</span>
+                    <span class="footer-time">Gesloten</span>
+                  </p>
                 </li>
               </ul>
             </div>
@@ -1037,6 +1415,37 @@
                     <img src="img/arrow-down.png" alt="arrow" />
                   </button>
                 </form>
+
+                <div class="single__checkbox single__checkbox--nieuwsbrief">
+                  <input
+                    class="custom-checkbox"
+                    type="checkbox"
+                    id="nieuwsbriefDesktop"
+                    name="nieuwsbriefDesktop"
+                    value="nieuwsbriefDesktop"
+                  />
+
+                  <label for="nieuwsbriefDesktop">
+                    <div class="checkbox__content">
+                      <img
+                        class="radio-icon radio-icon--uncheck"
+                        src="img/checkbox-uncheck.png"
+                        alt="uncheck"
+                      />
+
+                      <img
+                        class="radio-icon radio-icon--check"
+                        src="img/checkbox-check.png"
+                        alt="check"
+                      />
+
+                      <p>
+                        Ik ga akkoord met de
+                        <a href="#">algemene voorwaarden</a>
+                      </p>
+                    </div>
+                  </label>
+                </div>
               </div>
               <!-- Footer List -->
 

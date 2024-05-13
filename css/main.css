@@ -3400,10 +3400,10 @@ td:nth-child(4) {
   margin-top: 2rem;
 }
 
-.main-contact__item img,
-.main-contact__item-icon {
-  width: max-content;
-  height: 4rem;
+.main-contact__item-icon,
+.main-contact__item-icon svg {
+  width: 4rem;
+  height: auto;
   object-fit: contain;
   display: inline-block;
 }
@@ -3484,6 +3484,28 @@ td:nth-child(4) {
 
 .apparatuur__right {
   width: 35rem;
+}
+
+.apparatuur__right--mobile {
+  margin-top: 5rem;
+}
+
+.apparatuur__right--mobile h4 {
+  text-align: center;
+}
+
+.apparatuur__right--mobile .apparatuur__gebruik img {
+  margin-top: 0;
+}
+
+.apparatuur__right--mobile .custom-btn {
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.apparatuur__right--mobile {
+  display: none;
 }
 
 .apparatuur__item .apparatuur__left,
@@ -3634,20 +3656,19 @@ td:nth-child(4) {
 }
 
 .toskani__product .apparatuur__left {
-  padding: 5rem 3rem;
+  padding: 5rem 0;
+  border: 0;
 }
 
 .toskani__product-newsletter {
   margin-top: 3rem;
-  background: #fff9f7;
-  border: 1px solid #d4aea7;
   padding: 2.5rem 4rem;
   max-width: 50rem;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 3rem;
   border-radius: 1.2rem;
   -webkit-border-radius: 1.2rem;
@@ -3658,6 +3679,7 @@ td:nth-child(4) {
 
 .toskani__product-newsletter h5 {
   margin-bottom: 0;
+  margin-top: 1rem;
 }
 
 .toskani__product-newsletter .footer-input-form {
@@ -3831,12 +3853,14 @@ td:nth-child(4) {
 
 .checkbox__content p {
   font-weight: 500;
+  margin-top: 0 !important;
 }
 
 .radio-icon {
-  width: 2.5rem;
-  height: auto;
+  width: 2.5rem !important;
+  height: auto !important;
   object-fit: contain;
+  margin-top: 0 !important;
 }
 
 .radio-icon--check {
@@ -4826,27 +4850,29 @@ td:nth-child(4) {
   object-fit: contain;
 }
 
-.search__product-content h2 {
+.search__product-content .heading-5 {
   font-size: 2rem;
   line-height: 2.6rem;
+  display: block;
+  font-weight: 600;
 }
 
-.search__product-content a {
+.search__product-content .desc--16 {
   color: #6d6d6d;
 }
 
-.search__product-content a:hover {
+.search__product-content .desc--16:hover {
   text-decoration: underline;
 }
 
 .search__product-content p {
-  font-weight: 600;
   margin-top: 0.5rem;
 }
 
 .search__product-content p a {
   color: #0433ff;
   text-decoration: underline;
+  font-weight: 400;
 }
 
 .search__product .products__item-status p {
