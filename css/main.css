@@ -267,7 +267,7 @@ h6 {
 .custom-btn--blog {
   background: #fff9f7;
   color: #000;
-  border: 1px solid #d4aea7;
+  border: 0.1rem solid #d4aea7;
 }
 
 .custom-btn--blog:hover {
@@ -306,7 +306,7 @@ h6 {
 }
 
 .custom-btn-secondary {
-  border: 1px solid #d4aea7;
+  border: 0.1rem solid #d4aea7;
   background: #fff9f7;
   color: #000;
 }
@@ -1355,8 +1355,8 @@ main {
 }
 
 .products__item-status-circle {
-  width: 15px;
-  height: 15px;
+  width: 1.5rem;
+  height: 1.5rem;
   background: #019051;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -2754,7 +2754,7 @@ td:nth-child(4) {
 .filter-btn {
   background: #fff;
   color: #000;
-  border: 1px solid #d4aea7;
+  border: 0.1rem solid #d4aea7;
   width: max-content;
   min-width: max-content;
   height: 5.7rem;
@@ -2897,7 +2897,7 @@ td:nth-child(4) {
 
 .products__item--maand {
   background: #fff9f7;
-  border: 1px solid #d4aea7;
+  border: 0.1rem solid #d4aea7;
   padding: 2rem 3rem;
 }
 
@@ -3368,7 +3368,7 @@ td:nth-child(4) {
 .main-contact__item {
   padding: 2.5rem;
   background: #fef9f8;
-  border: 1px solid #d4aea7;
+  border: 0.1rem solid #d4aea7;
   border-radius: 2.2rem;
   -webkit-border-radius: 2.2rem;
   -moz-border-radius: 2.2rem;
@@ -3437,22 +3437,14 @@ td:nth-child(4) {
     url(../img/not-found-hero.jpg);
 }
 
-.notfound-hero-area .hero__content h1 {
-  font-size: 14.4rem;
-  line-height: 1;
-}
-
-.notfound-hero-area .hero__content h3 {
-  font-size: 4rem;
-  line-height: 4.4rem;
-}
-
-.notfound-hero-area .hero__content {
-  max-width: 125rem;
-}
-
 .notfound-hero-area .hero__content .custom-btn--standard {
-  margin-top: 4.5rem;
+  margin-top: 3rem;
+}
+
+.notfound-hero-area h1 {
+  font-size: 7.2rem;
+  line-height: 8.4rem;
+  margin-bottom: 0;
 }
 
 /* 404 Page */
@@ -3511,7 +3503,7 @@ td:nth-child(4) {
 .apparatuur__item .apparatuur__left,
 .apparatuur__item .apparatuur__right {
   background: #fff9f7;
-  border: 1px solid #d4aea7;
+  border: 0.1rem solid #d4aea7;
   border-radius: 1.4rem;
   -webkit-border-radius: 1.4rem;
   -moz-border-radius: 1.4rem;
@@ -3621,12 +3613,12 @@ td:nth-child(4) {
 
 .toskani__item--bg1 .apparatuur__left {
   background: #fff9f7;
-  border: 1px solid #d4aea7;
+  border: 0.1rem solid #d4aea7;
 }
 
 .toskani__item--bg2 .apparatuur__left {
   background: #f7f5f2;
-  border: 1px solid #d4aea7;
+  border: 0.1rem solid #d4aea7;
 }
 
 .toskani__item--bg3 .apparatuur__left {
@@ -3934,7 +3926,7 @@ td:nth-child(4) {
   justify-content: center;
   width: 4rem;
   height: 4rem;
-  border: 1px solid #808080;
+  border: 0.1rem solid #808080;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -3973,7 +3965,7 @@ td:nth-child(4) {
 }
 
 .zorgcheck__step-name p {
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 2.2rem;
 }
 
@@ -3986,7 +3978,7 @@ td:nth-child(4) {
 .zorgcheck__checkboxes .checkbox__content {
   flex-direction: column;
   background: #fff7f6;
-  border: 1px solid #d6d6d6;
+  border: 0.1rem solid #d6d6d6;
   border-radius: 1.2rem;
   -webkit-border-radius: 1.2rem;
   -moz-border-radius: 1.2rem;
@@ -4064,7 +4056,7 @@ td:nth-child(4) {
 }
 
 .leeftijd__field--error .input-style {
-  border: 1px solid #b41700;
+  border: 0.1rem solid #b41700;
 }
 
 .leeftijd__field--error p {
@@ -4150,7 +4142,7 @@ td:nth-child(4) {
 }
 
 .vergoed__item {
-  border: 1px solid #d6d6d6;
+  border: 0.1rem solid #d6d6d6;
   background: #f5f2ed;
   padding: 4rem 2.5rem;
   border-radius: 1.2rem;
@@ -4178,7 +4170,7 @@ td:nth-child(4) {
 }
 
 .vergoed__newsletter {
-  border: 1px solid #d6d6d6;
+  border: 0.1rem solid #d6d6d6;
   width: 100%;
   max-width: 85rem;
   margin-left: auto;
@@ -4201,7 +4193,7 @@ td:nth-child(4) {
 }
 
 .vergoed__logo {
-  width: 170px;
+  width: 17rem;
   height: auto;
   object-fit: contain;
   margin-left: auto;
@@ -4411,7 +4403,6 @@ td:nth-child(4) {
 /* Inner Skin problem Page */
 .skin__problem-hero-area {
   padding: 8rem 0;
-  /* background: #fff7f6; */
   background: #f7f5f1;
 }
 
@@ -4444,6 +4435,10 @@ td:nth-child(4) {
   flex: 0.5;
 }
 
+.skin__problem-hero-content p {
+  font-weight: 500;
+}
+
 .skin__problem-hero-list {
   margin-top: 3rem;
   display: grid;
@@ -4464,8 +4459,8 @@ td:nth-child(4) {
 
 .skin__problem-hero-list-text h5,
 .skin__problem-hero-list-text p {
-  font-size: 2.2rem;
-  line-height: 2.8rem;
+  font-size: 2rem;
+  line-height: 2.6rem;
   font-weight: 600;
 }
 
@@ -4495,7 +4490,7 @@ td:nth-child(4) {
 
 .populaire-area--skin .populaire__items {
   grid-template-columns: repeat(3, 1fr);
-  max-width: 966px;
+  max-width: 96.6rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4566,8 +4561,14 @@ td:nth-child(4) {
   background: transparent !important;
   max-width: fit-content !important;
   min-width: fit-content !important;
-  padding: 1.4rem 3rem !important;
-  font-size: 1.8rem !important;
+  padding: 1.2rem 2rem !important;
+  font-size: 1.4rem !important;
+  font-weight: 400;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
 }
 
 .custom-btn--vancancie-form:hover {
@@ -4738,7 +4739,7 @@ td:nth-child(4) {
 .cv__upload-area {
   width: 100%;
   height: 20rem;
-  border: 1px dashed #808080;
+  border: 0.1rem dashed #808080;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4788,8 +4789,17 @@ td:nth-child(4) {
 
 .form__isagree-area a {
   color: #6a6a6a;
-  text-decoration: underline;
   margin-top: 1.5rem;
+  transition: all 0.15s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+}
+
+.form__isagree-area a:hover {
+  color: #000;
+  text-decoration: underline;
 }
 
 .form__checkbox-area {
@@ -4797,15 +4807,17 @@ td:nth-child(4) {
   align-items: center;
   gap: 1rem;
   margin-top: 1.5rem;
+  margin-left: -0.5rem;
 }
 
 .form__checkbox-area input {
   width: 1.5rem;
   height: 1.5rem;
-  border: 2px solid #000;
+  border: 0.2rem solid #000;
   cursor: pointer;
 }
 
+.form__checkbox-area label p,
 .form__checkbox-area label {
   font-size: 1.6rem;
   line-height: 2.2rem;
@@ -4813,6 +4825,10 @@ td:nth-child(4) {
   font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.vancancie-form__right-logo--mobile {
+  display: none;
 }
 
 /* Vancancie page */

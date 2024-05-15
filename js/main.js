@@ -343,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Swiper Slide resulten
   const swiperResulten = new Swiper(".resultaten__items", {
-    allowTouchMove: false,
+    allowTouchMove: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,

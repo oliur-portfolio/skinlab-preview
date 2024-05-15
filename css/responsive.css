@@ -503,7 +503,7 @@
   }
 
   .vancancie-form__tabs {
-    margin-top: 4rem;
+    margin-top: 0;
   }
 
   .footer-area {
@@ -535,6 +535,20 @@
 
   .apparatuur__right--mobile {
     display: block;
+  }
+
+  .vancancie-form__right-logo--desktop {
+    display: none;
+  }
+
+  .vancancie-form__right-logo--mobile {
+    display: block;
+    margin-left: 0 !important;
+    margin-top: 4rem;
+  }
+
+  .form__checkbox-area {
+    margin-left: -0.3rem;
   }
 }
 
@@ -865,6 +879,10 @@
   .laser-process-area--skin {
     padding-top: 8rem;
   }
+
+  .top-header__links li {
+    display: none;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -1065,10 +1083,6 @@
 
   .search-wrapper {
     padding: 0.6rem 2rem;
-  }
-
-  .top-header__links li {
-    display: none;
   }
 
   .top-header__links-faq {
@@ -1335,14 +1349,14 @@
 
   .all-products__items .custom-btn--product-cart-btn::before {
     content: "In winkelmand";
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 
   .all-products-area--secondary-layout
     .all-products__items
     .custom-btn--product-cart-btn::before {
     position: absolute;
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 
   .all-products__items .products__label p {
@@ -1487,7 +1501,7 @@
   }
 
   .skin__problem-hero-wrapper {
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
 
   .skin__problem-hero-list {
@@ -1543,9 +1557,8 @@
   }
 
   .vancancie-form .nav-logo {
-    width: 8.5rem;
-    height: 5rem;
-    margin-left: 2rem;
+    width: 10rem;
+    height: 6rem;
   }
 
   .main-search .custom__tab button {
@@ -1598,6 +1611,14 @@
 
   .all-products-area .product-category-nav-area {
     margin-top: 5rem;
+  }
+
+  .main-blogs-area--skin {
+    padding-bottom: 0;
+  }
+
+  .resultaten__area {
+    padding-bottom: 6rem;
   }
 }
 
