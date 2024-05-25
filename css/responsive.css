@@ -466,6 +466,7 @@
     aspect-ratio: 16/9;
   }
 
+  .skin__problem-hero-image-layer,
   .skin__problem-hero-image img {
     border-radius: 1.8rem;
     -webkit-border-radius: 1.8rem;
@@ -1517,6 +1518,28 @@
     padding: 6rem 0;
   }
 
+  .skin__problem-hero-area .container {
+    padding: 0;
+  }
+
+  .skin__problem-hero-area .section-heading,
+  .skin__problem-hero-content {
+    padding: 0 2rem;
+  }
+
+  .skin__problem-hero-image img,
+  .skin__problem-hero-image-layer {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+
+  .skin__problem-hero-image-layer {
+    padding: 2rem;
+  }
+
   .skin__problem-hero .section-heading h2 {
     padding: 0 3rem;
   }
@@ -1559,6 +1582,8 @@
   .vancancie-form .nav-logo {
     width: 10rem;
     height: 6rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .main-search .custom__tab button {

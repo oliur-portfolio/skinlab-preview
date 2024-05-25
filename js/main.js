@@ -14,19 +14,40 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Faq More Expand Effect
-  const faqExpandBtns = document.querySelectorAll(".faq--expand-btn");
+  // Faq Items Show
+  const itemContainers = document.querySelectorAll(
+    ".basic-accordion.faq-accordion"
+  );
+  const visibleItemCount = 10;
 
-  faqExpandBtns.forEach((accordion) => {
-    accordion.onclick = function () {
-      let content = this.previousElementSibling;
+  itemContainers.forEach((container) => {
+    const items = container.querySelectorAll(".basic-accordion__item");
+    const button = container.nextElementSibling;
 
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
+    for (let i = 0; i < visibleItemCount; i++) {
+      if (items[i]) {
+        items[i].classList.add("visible");
       }
-    };
+    }
+
+    if (button && button.classList.contains("faq--expand-btn")) {
+      button.addEventListener("click", function () {
+        const isExpanded =
+          items[visibleItemCount].classList.contains("visible");
+
+        if (isExpanded) {
+          items.forEach((item, index) => {
+            if (index >= visibleItemCount) {
+              item.classList.remove("visible");
+            }
+          });
+          button.textContent = "Meer Vragen";
+        } else {
+          items.forEach((item) => item.classList.add("visible"));
+          button.textContent = "Minder Vragen";
+        }
+      });
+    }
   });
 
   // Animated Hamburger Icon
@@ -643,54 +664,143 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to format date input
   document.getElementById("leeftijd").addEventListener("input", function (e) {
-    let inputValue = e.target.value;
+    let inputValue = e.target.value.replace(/\D/g, ""); // Remove all non-digit characters
+    let cursorPosition = e.target.selectionStart; // Store the current cursor position
 
-    inputValue = inputValue.replace(/\D/g, "");
-
+    // Handle empty input case
     if (inputValue === "") {
-      e.target.value = "__-__-____";
+      e.target.value = "";
       return;
     }
 
     let formattedValue = "";
     let inputIndex = 0;
+
     for (let i = 0; i < 10; i++) {
-      if (inputValue[inputIndex]) {
+      if (i === 2 || i === 5) {
+        formattedValue += "-"; // Add hyphen at correct positions
+      } else if (inputValue[inputIndex]) {
         formattedValue += inputValue[inputIndex++];
       } else {
         formattedValue += "_";
       }
-      if (i === 1 || i === 3) {
-        formattedValue += "-";
-      }
-      if (i === 9) {
-        break;
-      }
     }
 
-    e.target.value = formattedValue.slice(0, 10);
+    e.target.value = formattedValue;
+    cursorPosition = Math.min(cursorPosition, formattedValue.length);
+
+    // Adjust cursor position if needed
+    if (formattedValue[cursorPosition - 1] === "-") {
+      cursorPosition++;
+    }
+
+    e.target.setSelectionRange(cursorPosition, cursorPosition);
   });
 
   document.getElementById("leeftijd").addEventListener("keydown", function (e) {
+    let currentValue = e.target.value;
+    let cursorPosition = e.target.selectionStart;
+
     if (e.keyCode === 8) {
+      // Backspace key
+      if (window.getSelection().toString() === currentValue) {
+        e.target.value = "";
+        return;
+      }
+
       e.preventDefault();
-      let currentValue = e.target.value;
-      let index = currentValue.length - 1;
-      while (index >= 0 && currentValue[index] === "_") {
-        index--;
+
+      if (cursorPosition > 0) {
+        let index = cursorPosition - 1;
+
+        // Skip over hyphens
+        if (currentValue[index] === "-") {
+          index--;
+        }
+
+        // Replace the last digit with "_"
+        if (index >= 0 && !isNaN(currentValue[index])) {
+          e.target.value =
+            currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
+          e.target.setSelectionRange(index, index);
+        }
       }
-      while (
-        index >= 0 &&
-        (currentValue[index] === "-" || isNaN(currentValue[index]))
-      ) {
-        index--;
+    } else if (e.keyCode === 46) {
+      // Delete key
+      if (window.getSelection().toString() === currentValue) {
+        e.target.value = "";
+        return;
       }
-      if (index >= 0) {
-        e.target.value =
-          currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
+
+      e.preventDefault();
+
+      if (cursorPosition < currentValue.length) {
+        let index = cursorPosition;
+
+        // Skip over hyphens
+        if (currentValue[index] === "-") {
+          index++;
+        }
+
+        // Replace the next digit with "_"
+        if (index < currentValue.length && !isNaN(currentValue[index])) {
+          e.target.value =
+            currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
+          e.target.setSelectionRange(cursorPosition, cursorPosition);
+        }
       }
     }
   });
+
+  // document.getElementById("leeftijd").addEventListener("input", function (e) {
+  //   let inputValue = e.target.value;
+
+  //   inputValue = inputValue.replace(/\D/g, "");
+
+  //   if (inputValue === "") {
+  //     e.target.value = "__-__-____";
+  //     return;
+  //   }
+
+  //   let formattedValue = "";
+  //   let inputIndex = 0;
+  //   for (let i = 0; i < 10; i++) {
+  //     if (inputValue[inputIndex]) {
+  //       formattedValue += inputValue[inputIndex++];
+  //     } else {
+  //       formattedValue += "_";
+  //     }
+  //     if (i === 1 || i === 3) {
+  //       formattedValue += "-";
+  //     }
+  //     if (i === 9) {
+  //       break;
+  //     }
+  //   }
+
+  //   e.target.value = formattedValue.slice(0, 10);
+  // });
+
+  // document.getElementById("leeftijd").addEventListener("keydown", function (e) {
+  //   if (e.keyCode === 8) {
+  //     e.preventDefault();
+  //     let currentValue = e.target.value;
+  //     let index = currentValue.length - 1;
+  //     while (index >= 0 && currentValue[index] === "_") {
+  //       index--;
+  //     }
+  //     while (
+  //       index >= 0 &&
+  //       (currentValue[index] === "-" || isNaN(currentValue[index]))
+  //     ) {
+  //       index--;
+  //     }
+  //     if (index >= 0) {
+  //       e.target.value =
+  //         currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
+  //     }
+  //   }
+  // });
 });
 
 // Tabs Effect
