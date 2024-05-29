@@ -507,6 +507,10 @@
     margin-top: 0;
   }
 
+  .main-search .vancancie-form__tabs {
+    margin-top: 5rem;
+  }
+
   .footer-area {
     padding-top: 8rem;
   }
@@ -1427,6 +1431,11 @@
     -webkit-filter: blur(1.4rem);
   }
 
+  .skin__problem-hero-content .products__maand-more-text-shadow {
+    background: #f7f5f1;
+    bottom: -4rem;
+  }
+
   .products__maand-right {
     overflow: hidden;
   }
@@ -1546,8 +1555,8 @@
 
   .skin__problem-hero-list-text h5,
   .skin__problem-hero-list-text p {
-    font-size: 1.8rem;
-    line-height: 2.6rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
   }
 
   .vancancie-form__left {
@@ -1601,7 +1610,6 @@
 
   .search__product {
     gap: 2rem;
-    flex-direction: column;
   }
 
   .search__product-image {
@@ -1855,9 +1863,5 @@
   .breadcrumb__items {
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .faq-accordion {
-    max-height: 65rem;
   }
 }

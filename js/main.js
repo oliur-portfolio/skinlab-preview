@@ -1,12 +1,13 @@
 // Beer Slider
-var beerSliderElements = document.querySelectorAll(".beer-slider");
+document.addEventListener("DOMContentLoaded", function () {
+  var beerSliderElements = document.querySelectorAll(".beer-slider");
 
-beerSliderElements.forEach(function (element) {
-  var slider = new BeerSlider(element);
+  beerSliderElements.forEach(function (element) {
+    var slider = new BeerSlider(element);
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Tooltip
   tippy(".price__info-btn", {
     content: "Global content",
     theme: "tomato",
@@ -521,23 +522,6 @@ document.addEventListener("DOMContentLoaded", function () {
       openModal("modalFilter");
     });
 
-  // Product Description text show
-  const productMaandMoreTextPlus = document.querySelector(
-    ".products__maand-more-text--plus"
-  );
-  const productMaandMoreTextMinus = document.querySelector(
-    ".products__maand-more-text--minus"
-  );
-  const productMaandContent = document.querySelector(".products__maand-right");
-
-  productMaandMoreTextPlus.addEventListener("click", () => {
-    productMaandContent.classList.add("products__maand-right--show");
-  });
-
-  productMaandMoreTextMinus.addEventListener("click", () => {
-    productMaandContent.classList.remove("products__maand-right--show");
-  });
-
   // Change Product Layout
   const productSelectLayout = document.getElementById("productSelectLayout");
   const allProductLayoutArea = document.getElementById("allProducts");
@@ -552,6 +536,47 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     }
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Product Description text show
+  const productMaandMoreTextPlus = document.querySelector(
+    ".products__item--maand .products__maand-more-text--plus"
+  );
+  const productMaandMoreTextMinus = document.querySelector(
+    ".products__item--maand .products__maand-more-text--minus"
+  );
+  const productMaandContent = document.querySelector(
+    ".products__item--maand .products__maand-right"
+  );
+
+  productMaandMoreTextPlus.addEventListener("click", () => {
+    productMaandContent.classList.add("products__maand-right--show");
+  });
+
+  productMaandMoreTextMinus.addEventListener("click", () => {
+    productMaandContent.classList.remove("products__maand-right--show");
+  });
+});
+
+// Skin Problem Description text show
+const productMaandSkinMoreTextPlus = document.querySelector(
+  ".skin__problem-hero-content .products__maand-more-text--plus"
+);
+const productMaandSkinMoreTextMinus = document.querySelector(
+  ".skin__problem-hero-content .products__maand-more-text--minus"
+);
+const productMaandSkinContent = document.querySelector(
+  ".skin__problem-hero-content .products__maand-right"
+);
+
+productMaandSkinMoreTextPlus.addEventListener("click", () => {
+  console.log("click me");
+  productMaandSkinContent.classList.add("products__maand-right--show");
+});
+
+productMaandSkinMoreTextMinus.addEventListener("click", () => {
+  productMaandSkinContent.classList.remove("products__maand-right--show");
 });
 
 // Zorgchecker Form Step

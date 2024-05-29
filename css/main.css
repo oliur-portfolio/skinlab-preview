@@ -1532,6 +1532,9 @@ main {
 .geschikt__item--account .custom-btn {
   margin-left: 0;
   margin-right: 0;
+}
+
+.geschikt__item--account .custom-btn:hover {
   text-decoration: underline;
 }
 
@@ -2492,6 +2495,11 @@ main {
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
+}
+
+.populaire__item:hover .custom-btn--standard {
+  background: #d4aea7;
+  color: #fff;
 }
 
 /* Populaire Area */
@@ -4462,6 +4470,9 @@ td:nth-child(4) {
 
 .skin__problem-hero-content p {
   font-weight: 500;
+  font-size: 2.2rem;
+  line-height: 3rem;
+  margin-top: 0;
 }
 
 .skin__problem-hero-list {
@@ -4922,6 +4933,7 @@ td:nth-child(4) {
 
 .search__product-content .desc--16 {
   color: #6d6d6d;
+  word-break: break-all;
 }
 
 .search__product-content .desc--16:hover {
@@ -4934,8 +4946,11 @@ td:nth-child(4) {
 
 .search__product-content p a {
   color: #0433ff;
-  text-decoration: underline;
   font-weight: 500;
+}
+
+.search__product-content p a:hover {
+  text-decoration: underline;
 }
 
 .search__product .products__item-status p {
