@@ -1465,6 +1465,11 @@ main {
   border: 0.2rem solid #808080;
 }
 
+.swiper-button-prev span img,
+.swiper-button-next span img {
+  object-fit: contain;
+}
+
 .products .slick-prev.slick-arrow {
   right: 16rem;
 }
@@ -4585,6 +4590,11 @@ td:nth-child(4) {
 .resultaten__items {
   margin-top: 5rem;
   padding-bottom: 7rem;
+}
+
+.resultaten__items .swiper-button-next,
+.resultaten__items .swiper-button-prev {
+  display: none !important;
 }
 
 /* Resultaten Area */

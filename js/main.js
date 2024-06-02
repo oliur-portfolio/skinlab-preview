@@ -1,5 +1,30 @@
 // Beer Slider
 document.addEventListener("DOMContentLoaded", function () {
+  // Swiper Slide resulten
+  const swiperResulten = new Swiper(".resultaten__items", {
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination--resulten",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next--resulten",
+      prevEl: ".swiper-button-prev--resulten",
+    },
+    autoplay: {
+      delay: 10000,
+      pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+      350: {
+        allowTouchMove: false,
+      },
+      1199: {
+        allowTouchMove: true,
+      },
+    },
+  });
+
   var beerSliderElements = document.querySelectorAll(".beer-slider");
 
   beerSliderElements.forEach(function (element) {
@@ -8,10 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  tippy(".price__info-btn", {
-    content: "Global content",
-    theme: "tomato",
-  });
+  if (typeof tippy !== "undefined") {
+    tippy(".price__info-btn", {
+      content: "Global content",
+      theme: "tomato",
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -297,7 +324,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const swiperSubmenu = new Swiper(".submenu__slider", {
     loop: true,
-
     pagination: {
       el: ".swiper-pagination--submenu",
       clickable: true,
@@ -360,15 +386,6 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 3,
         slidesPerGroup: 3,
       },
-    },
-  });
-
-  // Swiper Slide resulten
-  const swiperResulten = new Swiper(".resultaten__items", {
-    allowTouchMove: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
     },
   });
 
@@ -476,7 +493,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to open a specific modal and close all other modals
   function openModal(modalId) {
-    console.log(modalId);
     var modals = document.querySelectorAll(".modal");
     for (var i = 0; i < modals.length; i++) {
       modals[i].classList.remove("filter-sidebar--open");
@@ -527,7 +543,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const allProductLayoutArea = document.getElementById("allProducts");
 
   productSelectLayout.addEventListener("change", function () {
-    console.log(this.value);
     if (this.value === "secondary-product") {
       allProductLayoutArea.classList.add("all-products-area--secondary-layout");
     } else if (this.value === "default-product") {
@@ -560,23 +575,53 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Skin Problem Description text show
-const productMaandSkinMoreTextPlus = document.querySelector(
-  ".skin__problem-hero-content .products__maand-more-text--plus"
-);
-const productMaandSkinMoreTextMinus = document.querySelector(
-  ".skin__problem-hero-content .products__maand-more-text--minus"
-);
-const productMaandSkinContent = document.querySelector(
-  ".skin__problem-hero-content .products__maand-right"
-);
+// const productMaandSkinMoreTextPlus = document.querySelector(
+//   ".skin__problem-hero-content .products__maand-more-text--plus"
+// );
+// const productMaandSkinMoreTextMinus = document.querySelector(
+//   ".skin__problem-hero-content .products__maand-more-text--minus"
+// );
+// const productMaandSkinContent = document.querySelector(
+//   ".skin__problem-hero-content .products__maand-right"
+// );
 
-productMaandSkinMoreTextPlus.addEventListener("click", () => {
-  console.log("click me");
-  productMaandSkinContent.classList.add("products__maand-right--show");
-});
+// productMaandSkinMoreTextPlus.addEventListener("click", () => {
+//   productMaandSkinContent.classList.add("products__maand-right--show");
+// });
 
-productMaandSkinMoreTextMinus.addEventListener("click", () => {
-  productMaandSkinContent.classList.remove("products__maand-right--show");
+// productMaandSkinMoreTextMinus.addEventListener("click", () => {
+//   productMaandSkinContent.classList.remove("products__maand-right--show");
+// });
+
+// Ensure the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+  const productMaandSkinMoreTextPlus = document.querySelector(
+    ".skin__problem-hero-content .products__maand-more-text--plus"
+  );
+  const productMaandSkinMoreTextMinus = document.querySelector(
+    ".skin__problem-hero-content .products__maand-more-text--minus"
+  );
+  const productMaandSkinContent = document.querySelector(
+    ".skin__problem-hero-content .products__maand-right"
+  );
+
+  if (
+    productMaandSkinMoreTextPlus &&
+    productMaandSkinMoreTextMinus &&
+    productMaandSkinContent
+  ) {
+    productMaandSkinMoreTextPlus.addEventListener("click", () => {
+      productMaandSkinContent.classList.add("products__maand-right--show");
+    });
+
+    productMaandSkinMoreTextMinus.addEventListener("click", () => {
+      productMaandSkinContent.classList.remove("products__maand-right--show");
+    });
+  } else {
+    console.warn(
+      "One or more elements for the skin problem description text show functionality are missing in the DOM."
+    );
+  }
 });
 
 // Zorgchecker Form Step
@@ -776,56 +821,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-
-  // document.getElementById("leeftijd").addEventListener("input", function (e) {
-  //   let inputValue = e.target.value;
-
-  //   inputValue = inputValue.replace(/\D/g, "");
-
-  //   if (inputValue === "") {
-  //     e.target.value = "__-__-____";
-  //     return;
-  //   }
-
-  //   let formattedValue = "";
-  //   let inputIndex = 0;
-  //   for (let i = 0; i < 10; i++) {
-  //     if (inputValue[inputIndex]) {
-  //       formattedValue += inputValue[inputIndex++];
-  //     } else {
-  //       formattedValue += "_";
-  //     }
-  //     if (i === 1 || i === 3) {
-  //       formattedValue += "-";
-  //     }
-  //     if (i === 9) {
-  //       break;
-  //     }
-  //   }
-
-  //   e.target.value = formattedValue.slice(0, 10);
-  // });
-
-  // document.getElementById("leeftijd").addEventListener("keydown", function (e) {
-  //   if (e.keyCode === 8) {
-  //     e.preventDefault();
-  //     let currentValue = e.target.value;
-  //     let index = currentValue.length - 1;
-  //     while (index >= 0 && currentValue[index] === "_") {
-  //       index--;
-  //     }
-  //     while (
-  //       index >= 0 &&
-  //       (currentValue[index] === "-" || isNaN(currentValue[index]))
-  //     ) {
-  //       index--;
-  //     }
-  //     if (index >= 0) {
-  //       e.target.value =
-  //         currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
-  //     }
-  //   }
-  // });
 });
 
 // Tabs Effect
