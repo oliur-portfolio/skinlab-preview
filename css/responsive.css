@@ -1438,7 +1438,7 @@
 
   .products__maand-more-text-wrapper {
     position: relative;
-    margin-top: 1.2rem;
+    margin-top: 1.8rem;
   }
 
   .products__maand-more-text-shadow {
@@ -1683,6 +1683,23 @@
 
   .resultaten__items .swiper-button-prev {
     left: 0;
+  }
+
+  .skin__problem-hero-content p {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+
+  .search__product--logo .search__product-image {
+    display: none;
+  }
+
+  .search__product-content-header--mobile {
+    display: block;
+  }
+
+  .search__product-content-header--desktop {
+    display: none;
   }
 }
 

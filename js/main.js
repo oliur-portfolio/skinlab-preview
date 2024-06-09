@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     for (let i = 0; i < links.length; i++) {
-      links[i].addEventListener("click", (e) => e.preventDefault());
+      //links[i].addEventListener("click", (e) => e.preventDefault());
       links[i].addEventListener("mouseenter", mouseenterFunc);
       links[i].addEventListener("mouseleave", mouseleaveFunc);
     }
@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     for (let i = 0; i < links.length; i++) {
-      links[i].addEventListener("click", (e) => e.preventDefault());
+      //links[i].addEventListener("click", (e) => e.preventDefault());
       links[i].addEventListener("mouseenter", mouseenterFunc);
       links[i].addEventListener("mouseleave", mouseleaveFunc);
     }
@@ -471,23 +471,26 @@ document.addEventListener("DOMContentLoaded", function () {
     var filterBtn = document.querySelector(".filter-btn");
     var filterBtnNav = document.querySelector(".product-category-nav-area");
     var filterBtnArea = document.querySelector(".all-products-area");
-    var filterBtnAreaTop = filterBtnArea.getBoundingClientRect().top;
-    var filterBtnAreaHeight = filterBtnArea.offsetHeight;
-    var filterBtnPosition = filterBtnNav.getBoundingClientRect().top;
 
-    var windowHeight = window.innerHeight;
+    if (filterBtn && filterBtnNav && filterBtnArea) {
+      var filterBtnAreaTop = filterBtnArea.getBoundingClientRect().top;
+      var filterBtnAreaHeight = filterBtnArea.offsetHeight;
+      var filterBtnPosition = filterBtnNav.getBoundingClientRect().top;
 
-    var buffer = 50;
-    if (filterBtnAreaTop + filterBtnAreaHeight < windowHeight + buffer) {
-      filterBtn.classList.add("hidden");
-    } else {
-      filterBtn.classList.remove("hidden");
-    }
+      var windowHeight = window.innerHeight;
 
-    if (filterBtnPosition + windowHeight < windowHeight) {
-      filterBtn.classList.add("filter-btn--sticky");
-    } else {
-      filterBtn.classList.remove("filter-btn--sticky");
+      var buffer = 50;
+      if (filterBtnAreaTop + filterBtnAreaHeight < windowHeight + buffer) {
+        filterBtn.classList.add("hidden");
+      } else {
+        filterBtn.classList.remove("hidden");
+      }
+
+      if (filterBtnPosition + windowHeight < windowHeight) {
+        filterBtn.classList.add("filter-btn--sticky");
+      } else {
+        filterBtn.classList.remove("filter-btn--sticky");
+      }
     }
   });
 
@@ -520,37 +523,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  document
-    .getElementById("openModalBtnLogin")
-    .addEventListener("click", function () {
+  var openModalBtnLogin = document.getElementById("openModalBtnLogin");
+  if (openModalBtnLogin) {
+    openModalBtnLogin.addEventListener("click", function () {
       openModal("modalLogin");
     });
+  }
 
-  document
-    .getElementById("openModalBtnRegister")
-    .addEventListener("click", function () {
+  var openModalBtnRegister = document.getElementById("openModalBtnRegister");
+  if (openModalBtnRegister) {
+    openModalBtnRegister.addEventListener("click", function () {
       openModal("modalRegister");
     });
+  }
 
-  document
-    .getElementById("openModalBtnFilter")
-    .addEventListener("click", function () {
+  var openModalBtnFilter = document.getElementById("openModalBtnFilter");
+  if (openModalBtnFilter) {
+    openModalBtnFilter.addEventListener("click", function () {
       openModal("modalFilter");
     });
+  }
 
   // Change Product Layout
   const productSelectLayout = document.getElementById("productSelectLayout");
   const allProductLayoutArea = document.getElementById("allProducts");
 
-  productSelectLayout.addEventListener("change", function () {
-    if (this.value === "secondary-product") {
-      allProductLayoutArea.classList.add("all-products-area--secondary-layout");
-    } else if (this.value === "default-product") {
-      allProductLayoutArea.classList.remove(
-        "all-products-area--secondary-layout"
-      );
-    }
-  });
+  if (productSelectLayout && allProductLayoutArea) {
+    productSelectLayout.addEventListener("change", function () {
+      if (this.value === "secondary-product") {
+        allProductLayoutArea.classList.add(
+          "all-products-area--secondary-layout"
+        );
+      } else if (this.value === "default-product") {
+        allProductLayoutArea.classList.remove(
+          "all-products-area--secondary-layout"
+        );
+      }
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -565,44 +575,31 @@ document.addEventListener("DOMContentLoaded", function () {
     ".products__item--maand .products__maand-right"
   );
 
-  productMaandMoreTextPlus.addEventListener("click", () => {
-    productMaandContent.classList.add("products__maand-right--show");
-  });
+  if (
+    productMaandMoreTextPlus &&
+    productMaandMoreTextMinus &&
+    productMaandContent
+  ) {
+    productMaandMoreTextPlus.addEventListener("click", () => {
+      productMaandContent.classList.add("products__maand-right--show");
+    });
 
-  productMaandMoreTextMinus.addEventListener("click", () => {
-    productMaandContent.classList.remove("products__maand-right--show");
-  });
+    productMaandMoreTextMinus.addEventListener("click", () => {
+      productMaandContent.classList.remove("products__maand-right--show");
+    });
+  }
 });
-
-// Skin Problem Description text show
-// const productMaandSkinMoreTextPlus = document.querySelector(
-//   ".skin__problem-hero-content .products__maand-more-text--plus"
-// );
-// const productMaandSkinMoreTextMinus = document.querySelector(
-//   ".skin__problem-hero-content .products__maand-more-text--minus"
-// );
-// const productMaandSkinContent = document.querySelector(
-//   ".skin__problem-hero-content .products__maand-right"
-// );
-
-// productMaandSkinMoreTextPlus.addEventListener("click", () => {
-//   productMaandSkinContent.classList.add("products__maand-right--show");
-// });
-
-// productMaandSkinMoreTextMinus.addEventListener("click", () => {
-//   productMaandSkinContent.classList.remove("products__maand-right--show");
-// });
 
 // Ensure the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   const productMaandSkinMoreTextPlus = document.querySelector(
-    ".skin__problem-hero-content .products__maand-more-text--plus"
+    ".more-text-content .products__maand-more-text--plus"
   );
   const productMaandSkinMoreTextMinus = document.querySelector(
-    ".skin__problem-hero-content .products__maand-more-text--minus"
+    ".more-text-content .products__maand-more-text--minus"
   );
   const productMaandSkinContent = document.querySelector(
-    ".skin__problem-hero-content .products__maand-right"
+    ".more-text-content .products__maand-right"
   );
 
   if (
@@ -617,10 +614,6 @@ document.addEventListener("DOMContentLoaded", function () {
     productMaandSkinMoreTextMinus.addEventListener("click", () => {
       productMaandSkinContent.classList.remove("products__maand-right--show");
     });
-  } else {
-    console.warn(
-      "One or more elements for the skin problem description text show functionality are missing in the DOM."
-    );
   }
 });
 
@@ -733,94 +726,102 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Function to format date input
-  document.getElementById("leeftijd").addEventListener("input", function (e) {
-    let inputValue = e.target.value.replace(/\D/g, ""); // Remove all non-digit characters
-    let cursorPosition = e.target.selectionStart; // Store the current cursor position
+  const leeftijdInput = document.getElementById("leeftijd");
 
-    // Handle empty input case
-    if (inputValue === "") {
-      e.target.value = "";
-      return;
-    }
+  if (leeftijdInput) {
+    leeftijdInput.addEventListener("input", function (e) {
+      let inputValue = e.target.value.replace(/\D/g, ""); // Remove all non-digit characters
+      let cursorPosition = e.target.selectionStart; // Store the current cursor position
 
-    let formattedValue = "";
-    let inputIndex = 0;
-
-    for (let i = 0; i < 10; i++) {
-      if (i === 2 || i === 5) {
-        formattedValue += "-"; // Add hyphen at correct positions
-      } else if (inputValue[inputIndex]) {
-        formattedValue += inputValue[inputIndex++];
-      } else {
-        formattedValue += "_";
-      }
-    }
-
-    e.target.value = formattedValue;
-    cursorPosition = Math.min(cursorPosition, formattedValue.length);
-
-    // Adjust cursor position if needed
-    if (formattedValue[cursorPosition - 1] === "-") {
-      cursorPosition++;
-    }
-
-    e.target.setSelectionRange(cursorPosition, cursorPosition);
-  });
-
-  document.getElementById("leeftijd").addEventListener("keydown", function (e) {
-    let currentValue = e.target.value;
-    let cursorPosition = e.target.selectionStart;
-
-    if (e.keyCode === 8) {
-      // Backspace key
-      if (window.getSelection().toString() === currentValue) {
+      // Handle empty input case
+      if (inputValue === "") {
         e.target.value = "";
         return;
       }
 
-      e.preventDefault();
+      let formattedValue = "";
+      let inputIndex = 0;
 
-      if (cursorPosition > 0) {
-        let index = cursorPosition - 1;
-
-        // Skip over hyphens
-        if (currentValue[index] === "-") {
-          index--;
-        }
-
-        // Replace the last digit with "_"
-        if (index >= 0 && !isNaN(currentValue[index])) {
-          e.target.value =
-            currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
-          e.target.setSelectionRange(index, index);
+      for (let i = 0; i < 10; i++) {
+        if (i === 2 || i === 5) {
+          formattedValue += "-"; // Add hyphen at correct positions
+        } else if (inputValue[inputIndex]) {
+          formattedValue += inputValue[inputIndex++];
+        } else {
+          formattedValue += "_";
         }
       }
-    } else if (e.keyCode === 46) {
-      // Delete key
-      if (window.getSelection().toString() === currentValue) {
-        e.target.value = "";
-        return;
+
+      e.target.value = formattedValue;
+      cursorPosition = Math.min(cursorPosition, formattedValue.length);
+
+      // Adjust cursor position if needed
+      if (formattedValue[cursorPosition - 1] === "-") {
+        cursorPosition++;
       }
 
-      e.preventDefault();
+      e.target.setSelectionRange(cursorPosition, cursorPosition);
+    });
 
-      if (cursorPosition < currentValue.length) {
-        let index = cursorPosition;
+    leeftijdInput.addEventListener("keydown", function (e) {
+      let currentValue = e.target.value;
+      let cursorPosition = e.target.selectionStart;
 
-        // Skip over hyphens
-        if (currentValue[index] === "-") {
-          index++;
+      if (e.keyCode === 8) {
+        // Backspace key
+        if (window.getSelection().toString() === currentValue) {
+          e.target.value = "";
+          return;
         }
 
-        // Replace the next digit with "_"
-        if (index < currentValue.length && !isNaN(currentValue[index])) {
-          e.target.value =
-            currentValue.slice(0, index) + "_" + currentValue.slice(index + 1);
-          e.target.setSelectionRange(cursorPosition, cursorPosition);
+        e.preventDefault();
+
+        if (cursorPosition > 0) {
+          let index = cursorPosition - 1;
+
+          // Skip over hyphens
+          if (currentValue[index] === "-") {
+            index--;
+          }
+
+          // Replace the last digit with "_"
+          if (index >= 0 && !isNaN(currentValue[index])) {
+            e.target.value =
+              currentValue.slice(0, index) +
+              "_" +
+              currentValue.slice(index + 1);
+            e.target.setSelectionRange(index, index);
+          }
+        }
+      } else if (e.keyCode === 46) {
+        // Delete key
+        if (window.getSelection().toString() === currentValue) {
+          e.target.value = "";
+          return;
+        }
+
+        e.preventDefault();
+
+        if (cursorPosition < currentValue.length) {
+          let index = cursorPosition;
+
+          // Skip over hyphens
+          if (currentValue[index] === "-") {
+            index++;
+          }
+
+          // Replace the next digit with "_"
+          if (index < currentValue.length && !isNaN(currentValue[index])) {
+            e.target.value =
+              currentValue.slice(0, index) +
+              "_" +
+              currentValue.slice(index + 1);
+            e.target.setSelectionRange(cursorPosition, cursorPosition);
+          }
         }
       }
-    }
-  });
+    });
+  }
 });
 
 // Tabs Effect
@@ -838,23 +839,28 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-document.getElementById("defaultOpen").click();
+const defaultOpen = document.getElementById("defaultOpen");
+if (defaultOpen) {
+  defaultOpen.click();
+}
 
 // Upload CV
 const realFileBtn = document.getElementById("real-file");
 const customUploadBtn = document.getElementById("customUploadButton");
 const customUploadFile = document.getElementById("customUploadFile");
 
-customUploadBtn.addEventListener("click", function () {
-  realFileBtn.click();
-});
+if (realFileBtn && customUploadBtn && customUploadFile) {
+  customUploadBtn.addEventListener("click", function () {
+    realFileBtn.click();
+  });
 
-realFileBtn.addEventListener("change", function () {
-  if (realFileBtn.value) {
-    customUploadFile.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/
-    )[1];
-  } else {
-    customUploadFile.innerHTML = "No file chosen, yet.";
-  }
-});
+  realFileBtn.addEventListener("change", function () {
+    if (realFileBtn.value) {
+      customUploadFile.innerHTML = realFileBtn.value.match(
+        /[\/\\]([\w\d\s\.\-\(\)]+)$/
+      )[1];
+    } else {
+      customUploadFile.innerHTML = "No file chosen, yet.";
+    }
+  });
+}
