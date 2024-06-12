@@ -3959,8 +3959,28 @@ td:nth-child(4) {
   -o-border-radius: 50%;
 }
 
-.zorgcheck__step--active .zorgcheck__step-num {
+.zorgcheck__step-num img {
+  display: none;
+}
+
+.zorgcheck__step--active .zorgcheck__step-num,
+.zorgcheck__step--completed .zorgcheck__step-num {
   background: #d4aea7;
+}
+
+.zorgcheck__step--active .zorgcheck__step-num img {
+  display: none;
+}
+
+.zorgcheck__step--completed .zorgcheck__step-num img {
+  display: block !important;
+  width: 16px;
+  height: auto;
+  object-fit: contain;
+}
+
+.zorgcheck__step--completed .zorgcheck__step-num > p {
+  display: none;
 }
 
 .zorgcheck__step-line {

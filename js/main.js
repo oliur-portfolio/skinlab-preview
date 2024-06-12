@@ -625,6 +625,11 @@ const zorgcheckerContents = document.querySelectorAll(
 const zorgcheckerSuccessContent = document.querySelector(".vergoed-area");
 const zorgcheckStepsContainer = document.querySelector(".zorgcheck");
 
+function initSteps() {
+  zorgcheckerSteps[0].classList.add("zorgcheck__step--active");
+  zorgcheckerContents[0].classList.add("zorgcheck-step__content--active");
+}
+
 function moveToNextStep(currentIndex) {
   zorgcheckerContents.forEach((c) =>
     c.classList.remove("zorgcheck-step__content--active")
@@ -642,17 +647,36 @@ function moveToNextStep(currentIndex) {
 }
 
 function handleAllStepsCompleted() {
-  zorgcheckerSuccessContent.classList.remove("hidden");
+  const isStep4Completed = zorgcheckerSteps[3].classList.contains(
+    "zorgcheck__step--completed"
+  );
+  if (zorgcheckerSuccessContent) {
+    if (isStep4Completed) {
+      zorgcheckerSuccessContent.classList.remove("hidden");
+      zorgcheckerSteps.forEach((step) =>
+        step.classList.remove("zorgcheck__step--active")
+      ); // Remove active class from all steps after completion
+    } else {
+      zorgcheckerSuccessContent.classList.add("hidden");
+    }
+  }
 }
 
 function handleStepIndicators(clickedIndex) {
   zorgcheckerSteps.forEach((step, index) => {
-    if (index <= clickedIndex) {
-      step.classList.add("zorgcheck__step--active");
+    step.classList.remove(
+      "zorgcheck__step--active",
+      "zorgcheck__step--completed"
+    );
+    if (index < clickedIndex) {
+      step.classList.add("zorgcheck__step--completed");
     } else {
-      step.classList.remove("zorgcheck__step--active");
+      step.classList.remove("zorgcheck__step--completed"); // Remove completed class from subsequent steps
     }
+    step.classList.toggle("zorgcheck__step--active", index === clickedIndex);
   });
+
+  handleAllStepsCompleted();
 }
 
 zorgcheckerContents.forEach((content, index) => {
@@ -660,7 +684,7 @@ zorgcheckerContents.forEach((content, index) => {
   radioButtons.forEach((radio) => {
     radio.addEventListener("change", () => {
       moveToNextStep(index);
-      handleStepIndicators(index);
+      handleStepIndicators(index + 1);
     });
   });
 
@@ -669,7 +693,7 @@ zorgcheckerContents.forEach((content, index) => {
     if (step2Button) {
       step2Button.addEventListener("click", () => {
         moveToNextStep(index);
-        handleStepIndicators(index);
+        handleStepIndicators(index + 1);
       });
     }
   }
@@ -678,7 +702,7 @@ zorgcheckerContents.forEach((content, index) => {
     if (step3Button) {
       step3Button.addEventListener("click", () => {
         moveToNextStep(index);
-        handleStepIndicators(index);
+        handleStepIndicators(index + 1);
       });
     }
   }
@@ -686,10 +710,15 @@ zorgcheckerContents.forEach((content, index) => {
 
 zorgcheckerSteps.forEach((step, index) => {
   step.addEventListener("click", () => {
-    moveToNextStep(index - 1);
-    handleStepIndicators(index - 1);
+    zorgcheckerContents.forEach((c) =>
+      c.classList.remove("zorgcheck-step__content--active")
+    );
+    zorgcheckerContents[index].classList.add("zorgcheck-step__content--active");
+    handleStepIndicators(index);
   });
 });
+
+document.addEventListener("DOMContentLoaded", initSteps);
 
 document.addEventListener("DOMContentLoaded", function () {
   // Show Password text
