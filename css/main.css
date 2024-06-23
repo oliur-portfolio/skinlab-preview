@@ -3963,7 +3963,10 @@ td:nth-child(4) {
   display: none;
 }
 
-.zorgcheck__step--active .zorgcheck__step-num,
+.zorgcheck__step--active .zorgcheck__step-num {
+  background: #fff7f6;
+}
+
 .zorgcheck__step--completed .zorgcheck__step-num {
   background: #d4aea7;
 }
@@ -4049,7 +4052,7 @@ td:nth-child(4) {
 }
 
 .zorgcheck-step__content {
-  margin-top: 9.7rem;
+  margin-top: 12rem;
   display: none;
 }
 
@@ -4164,7 +4167,7 @@ td:nth-child(4) {
 
 /* Vergoed Area */
 .vergoed-area {
-  padding-top: 8rem;
+  padding-top: 12rem;
 }
 
 .vergoed h2 {

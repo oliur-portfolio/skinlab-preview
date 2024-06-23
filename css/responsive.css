@@ -1176,7 +1176,6 @@
   .recensies-area,
   .apparatuur-area,
   .zorgcheck-area,
-  .vergoed-area,
   .terms-area,
   .main-blogs-area,
   .laser-process-area--skin,
@@ -1185,6 +1184,10 @@
   .kliniek-content-area,
   .main-contact-area {
     padding-top: 6rem;
+  }
+
+  .vergoed-area {
+    padding-top: 9rem;
   }
 
   .laser-process-area--skin .container .section-heading {
@@ -1244,6 +1247,14 @@
   .zorgcheck__steps,
   .zorgcheck__step {
     gap: 0.5rem;
+  }
+
+  .zorgcheck__steps {
+    margin-top: 2rem;
+  }
+
+  .zorgcheck-step__content {
+    margin-top: 9rem;
   }
 
   .product__logos-area,
