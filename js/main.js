@@ -99,6 +99,25 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).toggleClass("active-default").next().slideToggle("fast");
   });
 
+  // Accordion Effect | Navbar
+  $(".nav-accordion .accordion__question").click(function (e) {
+    e.preventDefault();
+
+    $(".nav-accordion .accordion__answer")
+      .not($(this).closest(".basic-accordion__item").find(".accordion__answer"))
+      .slideUp(300);
+    $(".nav-accordion .accordion__question")
+      .not(this)
+      .removeClass("active-default");
+
+    $(this)
+      .toggleClass("active-default")
+      .closest(".basic-accordion__item")
+      .find(".accordion__answer")
+      .slideToggle("fast");
+  });
+
+  // Faq Accordion
   $(".faq-accordion .accordion__question").click(function (e) {
     e.preventDefault();
 

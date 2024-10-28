@@ -251,17 +251,9 @@
     display: block;
   }
 
-  .process {
-    height: 87rem;
-  }
-
   .treatment__items {
     max-width: 80rem;
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .laser-process-area .process {
-    height: 60rem;
   }
 
   .all-products__items {
@@ -626,10 +618,6 @@
     margin-top: 3rem;
   }
 
-  .process-area {
-    padding-top: 3rem;
-  }
-
   .process__items {
     display: none;
   }
@@ -795,10 +783,6 @@
 
   .swiper-slide-active .process__item img {
     opacity: 1;
-  }
-
-  .laser-process-area .process {
-    height: 50rem;
   }
 
   .play-button {
@@ -1711,6 +1695,10 @@
 
   .search__product-content-header--desktop {
     display: none;
+  }
+
+  .process-area {
+    padding-top: 6rem;
   }
 }
 
