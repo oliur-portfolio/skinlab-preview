@@ -3151,6 +3151,10 @@ td:nth-child(4) {
   margin-top: 1.5rem;
 }
 
+.kliniek__content .custom-btn {
+  margin-top: 3rem;
+}
+
 /* kliniek Content Area */
 
 /* About US Page */
@@ -5034,6 +5038,60 @@ td:nth-child(4) {
 }
 
 /* Search Page */
+
+/* Kies Page */
+.kies__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.kies__header .nav-logo {
+  width: 11.5rem;
+  height: 7rem;
+  margin-left: 4rem;
+}
+
+.kies__header .custom-btn {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  z-index: 99;
+}
+
+.kies__form-area {
+  padding-top: 50px;
+}
+
+.kies__form-area h2 {
+  text-align: center;
+}
+
+.kies__form {
+  margin-top: 50px;
+  background: #212121;
+  color: #fff;
+  max-width: 550px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 700px;
+  padding: 20px 30px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+/* Kies Page */
 
 /* Beer Slider */
 .beer-handle {

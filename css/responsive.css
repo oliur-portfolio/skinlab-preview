@@ -277,6 +277,7 @@
 
   .kliniek__content {
     flex: none;
+    width: 100%;
   }
 
   .kliniek__image {
@@ -569,6 +570,11 @@
 
   .resultaten__items .swiper-button-prev {
     left: 2.3rem;
+  }
+
+  .kliniek__content .custom-btn {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -1910,5 +1916,27 @@
   .breadcrumb__items {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .kies__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .kies__header .nav-logo {
+    width: 10rem;
+    height: 6rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .kies__header .custom-btn {
+    position: static;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
   }
 }
