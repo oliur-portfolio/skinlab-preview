@@ -1191,7 +1191,7 @@ main {
 
 .products__header-content {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   padding: 6rem 0;
 }
@@ -1547,6 +1547,7 @@ main {
   height: 15.5rem;
   object-fit: contain;
   margin-top: 4rem;
+  display: block;
 }
 
 .geschikt__item--account {
@@ -1569,7 +1570,6 @@ main {
   padding: 2.5rem;
 }
 
-.geschikt__item--eerlijk img,
 .geschikt__duurzame-images {
   position: absolute;
   top: -2rem;
@@ -1583,16 +1583,6 @@ main {
   -o-transform: translateX(-50%);
   margin-top: 0 !important;
   object-fit: cover !important;
-}
-
-.geschikt__item--eerlijk img {
-  top: auto;
-  bottom: -2rem;
-  transform: translateX(-50%) rotate(180deg);
-  -webkit-transform: translateX(-50%) rotate(180deg);
-  -moz-transform: translateX(-50%) rotate(180deg);
-  -ms-transform: translateX(-50%) rotate(180deg);
-  -o-transform: translateX(-50%) rotate(180deg);
 }
 
 .geschikt__duurzame-images {
@@ -1736,6 +1726,68 @@ main {
 
 .process-arrow--next span {
   background-image: url("../img/right-arrow.png");
+}
+
+.eerlijk__images-position {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 155px;
+}
+
+.eerlijk__images {
+  position: relative;
+  background: rebeccapurple;
+}
+
+.eerlijk__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 136px;
+  height: 136px;
+}
+
+.eerlijk__image img {
+  object-fit: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.eerlijk__image1 {
+  top: 0;
+  left: -50px;
+  width: 136px;
+  height: 136px;
+}
+
+.eerlijk__image2 {
+  width: 95px;
+  height: 95px;
+  left: 100px;
+  top: auto;
+  bottom: -185px;
+}
+
+.eerlijk__image3 {
+  width: 80px;
+  height: 80px;
+  left: 156px;
+  top: auto;
+  bottom: -85px;
+}
+
+.eerlijk__image4 {
+  width: 136px;
+  height: 136px;
+  left: auto;
+  right: -23px;
+  top: auto;
+  bottom: -180px;
 }
 
 /* Geschikt Area */
