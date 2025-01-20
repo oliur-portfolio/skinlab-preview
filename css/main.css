@@ -1738,15 +1738,20 @@ main {
 
 .eerlijk__images {
   position: relative;
-  background: rebeccapurple;
+  height: 100%;
 }
 
 .eerlijk__image {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 136px;
   height: 136px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 
 .eerlijk__image img {
@@ -1759,35 +1764,31 @@ main {
 }
 
 .eerlijk__image1 {
-  top: 0;
-  left: -50px;
   width: 136px;
   height: 136px;
+  top: 45%;
+  left: 5%;
 }
 
 .eerlijk__image2 {
   width: 95px;
   height: 95px;
-  left: 100px;
-  top: auto;
-  bottom: -185px;
+  top: 86%;
+  left: 40%;
 }
 
 .eerlijk__image3 {
   width: 80px;
   height: 80px;
-  left: 156px;
-  top: auto;
-  bottom: -85px;
+  top: 27%;
+  left: 54%;
 }
 
 .eerlijk__image4 {
   width: 136px;
   height: 136px;
-  left: auto;
-  right: -23px;
-  top: auto;
-  bottom: -180px;
+  top: 70%;
+  left: 88%;
 }
 
 /* Geschikt Area */
